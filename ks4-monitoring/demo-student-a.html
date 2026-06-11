@@ -181,6 +181,63 @@
       .demo-section-panel[hidden] {
         display: none;
       }
+
+      .demo-tracker-note {
+        margin-bottom: 0.875rem;
+        font-size: 0.8125rem;
+        color: var(--text-muted);
+        line-height: 1.45;
+      }
+
+      .demo-attainment-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .demo-attainment-block {
+        padding: 0.875rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        background: var(--surface);
+      }
+
+      .demo-attainment-block__title {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 0.625rem;
+      }
+
+      .demo-attainment-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding: 0.35rem 0;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.875rem;
+      }
+
+      .demo-attainment-row:last-child {
+        border-bottom: none;
+      }
+
+      .demo-attainment-row__label {
+        color: var(--text);
+      }
+
+      .demo-intervention-type {
+        display: inline-block;
+        font-size: 0.625rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 0.25rem;
+      }
     </style>
   </head>
   <body>
@@ -391,26 +448,109 @@
           </ul>
         </section>
 
-        <section class="mon-section-panel demo-section-panel" id="panel-attainment" data-section="attainment" hidden>
-          <h2 class="mon-section-panel__title">Attainment</h2>
+        <section class="mon-section-panel demo-section-panel" id="panel-interventions" data-section="interventions" hidden>
+          <h2 class="mon-section-panel__title">Interventions &amp; Supports</h2>
+          <p class="demo-tracker-note">
+            DEMO example log. Shows the level of detail for mentoring, behaviour navigation, and pastoral supports on a dream profile.
+          </p>
           <ul class="mon-log">
             <li class="mon-log__item">
-              <div class="mon-log__date">18 December 2025 · King's Trust Level 1 Award</div>
-              <p class="mon-log__text">Theory unit complete. Practical unit in progress. Expected completion by Easter 2026.</p>
+              <span class="demo-intervention-type">Mentoring</span>
+              <div class="mon-log__date">15 September 2025 · LD</div>
+              <p class="mon-log__text">Weekly mentor check-in. Focus: settling in, centre expectations, and attendance targets for reduced timetable.</p>
+              <p class="mon-log__meta"><strong>Outcome:</strong> Student engaged. Agreed hand-up rule and 5-minute reset break if needed.</p>
             </li>
             <li class="mon-log__item">
-              <div class="mon-log__date">15 January 2026 · GCSE English Language</div>
-              <p class="mon-log__text">Working towards grade 4. Strong improvement in extended writing. Mock paper score moved from grade 3 to grade 4 boundary.</p>
+              <span class="demo-intervention-type">Mentoring</span>
+              <div class="mon-log__date">3 December 2025 · LD</div>
+              <p class="mon-log__text">Fortnightly mentoring session. Focus: managing frustration in group work and using restorative language.</p>
+              <p class="mon-log__meta"><strong>Outcome:</strong> Student reflected on October incident. Targets added to ILP for spring term.</p>
             </li>
             <li class="mon-log__item">
-              <div class="mon-log__date">15 January 2026 · GCSE Mathematics</div>
-              <p class="mon-log__text">Working towards grade 3. Number skills secure. Focus area: ratio and proportion. On track for next grade boundary with continued support.</p>
+              <span class="demo-intervention-type">Restorative conversation</span>
+              <div class="mon-log__date">22 October 2025</div>
+              <p class="mon-log__text">Brief restorative conversation after minor incident during group task (talking over others, refusing initial redirect).</p>
+              <p class="mon-log__meta"><strong>Outcome:</strong> Resolved in session. Student apologised to peer. No further issues that day.</p>
             </li>
             <li class="mon-log__item">
-              <div class="mon-log__date">20 January 2026 · Y10 provision courses</div>
-              <p class="mon-log__text">Health and Safety Level 1 complete. First Aid Level 1 and Safeguarding in progress.</p>
+              <span class="demo-intervention-type">Parent contact</span>
+              <div class="mon-log__date">14 November 2025</div>
+              <p class="mon-log__text">Mentor call to parent/carer after late arrival without notifying centre.</p>
+              <p class="mon-log__meta"><strong>Outcome:</strong> Travel plan agreed. Punctuality improved over following two weeks.</p>
+            </li>
+            <li class="mon-log__item">
+              <span class="demo-intervention-type">Remote learning</span>
+              <div class="mon-log__date">28 November 2025</div>
+              <p class="mon-log__text">One-day remote learning following low-level escalation in afternoon session. Work set via centre platform.</p>
+              <p class="mon-log__meta"><strong>Outcome:</strong> Student returned next day. Debrief with mentor completed. No formal warning.</p>
+            </li>
+            <li class="mon-log__item">
+              <span class="demo-intervention-type">Futures meeting</span>
+              <div class="mon-log__date">8 January 2026</div>
+              <p class="mon-log__text">Navigation support meeting at Futures. Attendees: LD, student, parent/carer. Discussed phased reintegration and behaviour expectations for return to mainstream.</p>
+              <p class="mon-log__meta"><strong>Outcome:</strong> Agreed next steps for spring term school meetings. Student motivated about return plan.</p>
+            </li>
+            <li class="mon-log__item">
+              <span class="demo-intervention-type">SEMH referral</span>
+              <div class="mon-log__date">20 November 2025</div>
+              <p class="mon-log__text">Internal wellbeing check-in referral (low-level). No open safeguarding concern. Monitor anxiety around group transitions.</p>
+              <p class="mon-log__meta"><strong>Outcome:</strong> Short check-in completed. No external referral required at this stage. Review at 12-week review.</p>
             </li>
           </ul>
+        </section>
+
+        <section class="mon-section-panel demo-section-panel" id="panel-attainment" data-section="attainment" hidden>
+          <h2 class="mon-section-panel__title">Attainment</h2>
+          <p class="demo-tracker-note">
+            DEMO example values mirroring Lloyd's tracker column labels (King's Trust sheet, Y10 provision sheet). Statuses are fictional but use the same qualification names as the live spreadsheets.
+          </p>
+          <div class="demo-attainment-grid">
+            <div class="demo-attainment-block">
+              <h3 class="demo-attainment-block__title">King's Trust (tracker columns)</h3>
+              <div class="demo-attainment-row">
+                <span class="demo-attainment-row__label">Theory</span>
+                <span class="mon-badge mon-badge--progress">In Progress</span>
+              </div>
+              <div class="demo-attainment-row">
+                <span class="demo-attainment-row__label">Practical</span>
+                <span class="mon-badge mon-badge--progress">In Progress</span>
+              </div>
+              <div class="demo-attainment-row">
+                <span class="demo-attainment-row__label">Level 1 Award Achieved</span>
+                <span class="mon-badge mon-badge--warn">Not yet</span>
+              </div>
+            </div>
+            <div class="demo-attainment-block">
+              <h3 class="demo-attainment-block__title">Y10 provision (KS4 placement)</h3>
+              <div class="demo-attainment-row">
+                <span class="demo-attainment-row__label">Health &amp; Safety L1</span>
+                <span class="mon-badge mon-badge--ok">Completed</span>
+              </div>
+              <div class="demo-attainment-row">
+                <span class="demo-attainment-row__label">First Aid L1</span>
+                <span class="mon-badge mon-badge--progress">In Progress</span>
+              </div>
+              <div class="demo-attainment-row">
+                <span class="demo-attainment-row__label">Safeguarding in Sport</span>
+                <span class="mon-badge mon-badge--progress">In Progress</span>
+              </div>
+              <div class="demo-attainment-row">
+                <span class="demo-attainment-row__label">EE Play Maker</span>
+                <span class="mon-badge mon-badge--progress">In Progress</span>
+              </div>
+            </div>
+            <div class="demo-attainment-block">
+              <h3 class="demo-attainment-block__title">Home school qualifications (continuing)</h3>
+              <div class="demo-attainment-row">
+                <span class="demo-attainment-row__label">GCSE English</span>
+                <span class="mon-badge mon-badge--progress">In Progress</span>
+              </div>
+              <div class="demo-attainment-row">
+                <span class="demo-attainment-row__label">GCSE Maths</span>
+                <span class="mon-badge mon-badge--progress">In Progress</span>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section class="mon-section-panel demo-section-panel" id="panel-reviews" data-section="reviews" hidden>
@@ -456,7 +596,8 @@
           { key: "riskAssessment", title: "Risk Assessment", meta: "Complete" },
           { key: "studentPassport", title: "Student Passport", meta: "Complete" },
           { key: "behaviour", title: "Behaviour", meta: "3 logged" },
-          { key: "attainment", title: "Attainment", meta: "4 entries" },
+          { key: "interventions", title: "Interventions", meta: "7 logged" },
+          { key: "attainment", title: "Attainment", meta: "9 courses" },
           { key: "reviews", title: "Reviews", meta: "3 reviews" },
           { key: "removal", title: "Removal", meta: "Not flagged" },
         ];

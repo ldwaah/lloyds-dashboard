@@ -2,12 +2,26 @@
   var STORAGE_KEY = "lloyds-ks4-monitoring";
   var STATUS_OPTIONS = ["Not Started", "In Progress", "Complete", "N/A"];
 
+  var INTERVENTION_TYPES = [
+    "Mentoring",
+    "Restorative conversation",
+    "Parent meeting",
+    "Parent contact",
+    "Remote learning",
+    "Futures meeting",
+    "Navigation support",
+    "SEMH referral",
+    "Safeguarding referral",
+    "Other",
+  ];
+
   var SECTION_DEFS = [
     { key: "induction", title: "Induction", type: "induction" },
     { key: "ilp", title: "Individual Learning Plans (ILP)" },
     { key: "riskAssessment", title: "Risk Assessments" },
     { key: "studentPassport", title: "Student Passport", hasSource: true },
-    { key: "behaviour", title: "Behaviour Instances", type: "log" },
+    { key: "behaviour", title: "Behaviour Instances", type: "log", logKind: "behaviour" },
+    { key: "interventions", title: "Interventions & Supports", type: "log", logKind: "interventions" },
     { key: "attainment", title: "Attainment", type: "attainment" },
     { key: "reviews", title: "Reviews", type: "reviews" },
     { key: "removal", title: "Removal / Provision Exit", type: "removal" },
@@ -60,6 +74,7 @@
       riskAssessment: emptySection(),
       studentPassport: { status: "Not Started", source: "", link: "", notes: "" },
       behaviour: [],
+      interventions: [],
       attainment: [],
       reviews: [],
       removal: {
@@ -132,7 +147,11 @@
     });
     if (!def) return "";
     if (def.type === "log") {
-      var count = (record.behaviour || []).length;
+      var kind = def.logKind || def.key;
+      var count = (record[kind] || []).length;
+      if (kind === "interventions") {
+        return count ? count + " logged" : "None logged";
+      }
       return count ? count + " logged" : "No incidents";
     }
     if (def.type === "attainment") {
@@ -279,6 +298,62 @@
       escapeHtml(sec.notes || "") +
       "</textarea></label>" +
       '<button type="submit" class="btn btn--primary">Save</button></form>'
+    );
+  }
+
+  function renderInterventions(record) {
+    var items = record.interventions || [];
+    var list =
+      items.length === 0
+        ? '<p class="mon-empty">No interventions or supports logged yet.</p>'
+        : '<ul class="mon-log">' +
+          items
+            .slice()
+            .reverse()
+            .map(function (item) {
+              return (
+                '<li class="mon-log__item">' +
+                (item.type
+                  ? '<p class="mon-log__meta" style="margin-top:0"><strong>' +
+                    escapeHtml(item.type) +
+                    "</strong></p>"
+                  : "") +
+                '<div class="mon-log__date">' +
+                escapeHtml(item.date) +
+                "</div>" +
+                '<p class="mon-log__text">' +
+                escapeHtml(item.description) +
+                "</p>" +
+                (item.outcome
+                  ? '<p class="mon-log__meta"><strong>Outcome:</strong> ' +
+                    escapeHtml(item.outcome) +
+                    "</p>"
+                  : "") +
+                '<button type="button" class="mon-log__delete" data-kind="interventions" data-id="' +
+                escapeHtml(item.id) +
+                '">Remove</button></li>'
+              );
+            })
+            .join("") +
+          "</ul>";
+
+    var typeOpts = INTERVENTION_TYPES.map(function (opt) {
+      return '<option value="' + escapeHtml(opt) + '">' + escapeHtml(opt) + "</option>";
+    }).join("");
+
+    return (
+      list +
+      '<form class="mon-add-form" data-kind="interventions">' +
+      '<h3 class="mon-form-title">Log intervention or support</h3>' +
+      '<div class="form-row">' +
+      '<label class="form-field"><span>Date</span><input type="date" name="date" required></label>' +
+      '<label class="form-field"><span>Type</span><select name="type" required>' +
+      typeOpts +
+      "</select></label>" +
+      "</div>" +
+      '<label class="form-field"><span>Description</span><textarea name="description" rows="3" required placeholder="What support was provided? Include mentor name, focus, or context."></textarea></label>' +
+      '<label class="form-field"><span>Outcome</span><input type="text" name="outcome" placeholder="Result / follow-up"></label>' +
+      '<button type="submit" class="btn btn--primary">Add entry</button></form>'
     );
   }
 
@@ -469,7 +544,9 @@
     }).join("");
 
     var body = "";
-    if (def.type === "log" && def.key === "behaviour") {
+    if (def.type === "log" && def.logKind === "interventions") {
+      body = renderInterventions(record);
+    } else if (def.type === "log" && def.logKind === "behaviour") {
       body = renderBehaviour(record);
     } else if (def.type === "attainment") {
       body = renderAttainment(record);

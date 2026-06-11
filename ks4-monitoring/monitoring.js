@@ -1,7 +1,7 @@
 (function () {
   var STORAGE_KEY = "lloyds-ks4-monitoring";
   var VERSION_KEY = "lloyds-ks4-monitoring-seed-version";
-  var SEED_VERSION = 7;
+  var SEED_VERSION = 8;
 
   var EXCLUDED_IDS = [
     "ks4-flynn-hurley",
@@ -109,6 +109,9 @@
         r.notes = "";
       });
     }
+    if (!record.interventions) {
+      record.interventions = [];
+    }
     if (record.removal && clearSectionNotes) {
       record.removal.notes = "";
     }
@@ -135,6 +138,7 @@
       riskAssessment: docSection("Not Started"),
       studentPassport: docSection("Not Started"),
       behaviour: [],
+      interventions: [],
       attainment: [
         {
           id: "seed-att-kt-calum",
@@ -186,6 +190,7 @@
       riskAssessment: docSection("Not Started"),
       studentPassport: docSection("Not Started"),
       behaviour: [],
+      interventions: [],
       attainment: [
         {
           id: "seed-att-kt-jayden",
@@ -219,6 +224,7 @@
       riskAssessment: docSection("Not Started"),
       studentPassport: docSection("Not Started"),
       behaviour: [],
+      interventions: [],
       attainment: [
         {
           id: "seed-att-kt-stacey",
@@ -270,6 +276,7 @@
       riskAssessment: docSection("Not Started"),
       studentPassport: docSection("Not Started"),
       behaviour: [],
+      interventions: [],
       attainment: [
         {
           id: "seed-att-kt-tyrell",
@@ -306,6 +313,7 @@
       riskAssessment: docSection("Not Started"),
       studentPassport: docSection("Not Started"),
       behaviour: [],
+      interventions: [],
       attainment: [
         {
           id: "seed-att-kt-ronny",
@@ -345,6 +353,7 @@
       riskAssessment: docSection("Not Started"),
       studentPassport: docSection("Not Started"),
       behaviour: [],
+      interventions: [],
       attainment: [
         {
           id: "seed-att-y10-mason",
@@ -378,6 +387,7 @@
       riskAssessment: docSection("Not Started"),
       studentPassport: docSection("Not Started"),
       behaviour: [],
+      interventions: [],
       attainment: [
         {
           id: "seed-att-kt-jovan",
@@ -417,6 +427,7 @@
       riskAssessment: docSection("Not Started"),
       studentPassport: docSection("Not Started"),
       behaviour: [],
+      interventions: [],
       attainment: [
         {
           id: "seed-att-harrison",
@@ -450,6 +461,7 @@
       riskAssessment: docSection("Not Started"),
       studentPassport: docSection("Not Started"),
       behaviour: [],
+      interventions: [],
       attainment: [
         {
           id: "seed-att-kt-joshua",
@@ -489,6 +501,7 @@
       riskAssessment: docSection("Not Started"),
       studentPassport: docSection("Not Started"),
       behaviour: [],
+      interventions: [],
       attainment: [],
       reviews: reviewEntries(
         { w6: "14/08/2026", w12: "25/09/2026", w24: "18/12/2026", w32: "12/02/2027" },
@@ -515,6 +528,7 @@
       riskAssessment: docSection("Not Started"),
       studentPassport: docSection("Not Started"),
       behaviour: [],
+      interventions: [],
       attainment: [],
       reviews: [],
       removal: { flagged: false, status: "Not Started", warnings: "", evidenceLinks: "", notes: "" },
@@ -578,6 +592,7 @@
       out[key] = mergeSection(out[key], seed[key]);
     });
     out.behaviour = mergeArray(out.behaviour, seed.behaviour, "id");
+    out.interventions = mergeArray(out.interventions, seed.interventions, "id");
     out.attainment = mergeArray(out.attainment, seed.attainment, "id");
     out.reviews = mergeArray(out.reviews, seed.reviews, "id");
     if (seed.removal && seed.removal.flagged) {
@@ -648,6 +663,15 @@
         changed = true;
       }
     });
+
+    if (version < 8) {
+      Object.keys(store).forEach(function (id) {
+        if (!store[id].interventions) {
+          store[id].interventions = [];
+          changed = true;
+        }
+      });
+    }
 
     if (version < 7) {
       Object.keys(SEED_RECORDS).forEach(function (id) {
