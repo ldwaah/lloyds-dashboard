@@ -15,7 +15,6 @@
 
   var otherMenu = document.getElementById("other-menu");
   var otherNotes = document.getElementById("other-notes");
-  var otherTeaching = document.getElementById("other-teaching");
   var otherBackBtn = document.getElementById("other-back-btn");
   var otherTitle = document.getElementById("other-title");
   var otherSubtitle = document.getElementById("other-subtitle");
@@ -25,7 +24,6 @@
 
     if (otherMenu) otherMenu.hidden = view !== "menu";
     if (otherNotes) otherNotes.hidden = view !== "notes";
-    if (otherTeaching) otherTeaching.hidden = view !== "teaching";
     if (otherBackBtn) otherBackBtn.hidden = view === "menu";
 
     if (!otherTitle || !otherSubtitle) return;
@@ -36,9 +34,6 @@
       otherSubtitle.hidden = false;
     } else if (view === "notes") {
       otherTitle.textContent = "Notes";
-      otherSubtitle.hidden = true;
-    } else if (view === "teaching") {
-      otherTitle.textContent = "Teaching";
       otherSubtitle.hidden = true;
     }
   }
