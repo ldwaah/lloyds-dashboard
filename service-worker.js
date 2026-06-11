@@ -1,4 +1,4 @@
-var CACHE_NAME = "lloyds-dashboard-v6";
+var CACHE_NAME = "lloyds-dashboard-v7";
 
 var ASSETS = [
   "./",

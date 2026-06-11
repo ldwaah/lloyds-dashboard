@@ -164,6 +164,165 @@
     return { workflows: workflows, tasks: tasks };
   }
 
+  function seedDefaultTasks() {
+    var tasks = loadTasks();
+    var changed = false;
+    var added = [];
+    var merged = [];
+    var skipped = [];
+
+    var seeds = [
+      {
+        id: "seed-task-kamari-induction",
+        title: "Contact Barking Abbey for Kamari induction, cc Bal",
+        category: "Student Induction",
+        priority: "High",
+        dueDate: "2026-06-12",
+        status: "Not Started",
+        notes:
+          "Contact Barking Abbey to arrange/confirm Kamari induction and cc Bal.",
+      },
+      {
+        id: "seed-task-kings-trust-qar",
+        title: "Complete King's Trust QAR documentation",
+        category: "Curriculum/Qualification",
+        priority: "High",
+        dueDate: "2026-06-12",
+        status: "Not Started",
+        notes: "Complete outstanding King's Trust QAR documentation.",
+      },
+      {
+        id: "seed-task-tyler-risk-assessment",
+        title: "Chase Tyler risk assessment if not received",
+        category: "Risk Assessment",
+        priority: "High",
+        dueDate: "2026-06-12",
+        status: "Not Started",
+        notes: "Chase Tyler's risk assessment if it has not been received.",
+      },
+      {
+        id: "seed-task-ehcp-cease",
+        title: "Chase EHCP Cease full correspondence if not received",
+        category: "SEND/EHCP",
+        priority: "Medium-High",
+        dueDate: "2026-06-16",
+        status: "Not Started",
+        notes:
+          "Chase full EHCP Cease correspondence early next week if not received.",
+      },
+      {
+        id: "seed-task-harrison-ronny-report",
+        title: "Chase Harrison/Ronny report clarification if no reply",
+        category: "Student Reports",
+        priority: "Medium",
+        dueDate: "2026-06-16",
+        status: "Not Started",
+        notes:
+          "Chase clarification regarding Harrison/Ronny report next week if no reply received.",
+      },
+      {
+        id: "seed-task-amir-meeting",
+        title: "Ask for Amir meeting outcome if not updated",
+        category: "Staff Follow-Up",
+        priority: "Medium",
+        dueDate: "2026-06-15",
+        status: "Not Started",
+        notes:
+          "Ask for the outcome of the Amir meeting after Friday if no update has been provided.",
+      },
+      {
+        id: "task-year11-create-profiles",
+        mergeOnly: true,
+        title: "Create Year 11 student profiles",
+        category: "Student Profiles",
+        priority: "High",
+        dueDate: "2026-06-15",
+        status: "Not Started",
+        notes:
+          "Create student profiles for all Year 11 students ready to send to schools.",
+        workflowId: YEAR11_WORKFLOW_ID,
+      },
+      {
+        id: "task-year11-send-profiles",
+        mergeOnly: true,
+        title: "Send Year 11 student profiles to schools",
+        category: "School Communication",
+        priority: "High",
+        dueDate: "2026-06-19",
+        status: "Not Started",
+        notes:
+          "Send completed Year 11 student profiles to relevant schools by next Friday.",
+        workflowId: YEAR11_WORKFLOW_ID,
+      },
+      {
+        id: "task-year10-arrange-meetings",
+        mergeOnly: true,
+        title: "Arrange end-of-year reviews for Year 10 students",
+        category: "Student Reviews",
+        priority: "High",
+        dueDate: "2026-06-19",
+        status: "Not Started",
+        notes:
+          "Arrange end-of-year review meetings with all Year 10 students in preparation for next year.",
+        workflowId: YEAR10_WORKFLOW_ID,
+      },
+    ];
+
+    seeds.forEach(function (seed) {
+      var existingIdx = -1;
+      for (var i = 0; i < tasks.length; i++) {
+        if (tasks[i].id === seed.id) {
+          existingIdx = i;
+          break;
+        }
+      }
+
+      if (existingIdx >= 0) {
+        var existing = tasks[existingIdx];
+        var updated = false;
+
+        if (seed.notes && !existing.notes) {
+          existing.notes = seed.notes;
+          updated = true;
+        }
+        if (seed.workflowId && !existing.workflowId) {
+          existing.workflowId = seed.workflowId;
+          updated = true;
+        }
+
+        if (updated) {
+          merged.push(seed.id);
+          changed = true;
+        } else {
+          skipped.push(seed.id);
+        }
+        return;
+      }
+
+      if (seed.mergeOnly) {
+        skipped.push(seed.id);
+        return;
+      }
+
+      tasks.push({
+        id: seed.id,
+        title: seed.title,
+        status: seed.status || "Not Started",
+        priority: seed.priority,
+        category: seed.category,
+        dueDate: seed.dueDate || "",
+        notes: seed.notes || "",
+        workflowId: seed.workflowId || "",
+      });
+      added.push(seed.id);
+      changed = true;
+    });
+
+    if (changed) saveTasks(tasks);
+
+    return { added: added, merged: merged, skipped: skipped, tasks: tasks };
+  }
+
   function pad(n) {
     return String(n).padStart(2, "0");
   }
@@ -248,6 +407,7 @@
       priority: "Medium",
       category: detectCategory(line),
       dueDate: parseDueDate(line),
+      notes: "",
       workflowId: workflowId || "",
     };
   }
@@ -465,6 +625,9 @@
           "</span>"
         : "") +
       "</div>" +
+      (task.notes
+        ? '<p class="task-item__notes">' + escapeHtml(task.notes) + "</p>"
+        : "") +
       "</div>" +
       '<div class="task-item__actions">' +
       '<button type="button" class="task-item__edit" aria-label="Edit task">Edit</button>' +
@@ -513,6 +676,12 @@
       '<select name="workflowId">' +
       workflowOptionsHtml(workflows, task.workflowId || "", true) +
       "</select>" +
+      "</div>" +
+      '<div class="form-field">' +
+      "<label>Notes</label>" +
+      '<textarea name="notes" rows="2">' +
+      escapeHtml(task.notes || "") +
+      "</textarea>" +
       "</div>" +
       '<div class="task-item__edit-actions">' +
       '<button type="submit" class="btn btn--primary btn--sm">Save</button>' +
@@ -630,6 +799,7 @@
         var category = form.querySelector('[name="category"]').value;
         var dueDate = form.querySelector('[name="dueDate"]').value;
         var workflowId = form.querySelector('[name="workflowId"]').value;
+        var notes = form.querySelector('[name="notes"]').value.trim();
 
         if (!title) return;
         if (STATUSES.indexOf(status) === -1) return;
@@ -646,6 +816,7 @@
             priority: priority,
             category: category,
             dueDate: dueDate || "",
+            notes: notes,
             workflowId: workflowId || "",
           };
         });
@@ -768,6 +939,7 @@
   document.addEventListener("DOMContentLoaded", function () {
     seedYear11Workflow();
     seedYear10Workflow();
+    seedDefaultTasks();
     initImport();
     refresh();
   });

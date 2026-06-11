@@ -388,7 +388,8 @@ body {
 }
 
 .form-field input,
-.form-field select {
+.form-field select,
+.form-field textarea {
   width: 100%;
   padding: 0.625rem 0.75rem;
   font-family: inherit;
@@ -409,7 +410,8 @@ body {
 }
 
 .form-field input:focus,
-.form-field select:focus {
+.form-field select:focus,
+.form-field textarea:focus {
   outline: none;
   border-color: #b8b8b6;
 }
@@ -758,6 +760,13 @@ body {
 .task-item__due {
   font-size: 0.8125rem;
   color: var(--text-muted);
+}
+
+.task-item__notes {
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.4;
 }
 
 .task-status,
