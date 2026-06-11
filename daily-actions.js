@@ -2,7 +2,7 @@
   var STORAGE_KEY = "lloyds-daily-actions";
 
   var DAILY_ACTIONS = [
-    { id: "gpt-adhoc-todo", label: "Check GPT Ad-hoc To-Do-List" },
+    { id: "gpt-adhoc-todo", label: "Check TD List" },
   ];
 
   function pad(n) {
