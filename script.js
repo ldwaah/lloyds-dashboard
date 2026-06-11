@@ -57,10 +57,26 @@
   switchTab("home");
 
   if ("serviceWorker" in navigator) {
+    var swRefreshing = false;
+    navigator.serviceWorker.addEventListener("controllerchange", function () {
+      if (swRefreshing) return;
+      swRefreshing = true;
+      window.location.reload();
+    });
+
     window.addEventListener("load", function () {
       navigator.serviceWorker
         .register("./service-worker.js", { scope: "./" })
-        .then(function () {
+        .then(function (registration) {
+          function checkForUpdates() {
+            registration.update().catch(function () {});
+          }
+
+          checkForUpdates();
+          document.addEventListener("visibilitychange", function () {
+            if (!document.hidden) checkForUpdates();
+          });
+
           if (window.LloydsNotifications) {
             window.LloydsNotifications.checkDeadlines();
           }

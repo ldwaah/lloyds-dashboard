@@ -1,4 +1,4 @@
-var CACHE_NAME = "lloyds-dashboard-v10";
+var CACHE_NAME = "lloyds-dashboard-v11";
 
 var ASSETS = [
   "./",
@@ -17,6 +17,24 @@ var ASSETS = [
 
 function assetUrl(path) {
   return new URL(path, self.location).href;
+}
+
+function isAppShellRequest(requestUrl) {
+  var path = requestUrl.pathname;
+  if (requestUrl.search) return true;
+  if (path.endsWith("/") || path.endsWith(".html")) return true;
+  if (path.endsWith(".js") || path.endsWith(".css")) return true;
+  return false;
+}
+
+function cachePut(request, response) {
+  if (!response || response.status !== 200 || response.type === "opaque") {
+    return;
+  }
+  var copy = response.clone();
+  caches.open(CACHE_NAME).then(function (cache) {
+    cache.put(request, copy);
+  });
 }
 
 self.addEventListener("install", function (event) {
@@ -60,20 +78,32 @@ self.addEventListener("fetch", function (event) {
 
   if (requestUrl.origin !== self.location.origin) return;
 
+  if (isAppShellRequest(requestUrl) || event.request.mode === "navigate") {
+    event.respondWith(
+      fetch(event.request)
+        .then(function (response) {
+          cachePut(event.request, response);
+          return response;
+        })
+        .catch(function () {
+          return caches.match(event.request).then(function (cached) {
+            if (cached) return cached;
+            if (event.request.mode === "navigate") {
+              return caches.match(assetUrl("./index.html"));
+            }
+            return Response.error();
+          });
+        })
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then(function (cached) {
       if (cached) return cached;
 
       return fetch(event.request).then(function (response) {
-        if (!response || response.status !== 200 || response.type === "opaque") {
-          return response;
-        }
-
-        var copy = response.clone();
-        caches.open(CACHE_NAME).then(function (cache) {
-          cache.put(event.request, copy);
-        });
-
+        cachePut(event.request, response);
         return response;
       });
     })
