@@ -8,10 +8,16 @@
     />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Lloyd" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#f6f5f2" />
     <title>Lloyd's Dashboard</title>
     <link rel="manifest" href="manifest.json" />
     <link rel="apple-touch-icon" href="icons/icon-192.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -55,13 +61,9 @@
                 <h2>Priority Workflows</h2>
                 <div id="home-workflows-list" class="home-workflows-list" aria-live="polite"></div>
               </article>
-              <article class="card card--ks4" id="home-ks4-card" role="button" tabindex="0" aria-label="Open KS4 student tracker">
-                <h2>KS4 Students</h2>
-                <div id="home-ks4-summary" class="home-ks4-summary" aria-live="polite"></div>
-              </article>
-              <a class="card card--monitoring" href="ks4-monitoring/" aria-label="Open KS4 Monitoring app">
+              <a class="card card--monitoring" href="ks4-monitoring/" aria-label="Open KS4 Monitoring">
                 <h2>KS4 Monitoring</h2>
-                <p class="card--monitoring__text">Lifecycle tracking — induction, ILP, behaviour, attainment, removal</p>
+                <p class="card--monitoring__text">10 Year 10 students. Induction, ILP, behaviour, attainment, removal.</p>
               </a>
             </section>
           </div>
@@ -139,22 +141,6 @@
           <div class="workspace calendar-workspace" aria-label="Calendar workspace">
             <div id="calendar-root" class="calendar-root"></div>
             <div id="calendar-day-detail" class="calendar-day-detail" hidden aria-live="polite"></div>
-          </div>
-        </section>
-
-        <!-- KS4 Students -->
-        <section
-          id="panel-ks4"
-          class="panel"
-          role="tabpanel"
-          aria-labelledby="tab-ks4"
-          hidden
-        >
-          <header class="page-header">
-            <h1>KS4 Students</h1>
-          </header>
-          <div class="workspace ks4-workspace" aria-label="KS4 student tracker">
-            <div id="ks4-root" class="ks4-root" aria-live="polite"></div>
           </div>
         </section>
 
@@ -264,14 +250,11 @@
           </span>
           <span class="tab__label">Calendar</span>
         </button>
-        <button
-          type="button"
-          class="tab"
+        <a
+          class="tab tab--link"
           id="tab-ks4"
-          role="tab"
-          aria-selected="false"
-          aria-controls="panel-ks4"
-          data-tab="ks4"
+          href="ks4-monitoring/"
+          aria-label="Open KS4 Monitoring"
         >
           <span class="tab__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
@@ -281,7 +264,7 @@
             </svg>
           </span>
           <span class="tab__label">KS4</span>
-        </button>
+        </a>
         <button
           type="button"
           class="tab"
@@ -304,7 +287,6 @@
 
     <script src="reminders.js"></script>
     <script src="tasks.js"></script>
-    <script src="ks4-students.js"></script>
     <script src="calendar.js"></script>
     <script src="notifications.js"></script>
     <script src="script.js"></script>

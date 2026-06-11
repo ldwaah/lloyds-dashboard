@@ -119,7 +119,7 @@
           overdue: task.dueDate < today,
           body:
             task.dueDate < today
-              ? "Overdue — was due " + formatShortDate(task.dueDate)
+              ? "Overdue, was due " + formatShortDate(task.dueDate)
               : "Due today",
         });
       }
@@ -136,7 +136,7 @@
           title: reminder.title,
           overdue: overdue,
           body: overdue
-            ? "Overdue — was " + formatShortDate(reminder.date)
+            ? "Overdue, was " + formatShortDate(reminder.date)
             : "Reminder today at " + formatTime(reminder.time),
         });
       }

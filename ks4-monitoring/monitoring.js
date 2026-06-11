@@ -1,7 +1,7 @@
 (function () {
   var STORAGE_KEY = "lloyds-ks4-monitoring";
   var VERSION_KEY = "lloyds-ks4-monitoring-seed-version";
-  var SEED_VERSION = 4;
+  var SEED_VERSION = 5;
 
   var EXCLUDED_IDS = [
     "ks4-flynn-hurley",
@@ -589,16 +589,28 @@
         agencies: "",
         intendedDestination: "",
         dataSources:
-          "Outlook Web emails Jun 2026: Student updates (sent), Admin Support, Eugene Dwaah cohort/proposed-student emails.",
+          "Outlook Web emails Jun 2026; Outlook desktop HxStore cache extract 2026-06-11 (data/emails-extracted/kamari.txt).",
       },
       induction: docSection(
         "Not Started",
-        "Email 10 Jun 2026 (Lloyd Dwaah, Student updates, sent): contact Barking Abbey and cc Bal regarding Kamari Emanuel's induction arrangements."
+        "Email 10 Jun 2026 (Lloyd Dwaah, Student updates, sent): contact Barking Abbey and cc Bal regarding Kamari Emanuel's induction arrangements. HxStore subject: Kamari Emanuel's induction arrangements."
       ),
       ilp: docSection("Not Started", "No ILP status in emails."),
-      riskAssessment: docSection("Not Started", "No risk assessment cited in emails."),
+      riskAssessment: docSection(
+        "Not Started",
+        "HxStore cache excerpt (induction context): anger management noted as key issue; two physical altercations since returning to school; struggles to regulate emotions — not a completed risk assessment document."
+      ),
       studentPassport: docSection("Not Started", "No passport status in emails."),
-      behaviour: [],
+      behaviour: [
+        {
+          id: "email-beh-kamari-1",
+          date: "",
+          description:
+            "HxStore: Kamari Emanuel — contact school cc Bal for induction; Barking Abbey referenced in referral batch email.",
+          intervention: "",
+          outcome: "See data/emails-extracted/kamari.txt.",
+        },
+      ],
       attainment: [],
       reviews: [],
       removal: { flagged: false, status: "Not Started", warnings: "", evidenceLinks: "", notes: "" },

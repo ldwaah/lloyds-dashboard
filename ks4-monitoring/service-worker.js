@@ -1,4 +1,4 @@
-var CACHE_NAME = "ks4-monitoring-v3";
+var CACHE_NAME = "ks4-monitoring-v6";
 
 var ASSETS = [
   "./",

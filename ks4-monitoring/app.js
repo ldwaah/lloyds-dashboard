@@ -147,79 +147,39 @@
   }
 
   function renderList() {
-    var students = getStudents();
-    var y10 = students.filter(function (s) {
-      return s.yearGroup === "Year 10";
-    });
-    var y11 = students.filter(function (s) {
-      return s.yearGroup === "Year 11";
-    });
-    var other = students.filter(function (s) {
-      return s.yearGroup !== "Year 10" && s.yearGroup !== "Year 11";
-    });
+    var students = getStudents()
+      .filter(function (s) {
+        return s.yearGroup === "Year 10";
+      })
+      .sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+      });
 
-    function groupHtml(title, list) {
-      if (!list.length) return "";
-      var cards = list
-        .map(function (s) {
-          var rec = getRecord(s.id);
-          var flagged =
-            rec.removal && rec.removal.flagged
-              ? '<span class="mon-badge mon-badge--alert">Removal</span>'
-              : "";
-          return (
-            '<button type="button" class="mon-student-card" data-id="' +
-            escapeHtml(s.id) +
-            '">' +
-            '<span class="mon-student-card__name">' +
-            escapeHtml(s.name) +
-            "</span>" +
-            '<span class="mon-student-card__meta">' +
-            escapeHtml(s.yearGroup) +
-            " · " +
-            escapeHtml(s.school) +
-            "</span>" +
-            '<span class="mon-student-card__badges">' +
-            '<span class="mon-badge ' +
-            statusClass(s.currentStatus) +
-            '">' +
-            escapeHtml(s.currentStatus) +
-            "</span>" +
-            flagged +
-            "</span></button>"
-          );
-        })
-        .join("");
-      return (
-        '<section class="mon-group"><h2 class="mon-group__title">' +
-        escapeHtml(title) +
-        ' <span class="mon-group__count">' +
-        list.length +
-        "</span></h2>" +
-        '<div class="mon-list">' +
-        cards +
-        "</div></section>"
-      );
-    }
+    var cards = students
+      .map(function (s) {
+        return (
+          '<button type="button" class="mon-student-card" data-id="' +
+          escapeHtml(s.id) +
+          '">' +
+          '<span class="mon-student-card__name">' +
+          escapeHtml(s.name) +
+          "</span>" +
+          '<span class="mon-student-card__meta">' +
+          escapeHtml(s.school) +
+          " · " +
+          escapeHtml(s.yearGroup) +
+          "</span></button>"
+        );
+      })
+      .join("");
 
     var root = document.getElementById("mon-root");
     if (!root) return;
 
     root.innerHTML =
-      '<div class="mon-notice">' +
-      "<p>Lifecycle monitoring from induction through to provision exit. Store document links only — files live elsewhere.</p>" +
-      "<p><strong>" +
-      students.length +
-      "</strong> KS4 students tracked" +
-      (students.length ? " (shared with Lloyd's Dashboard on this device)." : ".") +
-      "</p>" +
-      "</div>" +
-      groupHtml("Year 10", y10) +
-      groupHtml("Year 11", y11) +
-      (other.length ? groupHtml("Other KS4", other) : "") +
-      (students.length
-        ? ""
-        : '<p class="mon-empty">Student list did not load. Pull down to refresh or close and reopen the app.</p>');
+      students.length > 0
+        ? '<div class="mon-list">' + cards + "</div>"
+        : '<p class="mon-empty">Student list did not load. Pull down to refresh or close and reopen the app.</p>';
 
     root.querySelectorAll(".mon-student-card").forEach(function (btn) {
       btn.addEventListener("click", function () {
