@@ -1,7 +1,12 @@
 (function () {
   var STORAGE_KEY = "lloyds-ks4-monitoring";
   var VERSION_KEY = "lloyds-ks4-monitoring-seed-version";
-  var SEED_VERSION = 1;
+  var SEED_VERSION = 4;
+
+  var EXCLUDED_IDS = [
+    "ks4-flynn-hurley",
+    "ks4-charlie-archer",
+  ];
 
   var SHEET_URL =
     "https://docs.google.com/spreadsheets/d/1kMZy6UPEICCHABe7Fa9FIf_ij0z79l84aAYsRhzn-qc/edit";
@@ -59,15 +64,23 @@
         agencies: "",
         intendedDestination: "",
         dataSources:
-          "Master list (data/ks4-master-export.csv), Y10 provision (Flexi Full Time), King's Trust tab, SEMH tab, DofE tab. No emails in workspace.",
+          "Master list, Y10 provision, King's Trust, SEMH, DofE tabs; Outlook desktop cache (HxStore.hxd, extracted 2026-06-11).",
       },
-      induction: docSection("Not Started", "Provision: Flexi Full Time (Y10 provision tab). BFL: Final Warning (master list). Proposed start with centre.", {
+      induction: docSection("Not Started", "Provision: Flexi Full Time (Y10 provision tab). BFL: Final Warning (master list). Proposed start with centre. Email (Outlook): follow-up on Calum Mison (JRCS); mum reported available for meeting at 2.15pm.", {
         startDate: ukToIso("03/11/2026"),
       }),
       ilp: docSection("Not Started", "No ILP status in sheet or emails."),
       riskAssessment: docSection("Not Started", "SEMH tab: Significant Concern / Occasionally Dysregulated — this is SEMH risk, not a completed risk assessment document."),
       studentPassport: docSection("Not Started", "No student profile/passport status in sheet."),
-      behaviour: [],
+      behaviour: [
+        {
+          id: "email-beh-calum-1",
+          date: "",
+          description: "Outlook email thread: RE: Calum Mison Behaviour Update (subject line in local cache).",
+          intervention: "",
+          outcome: "Behaviour update correspondence — see data/emails-extracted/calum-mison.txt.",
+        },
+      ],
       attainment: [
         {
           id: "seed-att-kt-calum",
@@ -111,7 +124,7 @@
         interventions: "Mentoring",
         agencies: "",
         intendedDestination: "",
-        dataSources: "Master list, Y10 provision (Flexi Full Time), King's Trust tab, SEMH tab.",
+        dataSources: "Master list, Y10 provision, King's Trust, SEMH tabs; Outlook desktop cache (2026-06-11).",
       },
       induction: docSection("Not Started", "Provision: Flexi Full Time. BFL: Doing Well / OK. Current placement on master list.", {
         startDate: ukToIso("26/03/2026"),
@@ -119,7 +132,16 @@
       ilp: docSection("Not Started", "No ILP status in sheet."),
       riskAssessment: docSection("Not Started", "SEMH tab: Emerging Concern / Regulated — SEMH data only, not RA document status."),
       studentPassport: docSection("Not Started", "No passport/profile status in sheet."),
-      behaviour: [],
+      behaviour: [
+        {
+          id: "email-beh-jayden-1",
+          date: "",
+          description:
+            "Outlook: Re: Jayden O Brien - Year 10 4 week placement; school requested progress update and confirmation of return following work experience placement.",
+          intervention: "",
+          outcome: "See data/emails-extracted/jayden-obrien.txt.",
+        },
+      ],
       attainment: [
         {
           id: "seed-att-kt-jayden",
@@ -145,7 +167,7 @@
         interventions: "Mentoring",
         agencies: "Social Services",
         intendedDestination: "",
-        dataSources: "Master list, Y10 provision (KS4), King's Trust tab, SEMH tab, DofE tab.",
+        dataSources: "Master list, Y10 provision, King's Trust, SEMH, DofE tabs; Outlook desktop cache (2026-06-11).",
       },
       induction: docSection("Not Started", "Provision: KS4 (Y10 provision tab). BFL: Final Warning. Agencies: Social Services.", {
         startDate: ukToIso("12/08/2025"),
@@ -153,7 +175,23 @@
       ilp: docSection("Not Started", "No ILP status in sheet."),
       riskAssessment: docSection("Not Started", "SEMH tab: High Risk / Severely Dysregulated — SEMH data only."),
       studentPassport: docSection("Not Started", "No passport status in sheet."),
-      behaviour: [],
+      behaviour: [
+        {
+          id: "email-beh-stacey-1",
+          date: "2026-05-08",
+          description:
+            "Outlook: Safeguarding Update re Stacey Grail (LAC) — email dated 8 May 2026; separate thread URGENT SAFEGUARDING UPDATE re arrival/whereabouts.",
+          intervention: "Social Services (master list).",
+          outcome: "See data/emails-extracted/stacey-grail.txt.",
+        },
+        {
+          id: "email-beh-stacey-2",
+          date: "",
+          description: "Outlook: Stacey Grail (LAC) - final warning (subject line in local cache).",
+          intervention: "",
+          outcome: "Final warning referenced in email subject — correlate with BFL on master list.",
+        },
+      ],
       attainment: [
         {
           id: "seed-att-kt-stacey",
@@ -197,7 +235,7 @@
         interventions: "Reduced Timetable",
         agencies: "",
         intendedDestination: "",
-        dataSources: "Master list (no start date), Y10 provision (Flexi Full Time), King's Trust tab.",
+        dataSources: "Master list, Y10 provision, King's Trust tabs; Outlook desktop cache (2026-06-11).",
       },
       induction: docSection("Not Started", "Provision: Flexi Full Time. BFL: Doing Well / OK. No start date on master list.", {
         startDate: "",
@@ -205,7 +243,16 @@
       ilp: docSection("Not Started", "No ILP status in sheet."),
       riskAssessment: docSection("Not Started", "SEMH tab: Low Risk / Occasionally Dysregulated."),
       studentPassport: docSection("Not Started", "No passport status in sheet."),
-      behaviour: [],
+      behaviour: [
+        {
+          id: "email-beh-tyrell-1",
+          date: "",
+          description:
+            "Outlook: request to review Tyrell's Zoho email access; listed in KS4 rapid-response referral batch (with Charlie A, Stacey G, Flynn H, Jovan L, Calum M, Tyrell).",
+          intervention: "",
+          outcome: "See data/emails-extracted/tyrell-allassani.txt.",
+        },
+      ],
       attainment: [
         {
           id: "seed-att-kt-tyrell",
@@ -234,15 +281,23 @@
         interventions: "Reduced Timetable",
         agencies: "Social Services",
         intendedDestination: "",
-        dataSources: "Master list, Y10 provision (KS4), King's Trust tab, SEMH tab, DofE tab.",
+        dataSources: "Master list, Y10 provision, King's Trust, SEMH, DofE tabs; Outlook Rapid Response Referrals email (2026-06-11 extract).",
       },
-      induction: docSection("Not Started", "Provision: KS4. BFL: Doing Well / OK. Agencies: Social Services.", {
+      induction: docSection("Not Started", "Provision: KS4. BFL: Doing Well / OK. Agencies: Social Services. Outlook referral table lists Robert Clack — live placement.", {
         startDate: ukToIso("02/10/2025"),
       }),
       ilp: docSection("Not Started", "No ILP status in sheet."),
       riskAssessment: docSection("Not Started", "SEMH tab: High Risk / Frequently Dysregulated."),
       studentPassport: docSection("Not Started", "No passport status in sheet."),
-      behaviour: [],
+      behaviour: [
+        {
+          id: "email-beh-ronny-1",
+          date: "",
+          description: "Outlook: Ronny Burletson listed in Rapid Response Referrals (6) table — Robert Clack, live placement.",
+          intervention: "Reduced Timetable (master list).",
+          outcome: "Referral batch email in local cache.",
+        },
+      ],
       attainment: [
         {
           id: "seed-att-kt-ronny",
@@ -274,15 +329,23 @@
         interventions: "Mentoring",
         agencies: "",
         intendedDestination: "",
-        dataSources: "Master list, Y10 provision (KS4), King's Trust tab, SEMH tab.",
+        dataSources: "Master list, Y10 provision, King's Trust, SEMH tabs; Outlook Rapid Response Referrals email (2026-06-11 extract).",
       },
-      induction: docSection("Not Started", "Provision: KS4. BFL: Doing Well / OK.", {
+      induction: docSection("Not Started", "Provision: KS4. BFL: Doing Well / OK. Outlook referral table lists Dagenham Park School, 32-week review.", {
         startDate: ukToIso("09/08/2025"),
       }),
       ilp: docSection("Not Started", "No ILP status in sheet."),
       riskAssessment: docSection("Not Started", "SEMH tab: Significant Concern / Occasionally Dysregulated."),
       studentPassport: docSection("Not Started", "No passport status in sheet."),
-      behaviour: [],
+      behaviour: [
+        {
+          id: "email-beh-mason-1",
+          date: "",
+          description: "Outlook: Mason Taylor listed in Rapid Response Referrals table — Dagenham Park School.",
+          intervention: "Mentoring (master list).",
+          outcome: "Referral batch email in local cache.",
+        },
+      ],
       attainment: [
         {
           id: "seed-att-y10-mason",
@@ -308,15 +371,23 @@
         interventions: "FLZ (Focused Learning Zone)",
         agencies: "Subwize",
         intendedDestination: "",
-        dataSources: "Master list, Y10 provision (KS4), Engagement tab (as Jovan Lane Ridge), SEMH tab.",
+        dataSources: "Master list, Y10 provision, Engagement tab (Jovan Lane Ridge), SEMH tab; Outlook Rapid Response Referrals + Purple Ruler guide email (2026-06-11).",
       },
-      induction: docSection("Not Started", "Provision: KS4. BFL: Report. Agencies: Subwize. Interventions: FLZ.", {
+      induction: docSection("Not Started", "Provision: KS4. BFL: Report. Agencies: Subwize. Interventions: FLZ. Outlook referral table lists Robert Clack — live placement (Jovan Lane-Ridge).", {
         startDate: ukToIso("27/01/2026"),
       }),
       ilp: docSection("Not Started", "No ILP status in sheet."),
       riskAssessment: docSection("Not Started", "SEMH tab: Significant Concern / Frequently Dysregulated. No risk assessment document status in sheet."),
       studentPassport: docSection("Not Started", "No passport status in sheet."),
       behaviour: [
+        {
+          id: "email-beh-jovan-1",
+          date: "",
+          description:
+            "Outlook: Jovan Lane-Ridge in Rapid Response Referrals batch; Purple Ruler parent guide email includes jovan lane-ridge@robertclack.co.uk student login.",
+          intervention: "FLZ (master list).",
+          outcome: "See data/emails-extracted/jovan-lane.txt.",
+        },
         {
           id: "seed-beh-jovan-eng",
           date: "",
@@ -357,15 +428,27 @@
         interventions: "Reduced Timetable",
         agencies: "",
         intendedDestination: "",
-        dataSources: "Master list, Y10 provision (KS4), SEMH tab.",
+        dataSources: "Master list, Y10 provision, SEMH tab; Outlook Rapid Response Referrals + Purple Ruler guide email (2026-06-11).",
       },
-      induction: docSection("Not Started", "Provision: KS4. BFL: Doing Well / OK.", {
+      induction: docSection("Not Started", "Provision: KS4. BFL: Doing Well / OK. Outlook referral table lists Robert Clack — live placement.", {
         startDate: ukToIso("07/10/2025"),
       }),
       ilp: docSection("Not Started", "No ILP status in sheet."),
       riskAssessment: docSection("Not Started", "SEMH tab: High Risk / Severely Dysregulated."),
-      studentPassport: docSection("Not Started", "No passport status in sheet."),
-      behaviour: [],
+      studentPassport: docSection(
+        "In Progress",
+        "Outlook: Harrison Jones (report needs to be submitted to Barking Abbey — truncated subject in cache). Purple Ruler guide email lists hj16@robertclack.co.uk.",
+        { source: "Email (Outlook cache)" }
+      ),
+      behaviour: [
+        {
+          id: "email-beh-harrison-1",
+          date: "",
+          description: "Outlook: Harrison Jones in Rapid Response Referrals table — Robert Clack, live placement.",
+          intervention: "Reduced Timetable (master list).",
+          outcome: "Report submission to Barking Abbey referenced in email subject line.",
+        },
+      ],
       attainment: [
         {
           id: "seed-att-harrison",
@@ -391,15 +474,23 @@
         interventions: "Mentoring",
         agencies: "",
         intendedDestination: "",
-        dataSources: "Master list, Y10 provision (KS4), King's Trust tab, SEMH tab.",
+        dataSources: "Master list, Y10 provision, King's Trust, SEMH tabs; Outlook desktop cache (2026-06-11).",
       },
-      induction: docSection("Not Started", "Provision: KS4. BFL: Doing Well / OK.", {
+      induction: docSection("In Progress", "Provision: KS4. BFL: Doing Well / OK. Outlook email thread: Re: Joshua Lang - KS4 100%.", {
         startDate: ukToIso("03/05/2026"),
       }),
       ilp: docSection("Not Started", "No ILP status in sheet."),
       riskAssessment: docSection("Not Started", "SEMH tab: Emerging Concern / Occasionally Dysregulated."),
       studentPassport: docSection("Not Started", "No passport status in sheet."),
-      behaviour: [],
+      behaviour: [
+        {
+          id: "email-beh-joshua-1",
+          date: "",
+          description: "Outlook: See below regarding Joshua Lang; Joshua Lang and Daniel Jolaoso (email subjects in cache).",
+          intervention: "Mentoring (master list).",
+          outcome: "See data/emails-extracted/joshua-lang.txt.",
+        },
+      ],
       attainment: [
         {
           id: "seed-att-kt-joshua",
@@ -429,123 +520,87 @@
         fundingType: "Unknown",
         leadMentor: "LD",
         interventions: "Mentoring",
-        agencies: "",
+        agencies: "Robert Clack (Sean Webber, John Course)",
         intendedDestination: "",
         dataSources:
-          "Master list, Engagement tab (Tyler Frederick — spelling differs), SEMH tab. Not on Y10 provision tab. No emails in workspace.",
+          "Master list, Engagement tab (Tyler Frederick), SEMH tab, Outlook Web emails Jun 2026 (URGENT: Tyler Fredrick Punctuality and Behaviour Concern).",
       },
-      induction: docSection("Not Started", "Proposed start 03/07/2026. Not listed on Y10 provision tab — placement type unknown. BFL: Doing Well / OK on master list.", {
-        startDate: ukToIso("03/07/2026"),
-      }),
-      ilp: docSection("Not Started", "No ILP status in sheet."),
-      riskAssessment: docSection(
-        "Not Started",
-        "No risk assessment receipt in sheet or emails. (A dashboard task exists to chase Tyler's risk assessment — not used as evidence of document status.) SEMH tab: Significant Concern / Frequently Dysregulated."
+      induction: docSection(
+        "In Progress",
+        "Sheet proposed start 03/07/2026. Email 09/06/2026 (Eugene Dwaah): Tyler has NOT been excluded, suspended, or removed; temporarily on remote learning package supported by parent pending urgent review meeting with 100% Sports, Robert Clack, and parent/carer.",
+        { startDate: ukToIso("03/07/2026") }
       ),
-      studentPassport: docSection("Not Started", "No passport status in sheet."),
+      ilp: docSection("Not Started", "No ILP status in sheet or emails."),
+      riskAssessment: docSection(
+        "Needed",
+        "Email 09/06/2026 (Eugene Dwaah): safeguarding and risk-management review underway — persistent lateness, attendance patterns, information raising safeguarding concerns regarding activities outside provision. SEMH tab: Significant Concern / Frequently Dysregulated. No completed risk assessment document cited in emails."
+      ),
+      studentPassport: docSection("Not Started", "No passport status in sheet or emails."),
       behaviour: [
         {
           id: "seed-beh-tyler-eng",
           date: "",
           description:
-            "Engagement tab snapshot (Tyler Frederick): Punctuality — Frequently Late; Lesson engagement — Refusing / Disengaged; Purple Ruler — Not Accessing Learning; Concern — Monitor; Home contact — No Contact; Trend — Stable.",
+            "Engagement tab (Tyler Frederick): Frequently Late; Refusing/Disengaged; Not Accessing Learning; Monitor; No Contact; Stable.",
           intervention: "Mentoring (master list).",
-          outcome: "Ongoing — address disengagement per engagement tab.",
+          outcome: "Ongoing.",
+        },
+        {
+          id: "seed-beh-tyler-email-0806",
+          date: ukToIso("08/06/2026"),
+          description:
+            "Email (Admin Support to Sean Webber, Robert Clack): Tyler arrived 12:35, expected from 9:00am; ongoing punctuality concerns (often 2–3 hours late); defensive when staff discuss lateness; conduct concerns — rudeness to staff, inappropriate language, difficulty following instructions.",
+          intervention: "CEO invited mum to meeting to discuss concerns.",
+          outcome: "Meeting planned.",
+        },
+        {
+          id: "seed-beh-tyler-email-1106",
+          date: ukToIso("11/06/2026"),
+          description:
+            "Email (John Course, Robert Clack DSL): Rapid Response report shared; requesting clarification of plan/next steps for Tyler; offering to support and attend meetings.",
+          intervention: "School liaison (Sean Webber also offered to attend review).",
+          outcome: "Pending response.",
         },
       ],
       attainment: [],
       reviews: reviewEntries(
         { w6: "14/08/2026", w12: "25/09/2026", w24: "18/12/2026", w32: "12/02/2027" },
         "Master list"
-      ),
+      ).concat([
+        {
+          id: "seed-review-tyler-futures-0906",
+          date: ukToIso("12/06/2026"),
+          outcome: "Scheduled — Futures review meeting",
+          notes:
+            "Email 09/06/2026 (Amy Dwaah, Admin Support): meeting arranged Thursday 9:30am with mum and Tyler at Futures; Robert Clack (Sean Webber) invited.",
+        },
+      ]),
       removal: { flagged: false, status: "Not Started", warnings: "", evidenceLinks: "", notes: "" },
     },
-    "ks4-flynn-hurley": {
-      studentId: "ks4-flynn-hurley",
+    "ks4-kamari-emanuel": {
+      studentId: "ks4-kamari-emanuel",
       metadata: {
-        school: "Robert Clack",
-        yearGroup: "Year 11",
-        placementType: "KS4",
+        school: "Barking Abbey",
+        yearGroup: "Unknown",
+        placementType: "Unknown",
         fundingType: "Unknown",
         leadMentor: "LD",
-        interventions: "Mentoring",
+        interventions: "",
         agencies: "",
-        intendedDestination: "College",
-        dataSources: "Master list, Y11 provision (KS4), King's Trust tab, SEMH tab.",
+        intendedDestination: "",
+        dataSources:
+          "Outlook Web emails Jun 2026: Student updates (sent), Admin Support, Eugene Dwaah cohort/proposed-student emails.",
       },
-      induction: docSection("Not Started", "Provision: KS4 (Y11 provision tab). Proposed start 01/09/2026. Intended destination: College.", {
-        startDate: ukToIso("01/09/2026"),
-      }),
-      ilp: docSection("Not Started", "No ILP status in sheet."),
-      riskAssessment: docSection("Not Started", "SEMH tab: Low Risk / Regulated."),
-      studentPassport: docSection("Not Started", "Student profile not started (per KS4 tracker evidence)."),
-      behaviour: [],
-      attainment: [
-        {
-          id: "seed-att-kt-flynn",
-          date: "",
-          qualification: "King's Trust",
-          notes: "Sheet: Completed (Theory, Practical, Level 1 Award).",
-        },
-        {
-          id: "seed-att-y11-flynn",
-          date: "",
-          qualification: "GCSE English, GCSE Maths, Sports Leaders L1/L2",
-          notes: "Y11 provision tab: In Progress on GCSE English, GCSE Maths, Sports Leaders; Safeguarding Completed.",
-        },
-      ],
-      reviews: reviewEntries(
-        { w6: "13/10/2026", w12: "24/11/2026", w24: "16/02/2027", w32: "13/04/2027" },
-        "Master list"
+      induction: docSection(
+        "Not Started",
+        "Email 10 Jun 2026 (Lloyd Dwaah, Student updates, sent): contact Barking Abbey and cc Bal regarding Kamari Emanuel's induction arrangements."
       ),
-      removal: { flagged: false, status: "Not Started", warnings: "", evidenceLinks: "", notes: "" },
-    },
-    "ks4-charlie-archer": {
-      studentId: "ks4-charlie-archer",
-      metadata: {
-        school: "Greatfields School",
-        yearGroup: "Year 11",
-        placementType: "KS4",
-        fundingType: "Unknown",
-        leadMentor: "JC",
-        interventions: "FLZ (Focused Learning Zone)",
-        agencies: "CAMHS",
-        intendedDestination: "Apprenticeship",
-        dataSources: "Master list, Y11 provision (KS4), King's Trust tab, DofE tab, SEMH tab.",
-      },
-      induction: docSection("Not Started", "Provision: KS4. Start 20/10/2025. Agencies: CAMHS. Interventions: FLZ.", {
-        startDate: ukToIso("20/10/2025"),
-      }),
-      ilp: docSection("Not Started", "No ILP status in sheet."),
-      riskAssessment: docSection("Not Started", "SEMH tab: High Risk / Frequently Dysregulated."),
-      studentPassport: docSection("Not Started", "Student profile not started (per KS4 tracker). Create/send to school.", {
-        source: "In-house (to be created)",
-      }),
+      ilp: docSection("Not Started", "No ILP status in emails."),
+      riskAssessment: docSection("Not Started", "No risk assessment cited in emails."),
+      studentPassport: docSection("Not Started", "No passport status in emails."),
       behaviour: [],
-      attainment: [
-        {
-          id: "seed-att-kt-charlie",
-          date: "",
-          qualification: "King's Trust",
-          notes: "Sheet: Completed on all three.",
-        },
-        {
-          id: "seed-att-y11-charlie",
-          date: "",
-          qualification: "GCSE English/Maths, Functional Skills Maths, Sports Leaders",
-          notes: "Y11 provision: In Progress on GCSE English, GCSE Maths, Functional Skills Maths, Sports Leaders; H&S/First Aid/Safeguarding Completed.",
-        },
-        {
-          id: "seed-att-dofe-charlie",
-          date: "",
-          qualification: "DofE — Physical & Skills sections",
-          notes: "Sheet: Completed on Physical and Skills; Volunteer and Expedition Not Started.",
-        },
-      ],
-      reviews: reviewEntries(
-        { w6: "01/12/2025", w12: "12/01/2026", w24: "06/04/2026", w32: "01/06/2026" },
-        "Master list"
-      ),
+      attainment: [],
+      reviews: [],
       removal: { flagged: false, status: "Not Started", warnings: "", evidenceLinks: "", notes: "" },
     },
   };
@@ -653,6 +708,13 @@
     var version = parseInt(localStorage.getItem(VERSION_KEY) || "0", 10);
     var store = loadStore();
     var changed = false;
+
+    EXCLUDED_IDS.forEach(function (id) {
+      if (store[id]) {
+        delete store[id];
+        changed = true;
+      }
+    });
 
     Object.keys(SEED_RECORDS).forEach(function (id) {
       var seed = SEED_RECORDS[id];

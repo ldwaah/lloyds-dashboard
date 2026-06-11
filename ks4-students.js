@@ -205,19 +205,43 @@
       yearGroup: "Year 10",
       school: "Robert Clack",
       placementType: "Unknown",
+      currentStatus: "Current",
+      inductionStatus: "In Progress",
+      riskAssessmentStatus: "Needed",
+      ilpStatus: "Unknown",
+      studentProfileStatus: "Unknown",
+      reviewNeeded: "Yes",
+      evidenceSource:
+        "Google Sheet — Master list + Engagement tab; Outlook Web emails Jun 2026 (URGENT: Tyler Fredrick Punctuality and Behaviour Concern thread)",
+      evidenceWording:
+        "Sheet: Y10, Robert Clack, Start Date 03/07/2026, BFL Doing Well/OK, Mentoring. Engagement tab (Tyler Frederick): Frequently Late, Refusing/Disengaged, Not Accessing Learning. Email 08/06/2026 (Admin Support): arrived 12:35, expected 9:00; ongoing lateness (often 2–3 hours); conduct concerns (rudeness, inappropriate language, not following instructions); CEO invited mum to meeting. Email 09/06/2026 (Eugene Dwaah): NOT excluded/suspended/removed; temporarily on remote learning package pending urgent review with school and parent; safeguarding concerns re lateness, attendance, activities outside provision. Email 09/06/2026 (Amy Dwaah): review meeting Thu 9:30am at Futures with mum and Tyler. Email 11/06/2026 (John Course, Robert Clack DSL): asking for plan/next steps after Rapid Response report.",
+      missingInfo:
+        "Placement type, completed risk assessment document, ILP, student profile; reconcile sheet start date (03/07/2026) vs June 2026 attendance in emails; name spelling: Fredreick (sheet) / Fredrick (emails) / Frederick (engagement tab)",
+      suggestedAction:
+        "Support Futures review meeting (Thu 9:30); coordinate with Robert Clack (Sean Webber, John Course); monitor remote learning arrangement",
+      confidence: "High",
+    },
+    {
+      id: "ks4-kamari-emanuel",
+      name: "Kamari Emanuel",
+      keyStage: "KS4",
+      yearGroup: "Unknown",
+      school: "Barking Abbey",
+      placementType: "Unknown",
       currentStatus: "Proposed",
       inductionStatus: "Not Started",
       riskAssessmentStatus: "Unknown",
       ilpStatus: "Unknown",
       studentProfileStatus: "Unknown",
       reviewNeeded: "Yes",
-      evidenceSource: "Google Sheet — Master list + Engagement tab",
+      evidenceSource:
+        "Outlook Web emails Jun 2026 (Student updates sent item, Admin Support, Eugene Dwaah cohort emails)",
       evidenceWording:
-        "KS 4, Year Group 10, Robert Clack, Start Date 03/07/2026; BFL: Doing Well / OK; Engagement tab lists 'Tyler Frederick' — Frequently Late, Refusing/Disengaged, Not Accessing Learning",
+        "Email 10 Jun 2026 (Lloyd Dwaah, Student updates, sent): Lloyd to contact Barking Abbey and cc Bal regarding Kamari Emanuel's induction arrangements. Email (Admin Support): 'Who is this call me Kamari Emanuel'. Eugene Dwaah emails reference new/proposed students and Current Cohort List (10 Jun 2026) — Kamari named in search results only; full cohort list body not opened.",
       missingInfo:
-        "Risk assessment status, placement type, induction, ILP, profile (name spelling differs on engagement tab)",
-      suggestedAction: "Confirm July 2026 start; address disengagement on engagement tab",
-      confidence: "High",
+        "Year group, placement type, start date, funding type, risk assessment, ILP, student profile; confirm induction status with Barking Abbey",
+      suggestedAction: "Contact Barking Abbey for Kamari Emanuel induction, cc Bal (per Student updates email)",
+      confidence: "Medium",
     },
   ];
 
@@ -273,6 +297,16 @@
           s.evidenceWording = seed.evidenceWording;
           s.missingInfo = seed.missingInfo;
           s.suggestedAction = seed.suggestedAction;
+          changed = true;
+        }
+        if (seed && version < 5) {
+          s.evidenceSource = seed.evidenceSource;
+          s.evidenceWording = seed.evidenceWording;
+          s.missingInfo = seed.missingInfo;
+          s.suggestedAction = seed.suggestedAction;
+          if (seed.currentStatus) s.currentStatus = seed.currentStatus;
+          if (seed.inductionStatus) s.inductionStatus = seed.inductionStatus;
+          if (seed.riskAssessmentStatus) s.riskAssessmentStatus = seed.riskAssessmentStatus;
           changed = true;
         }
       });
