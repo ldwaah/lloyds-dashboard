@@ -56,8 +56,9 @@
                 <h2>Priority Workflows</h2>
                 <div id="home-workflows-list" class="home-workflows-list" aria-live="polite"></div>
               </article>
-              <article class="card">
-                <h2>Notes</h2>
+              <article class="card card--ks4" id="home-ks4-card" role="button" tabindex="0" aria-label="Open KS4 student tracker">
+                <h2>KS4 Students</h2>
+                <div id="home-ks4-summary" class="home-ks4-summary" aria-live="polite"></div>
               </article>
             </section>
           </div>
@@ -138,18 +139,21 @@
           </div>
         </section>
 
-        <!-- Notes -->
+        <!-- KS4 Students -->
         <section
-          id="panel-notes"
+          id="panel-ks4"
           class="panel"
           role="tabpanel"
-          aria-labelledby="tab-notes"
+          aria-labelledby="tab-ks4"
           hidden
         >
           <header class="page-header">
-            <h1>Notes</h1>
+            <h1>KS4 Students</h1>
+            <p class="page-header__subtitle">Master list tracker</p>
           </header>
-          <div class="workspace" aria-label="Notes workspace"></div>
+          <div class="workspace ks4-workspace" aria-label="KS4 student tracker">
+            <div id="ks4-root" class="ks4-root" aria-live="polite"></div>
+          </div>
         </section>
 
         <!-- Reminders -->
@@ -261,19 +265,20 @@
         <button
           type="button"
           class="tab"
-          id="tab-notes"
+          id="tab-ks4"
           role="tab"
           aria-selected="false"
-          aria-controls="panel-notes"
-          data-tab="notes"
+          aria-controls="panel-ks4"
+          data-tab="ks4"
         >
           <span class="tab__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
-              <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" />
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+              <path d="M8 7h8M8 11h6" />
             </svg>
           </span>
-          <span class="tab__label">Notes</span>
+          <span class="tab__label">KS4</span>
         </button>
         <button
           type="button"
@@ -297,6 +302,7 @@
 
     <script src="reminders.js"></script>
     <script src="tasks.js"></script>
+    <script src="ks4-students.js"></script>
     <script src="calendar.js"></script>
     <script src="notifications.js"></script>
     <script src="script.js"></script>

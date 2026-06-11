@@ -29,6 +29,23 @@
     if (tabName === "calendar" && window.LloydsCalendar) {
       window.LloydsCalendar.refresh();
     }
+    if (tabName === "ks4" && window.LloydsKS4) {
+      window.LloydsKS4.render();
+    }
+  }
+
+  var ks4Card = document.getElementById("home-ks4-card");
+  if (ks4Card) {
+    function openKs4() {
+      switchTab("ks4");
+    }
+    ks4Card.addEventListener("click", openKs4);
+    ks4Card.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openKs4();
+      }
+    });
   }
 
   tabs.forEach(function (tab) {
