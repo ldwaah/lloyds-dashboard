@@ -1,7 +1,7 @@
 (function () {
   var STORAGE_KEY = "lloyds-ks4-monitoring";
   var VERSION_KEY = "lloyds-ks4-monitoring-seed-version";
-  var SEED_VERSION = 5;
+  var SEED_VERSION = 6;
 
   var EXCLUDED_IDS = [
     "ks4-flynn-hurley",
@@ -35,20 +35,82 @@
         id: "seed-review-" + pair[1].replace(/\//g, ""),
         date: ukToIso(pair[1]),
         outcome: "Scheduled (" + pair[0] + ")",
-        notes: "Source: " + source + ". Date from master list - outcome not yet recorded in sheet.",
+        notes: "",
       });
     });
     return out;
   }
 
-  function docSection(status, notes, extra) {
-    var sec = { status: status || "Not Started", link: "", notes: notes || "" };
-    if (extra) {
-      Object.keys(extra).forEach(function (k) {
-        sec[k] = extra[k];
+  function inductionStatusFromDate(startDate) {
+    if (!startDate) return "Not Started";
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+    var parts = String(startDate).split("-");
+    if (parts.length !== 3) return "Not Started";
+    var start = new Date(
+      parseInt(parts[0], 10),
+      parseInt(parts[1], 10) - 1,
+      parseInt(parts[2], 10)
+    );
+    start.setHours(0, 0, 0, 0);
+    if (start.getTime() < today.getTime()) return "Complete";
+    if (start.getTime() > today.getTime()) return "Not Started";
+    return "In Progress";
+  }
+
+  function inductionSection(startDateIso) {
+    return {
+      startDate: startDateIso || "",
+      status: inductionStatusFromDate(startDateIso || ""),
+      homeCentreAgreementLink: "",
+      notes: "",
+    };
+  }
+
+  function docSection(status) {
+    return { status: status || "Not Started", link: "", notes: "" };
+  }
+
+  function normalizeRecord(record, clearSectionNotes) {
+    if (!record) return record;
+    if (record.induction) {
+      var ind = record.induction;
+      var hcaLink =
+        ind.homeCentreAgreementLink || ind.centreAgreementLink || ind.link || "";
+      record.induction = {
+        startDate: ind.startDate || "",
+        status: inductionStatusFromDate(ind.startDate || ""),
+        homeCentreAgreementLink: hcaLink,
+        notes: clearSectionNotes ? "" : ind.notes || "",
+      };
+    }
+    ["ilp", "riskAssessment"].forEach(function (key) {
+      if (record[key]) {
+        record[key].notes = clearSectionNotes ? "" : record[key].notes || "";
+        if (record[key].status) {
+          record[key].status = record[key].status;
+        }
+      }
+    });
+    if (record.studentPassport) {
+      record.studentPassport.notes = clearSectionNotes
+        ? ""
+        : record.studentPassport.notes || "";
+    }
+    if (clearSectionNotes && record.attainment) {
+      record.attainment.forEach(function (a) {
+        a.notes = "";
       });
     }
-    return sec;
+    if (clearSectionNotes && record.reviews) {
+      record.reviews.forEach(function (r) {
+        r.notes = "";
+      });
+    }
+    if (record.removal && clearSectionNotes) {
+      record.removal.notes = "";
+    }
+    return record;
   }
 
   var SEED_RECORDS = {
@@ -66,12 +128,10 @@
         dataSources:
           "Master list, Y10 provision, King's Trust, SEMH, DofE tabs; Outlook desktop cache (HxStore.hxd, extracted 2026-06-11).",
       },
-      induction: docSection("Not Started", "Provision: Flexi Full Time (Y10 provision tab). BFL: Final Warning (master list). Proposed start with centre. Email (Outlook): follow-up on Calum Mison (JRCS); mum reported available for meeting at 2.15pm.", {
-        startDate: ukToIso("03/11/2026"),
-      }),
-      ilp: docSection("Not Started", "No ILP status in sheet or emails."),
-      riskAssessment: docSection("Not Started", "SEMH tab: Significant Concern / Occasionally Dysregulated - this is SEMH risk, not a completed risk assessment document."),
-      studentPassport: docSection("Not Started", "No student profile/passport status in sheet."),
+      induction: inductionSection(ukToIso("03/11/2026")),
+      ilp: docSection("Not Started"),
+      riskAssessment: docSection("Not Started"),
+      studentPassport: docSection("Not Started"),
       behaviour: [
         {
           id: "email-beh-calum-1",
@@ -126,12 +186,10 @@
         intendedDestination: "",
         dataSources: "Master list, Y10 provision, King's Trust, SEMH tabs; Outlook desktop cache (2026-06-11).",
       },
-      induction: docSection("Not Started", "Provision: Flexi Full Time. BFL: Doing Well / OK. Current placement on master list.", {
-        startDate: ukToIso("26/03/2026"),
-      }),
-      ilp: docSection("Not Started", "No ILP status in sheet."),
-      riskAssessment: docSection("Not Started", "SEMH tab: Emerging Concern / Regulated - SEMH data only, not RA document status."),
-      studentPassport: docSection("Not Started", "No passport/profile status in sheet."),
+      induction: inductionSection(ukToIso("26/03/2026")),
+      ilp: docSection("Not Started"),
+      riskAssessment: docSection("Not Started"),
+      studentPassport: docSection("Not Started"),
       behaviour: [
         {
           id: "email-beh-jayden-1",
@@ -169,12 +227,10 @@
         intendedDestination: "",
         dataSources: "Master list, Y10 provision, King's Trust, SEMH, DofE tabs; Outlook desktop cache (2026-06-11).",
       },
-      induction: docSection("Not Started", "Provision: KS4 (Y10 provision tab). BFL: Final Warning. Agencies: Social Services.", {
-        startDate: ukToIso("12/08/2025"),
-      }),
-      ilp: docSection("Not Started", "No ILP status in sheet."),
-      riskAssessment: docSection("Not Started", "SEMH tab: High Risk / Severely Dysregulated - SEMH data only."),
-      studentPassport: docSection("Not Started", "No passport status in sheet."),
+      induction: inductionSection(ukToIso("12/08/2025")),
+      ilp: docSection("Not Started"),
+      riskAssessment: docSection("Not Started"),
+      studentPassport: docSection("Not Started"),
       behaviour: [
         {
           id: "email-beh-stacey-1",
@@ -237,12 +293,10 @@
         intendedDestination: "",
         dataSources: "Master list, Y10 provision, King's Trust tabs; Outlook desktop cache (2026-06-11).",
       },
-      induction: docSection("Not Started", "Provision: Flexi Full Time. BFL: Doing Well / OK. No start date on master list.", {
-        startDate: "",
-      }),
-      ilp: docSection("Not Started", "No ILP status in sheet."),
-      riskAssessment: docSection("Not Started", "SEMH tab: Low Risk / Occasionally Dysregulated."),
-      studentPassport: docSection("Not Started", "No passport status in sheet."),
+      induction: inductionSection(""),
+      ilp: docSection("Not Started"),
+      riskAssessment: docSection("Not Started"),
+      studentPassport: docSection("Not Started"),
       behaviour: [
         {
           id: "email-beh-tyrell-1",
@@ -283,12 +337,10 @@
         intendedDestination: "",
         dataSources: "Master list, Y10 provision, King's Trust, SEMH, DofE tabs; Outlook Rapid Response Referrals email (2026-06-11 extract).",
       },
-      induction: docSection("Not Started", "Provision: KS4. BFL: Doing Well / OK. Agencies: Social Services. Outlook referral table lists Robert Clack - live placement.", {
-        startDate: ukToIso("02/10/2025"),
-      }),
-      ilp: docSection("Not Started", "No ILP status in sheet."),
-      riskAssessment: docSection("Not Started", "SEMH tab: High Risk / Frequently Dysregulated."),
-      studentPassport: docSection("Not Started", "No passport status in sheet."),
+      induction: inductionSection(ukToIso("02/10/2025")),
+      ilp: docSection("Not Started"),
+      riskAssessment: docSection("Not Started"),
+      studentPassport: docSection("Not Started"),
       behaviour: [
         {
           id: "email-beh-ronny-1",
@@ -331,12 +383,10 @@
         intendedDestination: "",
         dataSources: "Master list, Y10 provision, King's Trust, SEMH tabs; Outlook Rapid Response Referrals email (2026-06-11 extract).",
       },
-      induction: docSection("Not Started", "Provision: KS4. BFL: Doing Well / OK. Outlook referral table lists Dagenham Park School, 32-week review.", {
-        startDate: ukToIso("09/08/2025"),
-      }),
-      ilp: docSection("Not Started", "No ILP status in sheet."),
-      riskAssessment: docSection("Not Started", "SEMH tab: Significant Concern / Occasionally Dysregulated."),
-      studentPassport: docSection("Not Started", "No passport status in sheet."),
+      induction: inductionSection(ukToIso("09/08/2025")),
+      ilp: docSection("Not Started"),
+      riskAssessment: docSection("Not Started"),
+      studentPassport: docSection("Not Started"),
       behaviour: [
         {
           id: "email-beh-mason-1",
@@ -373,12 +423,10 @@
         intendedDestination: "",
         dataSources: "Master list, Y10 provision, Engagement tab (Jovan Lane Ridge), SEMH tab; Outlook Rapid Response Referrals + Purple Ruler guide email (2026-06-11).",
       },
-      induction: docSection("Not Started", "Provision: KS4. BFL: Report. Agencies: Subwize. Interventions: FLZ. Outlook referral table lists Robert Clack - live placement (Jovan Lane-Ridge).", {
-        startDate: ukToIso("27/01/2026"),
-      }),
-      ilp: docSection("Not Started", "No ILP status in sheet."),
-      riskAssessment: docSection("Not Started", "SEMH tab: Significant Concern / Frequently Dysregulated. No risk assessment document status in sheet."),
-      studentPassport: docSection("Not Started", "No passport status in sheet."),
+      induction: inductionSection(ukToIso("27/01/2026")),
+      ilp: docSection("Not Started"),
+      riskAssessment: docSection("Not Started"),
+      studentPassport: docSection("Not Started"),
       behaviour: [
         {
           id: "email-beh-jovan-1",
@@ -430,16 +478,10 @@
         intendedDestination: "",
         dataSources: "Master list, Y10 provision, SEMH tab; Outlook Rapid Response Referrals + Purple Ruler guide email (2026-06-11).",
       },
-      induction: docSection("Not Started", "Provision: KS4. BFL: Doing Well / OK. Outlook referral table lists Robert Clack - live placement.", {
-        startDate: ukToIso("07/10/2025"),
-      }),
-      ilp: docSection("Not Started", "No ILP status in sheet."),
-      riskAssessment: docSection("Not Started", "SEMH tab: High Risk / Severely Dysregulated."),
-      studentPassport: docSection(
-        "In Progress",
-        "Outlook: Harrison Jones (report needs to be submitted to Barking Abbey - truncated subject in cache). Purple Ruler guide email lists hj16@robertclack.co.uk.",
-        { source: "Email (Outlook cache)" }
-      ),
+      induction: inductionSection(ukToIso("07/10/2025")),
+      ilp: docSection("Not Started"),
+      riskAssessment: docSection("Not Started"),
+      studentPassport: { status: "In Progress", source: "", link: "", notes: "" },
       behaviour: [
         {
           id: "email-beh-harrison-1",
@@ -476,12 +518,10 @@
         intendedDestination: "",
         dataSources: "Master list, Y10 provision, King's Trust, SEMH tabs; Outlook desktop cache (2026-06-11).",
       },
-      induction: docSection("In Progress", "Provision: KS4. BFL: Doing Well / OK. Outlook email thread: Re: Joshua Lang - KS4 100%.", {
-        startDate: ukToIso("03/05/2026"),
-      }),
-      ilp: docSection("Not Started", "No ILP status in sheet."),
-      riskAssessment: docSection("Not Started", "SEMH tab: Emerging Concern / Occasionally Dysregulated."),
-      studentPassport: docSection("Not Started", "No passport status in sheet."),
+      induction: inductionSection(ukToIso("03/05/2026")),
+      ilp: docSection("Not Started"),
+      riskAssessment: docSection("Not Started"),
+      studentPassport: docSection("Not Started"),
       behaviour: [
         {
           id: "email-beh-joshua-1",
@@ -525,17 +565,10 @@
         dataSources:
           "Master list, Engagement tab (Tyler Frederick), SEMH tab, Outlook Web emails Jun 2026 (URGENT: Tyler Fredrick Punctuality and Behaviour Concern).",
       },
-      induction: docSection(
-        "In Progress",
-        "Sheet proposed start 03/07/2026. Email 09/06/2026 (Eugene Dwaah): Tyler has NOT been excluded, suspended, or removed; temporarily on remote learning package supported by parent pending urgent review meeting with 100% Sports, Robert Clack, and parent/carer.",
-        { startDate: ukToIso("03/07/2026") }
-      ),
-      ilp: docSection("Not Started", "No ILP status in sheet or emails."),
-      riskAssessment: docSection(
-        "Needed",
-        "Email 09/06/2026 (Eugene Dwaah): safeguarding and risk-management review underway - persistent lateness, attendance patterns, information raising safeguarding concerns regarding activities outside provision. SEMH tab: Significant Concern / Frequently Dysregulated. No completed risk assessment document cited in emails."
-      ),
-      studentPassport: docSection("Not Started", "No passport status in sheet or emails."),
+      induction: inductionSection(ukToIso("03/07/2026")),
+      ilp: docSection("Not Started"),
+      riskAssessment: docSection("Needed"),
+      studentPassport: docSection("Not Started"),
       behaviour: [
         {
           id: "seed-beh-tyler-eng",
@@ -591,16 +624,10 @@
         dataSources:
           "Outlook Web emails Jun 2026; Outlook desktop HxStore cache extract 2026-06-11 (data/emails-extracted/kamari.txt).",
       },
-      induction: docSection(
-        "Not Started",
-        "Email 10 Jun 2026 (Lloyd Dwaah, Student updates, sent): contact Barking Abbey and cc Bal regarding Kamari Emanuel's induction arrangements. HxStore subject: Kamari Emanuel's induction arrangements."
-      ),
-      ilp: docSection("Not Started", "No ILP status in emails."),
-      riskAssessment: docSection(
-        "Not Started",
-        "HxStore cache excerpt (induction context): anger management noted as key issue; two physical altercations since returning to school; struggles to regulate emotions - not a completed risk assessment document."
-      ),
-      studentPassport: docSection("Not Started", "No passport status in emails."),
+      induction: inductionSection(""),
+      ilp: docSection("Not Started"),
+      riskAssessment: docSection("Not Started"),
+      studentPassport: docSection("Not Started"),
       behaviour: [
         {
           id: "email-beh-kamari-1",
@@ -621,6 +648,7 @@
     if (!sec) return true;
     return (
       (!sec.link || sec.link === "") &&
+      (!sec.homeCentreAgreementLink || sec.homeCentreAgreementLink === "") &&
       (!sec.notes || sec.notes === "") &&
       (!sec.startDate || sec.startDate === "") &&
       (!sec.source || sec.source === "") &&
@@ -633,9 +661,11 @@
     if (!existing || isEmptySection(existing)) return JSON.parse(JSON.stringify(seed));
     var out = JSON.parse(JSON.stringify(existing));
     if (!out.link && seed.link) out.link = seed.link;
+    if (!out.homeCentreAgreementLink && seed.homeCentreAgreementLink) {
+      out.homeCentreAgreementLink = seed.homeCentreAgreementLink;
+    }
     if (!out.startDate && seed.startDate) out.startDate = seed.startDate;
     if (!out.source && seed.source) out.source = seed.source;
-    if ((!out.notes || out.notes === "") && seed.notes) out.notes = seed.notes;
     if (out.status === "Not Started" && seed.status && seed.status !== "Not Started") {
       out.status = seed.status;
     }
@@ -728,16 +758,24 @@
       }
     });
 
+    var clearingNotes = version < SEED_VERSION;
+
     Object.keys(SEED_RECORDS).forEach(function (id) {
       var seed = SEED_RECORDS[id];
       seed.updatedAt = new Date().toISOString();
       if (!store[id]) {
-        store[id] = JSON.parse(JSON.stringify(seed));
+        store[id] = normalizeRecord(JSON.parse(JSON.stringify(seed)), true);
         changed = true;
       } else if (version < SEED_VERSION) {
         store[id] = mergeRecord(store[id], seed);
         changed = true;
       }
+    });
+
+    Object.keys(store).forEach(function (id) {
+      var before = JSON.stringify(store[id]);
+      store[id] = normalizeRecord(store[id], clearingNotes);
+      if (JSON.stringify(store[id]) !== before) changed = true;
     });
 
     if (changed || version < SEED_VERSION) {
@@ -752,6 +790,8 @@
     migrate: migrateMonitoring,
     ensureKs4Students: ensureKs4Students,
     loadStore: loadStore,
+    inductionStatusFromDate: inductionStatusFromDate,
+    normalizeRecord: normalizeRecord,
     SEED_VERSION: SEED_VERSION,
     SEED_RECORDS: SEED_RECORDS,
     STORAGE_KEY: STORAGE_KEY,

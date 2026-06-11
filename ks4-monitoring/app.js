@@ -3,7 +3,7 @@
   var STATUS_OPTIONS = ["Not Started", "In Progress", "Complete", "N/A"];
 
   var SECTION_DEFS = [
-    { key: "induction", title: "Induction", hasStartDate: true },
+    { key: "induction", title: "Induction", type: "induction" },
     { key: "ilp", title: "Individual Learning Plans (ILP)" },
     { key: "riskAssessment", title: "Risk Assessments" },
     { key: "studentPassport", title: "Student Passport", hasSource: true },
@@ -50,7 +50,12 @@
     return {
       studentId: studentId,
       updatedAt: new Date().toISOString(),
-      induction: { status: "Not Started", startDate: "", link: "", notes: "" },
+      induction: {
+        status: "Not Started",
+        startDate: "",
+        homeCentreAgreementLink: "",
+        notes: "",
+      },
       ilp: emptySection(),
       riskAssessment: emptySection(),
       studentPassport: { status: "Not Started", source: "", link: "", notes: "" },
@@ -142,8 +147,18 @@
       if (!record.removal || !record.removal.flagged) return "Not flagged";
       return record.removal.status || "Flagged";
     }
+    if (key === "induction" && record.induction) {
+      return inductionStatusFromDate(record.induction.startDate) || record.induction.status || "Not Started";
+    }
     var sec = record[key];
     return sec && sec.status ? sec.status : "Not Started";
+  }
+
+  function inductionStatusFromDate(startDate) {
+    if (window.LloydsKS4MonitoringSeed && window.LloydsKS4MonitoringSeed.inductionStatusFromDate) {
+      return window.LloydsKS4MonitoringSeed.inductionStatusFromDate(startDate);
+    }
+    return startDate ? "Not Started" : "Not Started";
   }
 
   function renderList() {
@@ -215,15 +230,36 @@
     );
   }
 
+  function renderInductionSection(record) {
+    var sec = record.induction || emptyRecord("").induction;
+    var derived = inductionStatusFromDate(sec.startDate);
+    var status = sec.startDate ? derived : sec.status || "Not Started";
+    var link = sec.homeCentreAgreementLink || sec.link || "";
+
+    return (
+      '<form class="mon-section-form" data-section="induction">' +
+      '<label class="form-field"><span>Start date with centre</span><input type="date" name="startDate" value="' +
+      escapeHtml(sec.startDate || "") +
+      '"></label>' +
+      '<p class="mon-derived-status">Status: <strong>' +
+      escapeHtml(status) +
+      "</strong> <span class=\"mon-derived-status__hint\">(from start date)</span></p>" +
+      '<input type="hidden" name="status" value="' +
+      escapeHtml(status) +
+      '">' +
+      '<label class="form-field"><span>Home Centre Agreement</span><input type="url" name="homeCentreAgreementLink" value="' +
+      escapeHtml(link) +
+      '" placeholder="Google Drive link" inputmode="url"></label>' +
+      '<label class="form-field"><span>Notes</span><textarea name="notes" rows="3" placeholder="Your notes">' +
+      escapeHtml(sec.notes || "") +
+      "</textarea></label>" +
+      '<button type="submit" class="btn btn--primary">Save</button></form>'
+    );
+  }
+
   function renderDocSection(record, key, def) {
     var sec = record[key] || emptySection();
     var extra = "";
-    if (def.hasStartDate) {
-      extra +=
-        '<label class="form-field"><span>Start date with centre</span><input type="date" name="startDate" value="' +
-        escapeHtml(sec.startDate || "") +
-        '"></label>';
-    }
     if (def.hasSource) {
       extra +=
         '<label class="form-field"><span>Source (school / in-house)</span><input type="text" name="source" value="' +
@@ -441,6 +477,8 @@
       body = renderReviews(record);
     } else if (def.type === "removal") {
       body = renderRemoval(record);
+    } else if (def.type === "induction") {
+      body = renderInductionSection(record);
     } else {
       body = renderDocSection(record, def.key, def);
     }
@@ -483,11 +521,19 @@
         var fd = new FormData(sectionForm);
         var patch = {};
         var sec = Object.assign({}, getRecord(activeStudentId)[key] || emptySection());
-        sec.status = fd.get("status");
-        sec.link = String(fd.get("link") || "").trim();
-        sec.notes = String(fd.get("notes") || "").trim();
-        if (fd.get("startDate") !== null) sec.startDate = fd.get("startDate");
-        if (fd.get("source") !== null) sec.source = String(fd.get("source") || "").trim();
+        if (key === "induction") {
+          sec.startDate = String(fd.get("startDate") || "").trim();
+          sec.homeCentreAgreementLink = String(fd.get("homeCentreAgreementLink") || "").trim();
+          sec.notes = String(fd.get("notes") || "").trim();
+          sec.status = inductionStatusFromDate(sec.startDate);
+          delete sec.link;
+          delete sec.centreAgreementLink;
+        } else {
+          sec.status = fd.get("status");
+          sec.link = String(fd.get("link") || "").trim();
+          sec.notes = String(fd.get("notes") || "").trim();
+          if (fd.get("source") !== null) sec.source = String(fd.get("source") || "").trim();
+        }
         patch[key] = sec;
         updateRecord(activeStudentId, patch);
         renderProfile();
