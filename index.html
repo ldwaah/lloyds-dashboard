@@ -4,9 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lloyd's Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div class="app">
+      <header class="header">
+        <h1>Lloyd's Dashboard</h1>
+        <p class="date" id="today-date" aria-live="polite"></p>
+        <p class="tagline">100% Workflow</p>
+      </header>
+
+      <main class="canvas">
+        <section class="cards" aria-label="Workspace sections">
+          <article class="card">
+            <h2>Today</h2>
+          </article>
+          <article class="card">
+            <h2>This Week</h2>
+          </article>
+          <article class="card">
+            <h2>Notes</h2>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
