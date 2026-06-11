@@ -2,7 +2,7 @@
 (function () {
   var STORAGE_KEY = "lloyds-ks4-students";
   var VERSION_KEY = "lloyds-ks4-seed-version";
-  var SEED_VERSION = 5;
+  var SEED_VERSION = 6;
   var SHEET_URL =
     "https://docs.google.com/spreadsheets/d/1kMZy6UPEICCHABe7Fa9FIf_ij0z79l84aAYsRhzn-qc/edit";
 
@@ -104,7 +104,7 @@
       name: "Ronny Burletson",
       keyStage: "KS4",
       yearGroup: "Year 10",
-      school: "Robert Clack",
+      school: "Jo Richardson Community School",
       placementType: "KS4",
       currentStatus: "Current",
       inductionStatus: "Unknown",
@@ -114,7 +114,7 @@
       reviewNeeded: "Yes",
       evidenceSource: "Google Sheet - Master list + Y10 provision tab",
       evidenceWording:
-        "KS 4, Year Group 10, Robert Clack, Start Date 02/10/2025; Provision: KS4; BFL: Doing Well / OK; Interventions: Reduced Timetable; Agencies: Social Services; King's Trust: Completed",
+        "KS 4, Year Group 10, Jo Richardson Community School, Start Date 02/10/2025; Provision: KS4; BFL: Doing Well / OK; Interventions: Reduced Timetable; Agencies: Social Services; King's Trust: Completed",
       missingInfo: "Funding type, induction, risk assessment, ILP, profile",
       suggestedAction: "Confirm 32-week review (14/05/2026) preparation",
       confidence: "High",
@@ -215,7 +215,7 @@
       evidenceSource:
         "Google Sheet - Master list + Engagement tab; Outlook Web emails Jun 2026 (URGENT: Tyler Fredrick Punctuality and Behaviour Concern thread)",
       evidenceWording:
-        "Sheet: Y10, Robert Clack, Start Date 03/07/2026, BFL Doing Well/OK, Mentoring. Engagement tab (Tyler Frederick): Frequently Late, Refusing/Disengaged, Not Accessing Learning. Email 08/06/2026 (Admin Support): arrived 12:35, expected 9:00; ongoing lateness (often 2–3 hours); conduct concerns (rudeness, inappropriate language, not following instructions); CEO invited mum to meeting. Email 09/06/2026 (Eugene Dwaah): NOT excluded/suspended/removed; temporarily on remote learning package pending urgent review with school and parent; safeguarding concerns re lateness, attendance, activities outside provision. Email 09/06/2026 (Amy Dwaah): review meeting Thu 9:30am at Futures with mum and Tyler. Email 11/06/2026 (John Course, Robert Clack DSL): asking for plan/next steps after Rapid Response report.",
+        "Sheet: Y10, Robert Clack, Start Date 03/07/2026, BFL Doing Well/OK, Mentoring. Engagement tab (Tyler Frederick): Frequently Late, Refusing/Disengaged, Not Accessing Learning. Email 08/06/2026 (Admin Support): arrived 12:35, expected 9:00; ongoing lateness (often 2-3 hours); conduct concerns (rudeness, inappropriate language, not following instructions); CEO invited mum to meeting. Email 09/06/2026 (Eugene Dwaah): NOT excluded/suspended/removed; temporarily on remote learning package pending urgent review with school and parent; safeguarding concerns re lateness, attendance, activities outside provision. Email 09/06/2026 (Amy Dwaah): review meeting Thu 9:30am at Futures with mum and Tyler. Email 11/06/2026 (John Course, Robert Clack DSL): asking for plan/next steps after Rapid Response report.",
       missingInfo:
         "Placement type, completed risk assessment document, ILP, student profile; reconcile sheet start date (03/07/2026) vs June 2026 attendance in emails; name spelling: Fredreick (sheet) / Fredrick (emails) / Frederick (engagement tab)",
       suggestedAction:
@@ -308,6 +308,11 @@
           if (seed.currentStatus) s.currentStatus = seed.currentStatus;
           if (seed.inductionStatus) s.inductionStatus = seed.inductionStatus;
           if (seed.riskAssessmentStatus) s.riskAssessmentStatus = seed.riskAssessmentStatus;
+          changed = true;
+        }
+        if (seed && version < 6) {
+          if (seed.school) s.school = seed.school;
+          s.evidenceWording = seed.evidenceWording;
           changed = true;
         }
       });

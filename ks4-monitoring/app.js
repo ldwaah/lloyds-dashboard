@@ -1,6 +1,6 @@
 (function () {
   var STORAGE_KEY = "lloyds-ks4-monitoring";
-  var STATUS_OPTIONS = ["Not Started", "In Progress", "Complete", "N/A"];
+  var STATUS_OPTIONS = ["Not Started", "In Progress", "Complete", "Needed", "N/A"];
 
   var REPORT_TERMS = ["Autumn", "Spring", "Summer"];
   var REPORT_STATUS_OPTIONS = ["Not sent", "Sent", "N/A"];

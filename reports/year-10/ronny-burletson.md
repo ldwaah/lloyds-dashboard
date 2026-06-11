@@ -1,7 +1,7 @@
 # Ronny Burletson - Email Evidence Report
 
 **Year group:** Year 10 (ks4-ronny-burletson)  
-**School (tracker):** Robert Clack  
+**School (tracker):** Jo Richardson Community School  
 **Search date:** 2026-06-11  
 **Summary:** Post-Easter attendance crisis (~18%); report to Bal pending; Autumn 2 school report + behaviour log (local PDFs)
 
@@ -25,7 +25,7 @@
 
 **Quotes / snippets:**
 
-- Table row (live placements): `Ronny Burletson` - **Robert Clack** - live placement
+- Table row (live placements): `Ronny Burletson` - **Jo Richardson Community School** (corrected; batch email listed Robert Clack in error)
 - Appears alongside: Mason Taylor (Dagenham Park), Jovan Lane-Ridge (Robert Clack), Joshua Lang (All Saints), Tyler Walterstow-Frederick (Robert Clack), Stacey Grail (LAC), Kamari Emanuel
 
 **Topics:** rapid response referral, school liaison, live placement status
