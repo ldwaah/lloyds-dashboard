@@ -1,0 +1,13 @@
+# ks4-tyler-fredreick
+# Matches: 2
+
+--- Excerpt 1 ---
+Subject (guess): &$Tutoring student removal request: Tyler Fredreick (
+Match term: Tyler Fredreick
+&$Tutoring student removal request: Tyler Fredreick (
+
+--- Excerpt 2 ---
+Subject (guess): moval request: Tyler Fredreick (
+Match term: Tyler Fredreick
+moval request: Tyler Fredreick (
+

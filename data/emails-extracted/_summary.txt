@@ -1,0 +1,17 @@
+Outlook extraction — 2026-06-11
+Source: HxStore.hxd (New Outlook local cache). AppleScript returned 0 messages.
+
+Student files:
+  calum-mison.txt — 3 excerpts
+  jayden-obrien.txt — 4 excerpts
+  stacey-grail.txt — 3 excerpts
+  tyrell-allassani.txt — 2 excerpts
+  jovan-lane.txt — 1 excerpt
+  harrison-jones.txt — 1 excerpt
+  joshua-lang.txt — 2 excerpts
+  tyler-fredreick.txt — 2 excerpts (+ detailed Jun 2026 thread already in monitoring seed from Outlook Web)
+  kamari.txt — 2 excerpts
+  general-ks4-terms.txt — curated induction/RA/EHCP/Barking Abbey/Rapid Response terms
+  outlook-search-report.txt — full methodology and hit summary
+
+Monitoring profiles updated: SEED_VERSION 5

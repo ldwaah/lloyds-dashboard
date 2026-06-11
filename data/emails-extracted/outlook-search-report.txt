@@ -1,0 +1,46 @@
+Outlook search report — 2026-06-11
+==================================
+
+Method
+------
+1. AppleScript (`tell application "Microsoft Outlook"`) — FAILED for message access.
+   - Inbox count: 0 across all mail folders via AppleScript.
+   - Exchange/IMAP/LDAP accounts: 0 detected.
+   - Cause: New Outlook mode (`IsRunningNewOutlook = 1` in preferences). Classic AppleScript mail model not populated.
+
+2. Fallback — local HxStore cache (read-only binary extract):
+   Path: ~/Library/Group Containers/UBF8T346G9.Office/Outlook/.../HxStore.hxd
+
+Search term hit counts (HxStore strings)
+----------------------------------------
+Calum Mison: 4 | Jayden O: 6 | Stacey Grail: 10 | Tyrell (partial): 5
+Ronny Burletson: 3 | Mason Taylor: 7 | Jovan Lane: 17 | Harrison Jones: 7
+Joshua Lang: 9 | Tyler Fredreick/Frederick: 6 | Kamari: 4
+Barking Abbey: 9 | risk assessment: 10 | induction: 18 | EHCP: 20 | KS4: 117
+
+Y10 students with NO dedicated HxStore name hits
+------------------------------------------------
+- Tyrell Allassani (only partial "Tyrell" matches in batch lists)
+- Ronny Burletson (only in Rapid Response Referrals table HTML)
+- Mason Taylor (only in Rapid Response Referrals table HTML)
+
+Notable email subjects / excerpts found
+---------------------------------------
+- RE: Calum Mison Behaviour Update
+- Re: Jayden O Brien - Year 10 4 week placement (+ work experience return query)
+- Safeguarding Update / URGENT SAFEGUARDING UPDATE — Stacey Grail (LAC); final warning
+- Re: Joshua Lang - KS4 100%
+- Tutoring student removal request: Tyler Fredreick; CEO meeting 11 Jun 2026 + risk assessment (Rapid Response batch)
+- Harrison Jones (report needs to be submitted to Barking Abbey)
+- Kamari Emanuel — contact school cc Bal for induction; Kamari Emanuel's induction arrangements
+- Rapid Response Referrals (6) table: Ronny Burletson, Mason Taylor, Jovan Lane-Ridge, Joshua Lang, Tyler Walterstow-Frederick, Stacey Grail, Kamari Emanuel, Barking Abbey cases
+
+Profiles updated
+----------------
+ks4-monitoring/monitoring.js — email behaviour entries + section notes merged (SEED_VERSION 5).
+Per-student audit files in data/emails-extracted/*.txt
+
+If AppleScript needed in future
+-------------------------------
+Switch Outlook to Legacy Outlook (Help → Revert to Legacy Outlook), restart, re-run AppleScript search.
+Or export/search via Outlook Web and save .eml files to repo.

@@ -1,0 +1,13 @@
+# kamari
+# Matches: 2
+
+--- Excerpt 1 ---
+Subject (guess): %Kamari Emanuel - contact school cc Bal for induction[
+Match term: Kamari Emanuel
+%Kamari Emanuel - contact school cc Bal for induction[
+
+--- Excerpt 2 ---
+Subject (guess): Kamari Emanuel’s induction arrangements
+Match term: Kamari Emanuel
+Kamari Emanuel’s induction arrangements
+

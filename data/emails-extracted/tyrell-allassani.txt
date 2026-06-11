@@ -1,0 +1,13 @@
+# ks4-tyrell-allassani
+# Matches: 2
+
+--- Excerpt 1 ---
+Subject (guess): =Please could you look at Tyrells access on his Zoho email address, we are ab
+Match term: Tyrell
+=Please could you look at Tyrells access on his Zoho email address, we are ab
+
+--- Excerpt 2 ---
+Subject (guess): / 1–4: Charlie A, Stacey G, Flynn H, Jovan L, Calum M, Tyrell*
+Match term: Tyrell
+/ 1–4: Charlie A, Stacey G, Flynn H, Jovan L, Calum M, Tyrell*
+

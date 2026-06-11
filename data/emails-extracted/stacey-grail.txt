@@ -1,0 +1,18 @@
+# ks4-stacey-grail
+# Matches: 3
+
+--- Excerpt 1 ---
+Subject (guess): Stacey Grail (LAC) - final warning 7
+Match term: Stacey Grail
+Stacey Grail (LAC) - final warning 7
+
+--- Excerpt 2 ---
+Subject (guess): b>Minutes of Stacey Grail profess_
+Match term: Stacey Grail
+Minutes of Stacey Grail profess_
+
+--- Excerpt 3 ---
+Subject (guess): Stacey Grail (LAC) - final warning
+Match term: Stacey Grail
+Stacey Grail (LAC) - final warning
+
