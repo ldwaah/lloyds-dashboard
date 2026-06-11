@@ -32,8 +32,9 @@
 
           <div class="canvas">
             <section class="cards" aria-label="Workspace sections">
-              <article class="card">
-                <h2>Today</h2>
+              <article class="card card--reminders" id="home-reminders-card">
+                <h2>Today's Reminders</h2>
+                <div id="home-reminders-list" class="home-reminders-list" aria-live="polite"></div>
               </article>
               <article class="card">
                 <h2>This Week</h2>
@@ -86,9 +87,63 @@
           </header>
           <div class="workspace" aria-label="Notes workspace"></div>
         </section>
-      </main>
 
-      <nav class="tab-bar" role="tablist" aria-label="Main navigation">
+        <!-- Reminders -->
+        <section
+          id="panel-reminders"
+          class="panel"
+          role="tabpanel"
+          aria-labelledby="tab-reminders"
+          hidden
+        >
+          <header class="page-header">
+            <h1>Reminders</h1>
+          </header>
+          <div class="workspace reminders-workspace" aria-label="Reminders workspace">
+            <form id="reminder-form" class="reminder-form" novalidate>
+              <div class="form-field">
+                <label for="reminder-title">Title</label>
+                <input
+                  type="text"
+                  id="reminder-title"
+                  name="title"
+                  placeholder="What do you need to remember?"
+                  required
+                  autocomplete="off"
+                />
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="reminder-date">Date</label>
+                  <input type="date" id="reminder-date" name="date" required />
+                </div>
+                <div class="form-field">
+                  <label for="reminder-time">Time</label>
+                  <input type="time" id="reminder-time" name="time" required />
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="reminder-category">Category</label>
+                <select id="reminder-category" name="category" required>
+                  <option value="Work">Work</option>
+                  <option value="Personal">Personal</option>
+                  <option value="Teaching Qualification">Teaching Qualification</option>
+                  <option value="Health">Health</option>
+                  <option value="Money">Money</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn--primary">Add reminder</button>
+            </form>
+
+            <div id="reminders-groups" class="reminders-groups" aria-live="polite"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <nav class="tab-bar" role="tablist" aria-label="Main navigation">
+      <div class="tab-bar__inner">
         <button
           type="button"
           class="tab tab--active"
@@ -156,9 +211,27 @@
           </span>
           <span class="tab__label">Notes</span>
         </button>
-      </nav>
-    </div>
+        <button
+          type="button"
+          class="tab"
+          id="tab-reminders"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-reminders"
+          data-tab="reminders"
+        >
+          <span class="tab__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+              <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+            </svg>
+          </span>
+          <span class="tab__label">Reminders</span>
+        </button>
+      </div>
+    </nav>
 
+    <script src="reminders.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
