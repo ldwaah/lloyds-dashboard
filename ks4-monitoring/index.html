@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="KS4 Monitor" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>KS4 Monitoring</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="icons/icon-192.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="mon-header">
+        <div class="mon-header__top">
+          <button
+            type="button"
+            id="mon-back-btn"
+            class="mon-back-btn"
+            hidden
+            aria-label="Back to student list"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <div class="mon-header__text">
+            <h1 class="mon-header__title">KS4 Monitoring</h1>
+            <p class="mon-header__subtitle">Student lifecycle tracker</p>
+            <p id="mon-profile-header" class="mon-header__profile" hidden></p>
+          </div>
+        </div>
+        <a href="../index.html" class="mon-dash-link">← Lloyd's Dashboard</a>
+      </header>
+
+      <main class="content">
+        <div id="mon-root" class="mon-root" aria-live="polite"></div>
+      </main>
+    </div>
+
+    <script src="../ks4-students.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
