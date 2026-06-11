@@ -36,6 +36,7 @@
 
   function saveTasks(tasks) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+    window.dispatchEvent(new CustomEvent("lloyds-data-changed"));
   }
 
   function loadWorkflows() {
@@ -1000,10 +1001,39 @@
     });
   }
 
+  function extendDueDate(id, days) {
+    days = days || 1;
+    var tasks = loadTasks();
+    var updated = tasks.map(function (t) {
+      if (t.id !== id || !t.dueDate) return t;
+      return {
+        id: t.id,
+        title: t.title,
+        status: t.status,
+        priority: t.priority,
+        category: t.category,
+        dueDate: toDateString(addDays(
+          new Date(
+            parseInt(t.dueDate.slice(0, 4), 10),
+            parseInt(t.dueDate.slice(5, 7), 10) - 1,
+            parseInt(t.dueDate.slice(8, 10), 10)
+          ),
+          days
+        )),
+        notes: t.notes || "",
+        workflowId: t.workflowId || "",
+      };
+    });
+    saveTasks(updated);
+    refresh(updated);
+    return updated;
+  }
+
   window.LloydsTasks = {
     refresh: refresh,
     load: loadTasks,
     loadWorkflows: loadWorkflows,
+    extendDueDate: extendDueDate,
   };
 
   document.addEventListener("DOMContentLoaded", function () {

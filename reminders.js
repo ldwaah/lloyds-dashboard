@@ -23,6 +23,7 @@
 
   function saveReminders(reminders) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(reminders));
+    window.dispatchEvent(new CustomEvent("lloyds-data-changed"));
   }
 
   function pad(n) {
@@ -289,9 +290,40 @@
     });
   }
 
+  function extendDate(id, days) {
+    days = days || 1;
+    var reminders = loadReminders();
+    var updated = reminders.map(function (r) {
+      if (r.id !== id) return r;
+      var parts = r.date.split("-");
+      var d = new Date(
+        parseInt(parts[0], 10),
+        parseInt(parts[1], 10) - 1,
+        parseInt(parts[2], 10)
+      );
+      d.setDate(d.getDate() + days);
+      return {
+        id: r.id,
+        title: r.title,
+        date:
+          d.getFullYear() +
+          "-" +
+          pad(d.getMonth() + 1) +
+          "-" +
+          pad(d.getDate()),
+        time: r.time,
+        category: r.category,
+      };
+    });
+    saveReminders(updated);
+    refresh(updated);
+    return updated;
+  }
+
   window.LloydsReminders = {
     refresh: refresh,
     load: loadReminders,
+    extendDate: extendDate,
   };
 
   document.addEventListener("DOMContentLoaded", function () {

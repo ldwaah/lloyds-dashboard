@@ -30,6 +30,22 @@
             <p class="tagline">100% Workflow</p>
           </header>
 
+          <div id="notification-prompt" class="notification-prompt" hidden>
+            <div class="notification-prompt__body">
+              <p class="notification-prompt__title">Deadline alerts</p>
+              <p class="notification-prompt__status">
+                Get notified for due and overdue items when you open the app.
+              </p>
+              <p class="notification-prompt__note">
+                iOS: no background push without a server — alerts appear when you visit the app.
+                Android: similar unless the app is open; tap a notification to extend deadlines.
+              </p>
+              <button type="button" id="notification-enable-btn" class="btn btn--primary btn--sm">
+                Enable notifications
+              </button>
+            </div>
+          </div>
+
           <div class="canvas">
             <section class="cards" aria-label="Workspace sections">
               <article class="card card--reminders" id="home-reminders-card">
@@ -58,7 +74,10 @@
           <header class="page-header">
             <h1>Calendar</h1>
           </header>
-          <div class="workspace" aria-label="Calendar workspace"></div>
+          <div class="workspace calendar-workspace" aria-label="Calendar workspace">
+            <div id="calendar-root" class="calendar-root"></div>
+            <div id="calendar-day-detail" class="calendar-day-detail" hidden aria-live="polite"></div>
+          </div>
         </section>
 
         <!-- Tasks -->
@@ -278,6 +297,8 @@
 
     <script src="reminders.js"></script>
     <script src="tasks.js"></script>
+    <script src="calendar.js"></script>
+    <script src="notifications.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -7,6 +7,8 @@ var ASSETS = [
   "./script.js",
   "./reminders.js",
   "./tasks.js",
+  "./calendar.js",
+  "./notifications.js",
   "./manifest.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
@@ -74,5 +76,43 @@ self.addEventListener("fetch", function (event) {
         return response;
       });
     })
+  );
+});
+
+self.addEventListener("notificationclick", function (event) {
+  event.notification.close();
+
+  var data = event.notification.data || {};
+  var action = event.action;
+
+  if (action === "extend" && data.type && data.id) {
+    event.waitUntil(
+      clients
+        .matchAll({ type: "window", includeUncontrolled: true })
+        .then(function (clientList) {
+          for (var i = 0; i < clientList.length; i++) {
+            var client = clientList[i];
+            client.postMessage({
+              type: "extend-deadline",
+              itemType: data.type,
+              itemId: data.id,
+            });
+            return client.focus();
+          }
+          return clients.openWindow("./#extend=" + data.type + ":" + data.id);
+        })
+    );
+    return;
+  }
+
+  event.waitUntil(
+    clients
+      .matchAll({ type: "window", includeUncontrolled: true })
+      .then(function (clientList) {
+        for (var j = 0; j < clientList.length; j++) {
+          return clientList[j].focus();
+        }
+        return clients.openWindow("./");
+      })
   );
 });

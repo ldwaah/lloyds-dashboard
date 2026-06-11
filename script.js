@@ -25,6 +25,10 @@
       panel.classList.toggle("panel--active", isActive);
       panel.hidden = !isActive;
     });
+
+    if (tabName === "calendar" && window.LloydsCalendar) {
+      window.LloydsCalendar.refresh();
+    }
   }
 
   tabs.forEach(function (tab) {
@@ -39,6 +43,11 @@
     window.addEventListener("load", function () {
       navigator.serviceWorker
         .register("./service-worker.js", { scope: "./" })
+        .then(function () {
+          if (window.LloydsNotifications) {
+            window.LloydsNotifications.checkDeadlines();
+          }
+        })
         .catch(function () {});
     });
   }
