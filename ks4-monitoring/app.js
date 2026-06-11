@@ -2,6 +2,9 @@
   var STORAGE_KEY = "lloyds-ks4-monitoring";
   var STATUS_OPTIONS = ["Not Started", "In Progress", "Complete", "N/A"];
 
+  var REPORT_TERMS = ["Autumn", "Spring", "Summer"];
+  var REPORT_STATUS_OPTIONS = ["Not sent", "Sent", "N/A"];
+
   var INTERVENTION_TYPES = [
     "Mentoring",
     "Restorative conversation",
@@ -23,6 +26,7 @@
     { key: "behaviour", title: "Behaviour Instances", type: "log", logKind: "behaviour" },
     { key: "interventions", title: "Interventions & Supports", type: "log", logKind: "interventions" },
     { key: "attainment", title: "Attainment", type: "attainment" },
+    { key: "reports", title: "Reports", type: "reports" },
     { key: "reviews", title: "Reviews", type: "reviews" },
     { key: "removal", title: "Removal / Provision Exit", type: "removal" },
   ];
@@ -60,6 +64,25 @@
     return { status: "Not Started", link: "", notes: "" };
   }
 
+  function reportTermId(term) {
+    return "report-" + String(term).toLowerCase();
+  }
+
+  function emptyReports() {
+    if (window.LloydsKS4MonitoringSeed && window.LloydsKS4MonitoringSeed.emptyReports) {
+      return window.LloydsKS4MonitoringSeed.emptyReports();
+    }
+    return REPORT_TERMS.map(function (term) {
+      return {
+        id: reportTermId(term),
+        term: term,
+        dateSent: "",
+        driveLink: "",
+        status: "Not sent",
+      };
+    });
+  }
+
   function emptyRecord(studentId) {
     return {
       studentId: studentId,
@@ -76,6 +99,7 @@
       behaviour: [],
       interventions: [],
       attainment: [],
+      reports: emptyReports(),
       reviews: [],
       removal: {
         flagged: false,
@@ -138,6 +162,8 @@
     if (v === "in progress") return "mon-badge--progress";
     if (v === "not started") return "mon-badge--warn";
     if (v === "n/a" || v === "proposed") return "mon-badge--muted";
+    if (v === "sent") return "mon-badge--ok";
+    if (v === "not sent") return "mon-badge--warn";
     return "";
   }
 
@@ -161,6 +187,14 @@
     if (def.type === "reviews") {
       var r = (record.reviews || []).length;
       return r ? r + " reviews" : "No reviews";
+    }
+    if (def.type === "reports") {
+      var reports = record.reports || [];
+      var sent = reports.filter(function (item) {
+        return item.status === "Sent";
+      }).length;
+      if (!sent) return "None sent";
+      return sent + " of " + reports.length + " sent";
     }
     if (def.type === "removal") {
       if (!record.removal || !record.removal.flagged) return "Not flagged";
@@ -446,6 +480,71 @@
     );
   }
 
+  function reportStatusSelect(value) {
+    var opts = REPORT_STATUS_OPTIONS.map(function (opt) {
+      return (
+        '<option value="' +
+        escapeHtml(opt) +
+        '"' +
+        (opt === value ? " selected" : "") +
+        ">" +
+        escapeHtml(opt) +
+        "</option>"
+      );
+    }).join("");
+    return (
+      '<label class="form-field mon-report-status"><span>Status</span><select name="status" class="mon-status-select">' +
+      opts +
+      "</select></label>"
+    );
+  }
+
+  function renderReports(record) {
+    var items = record.reports || emptyReports();
+    var list =
+      '<p class="mon-reports-intro">Term reports sent to home school. Paste a Google Drive link for each term; tap the link to open in a new tab.</p>' +
+      '<ul class="mon-log mon-reports">' +
+      items
+        .map(function (item) {
+          var termLabel = item.term + " Term Report";
+          var link = String(item.driveLink || "").trim();
+          var linkBlock = link
+            ? '<p class="mon-report-link"><a href="' +
+              escapeHtml(link) +
+              '" target="_blank" rel="noopener noreferrer">Open in Google Drive</a></p>'
+            : "";
+          return (
+            '<li class="mon-log__item mon-report-term">' +
+            '<form class="mon-report-form" data-report-id="' +
+            escapeHtml(item.id) +
+            '">' +
+            '<div class="mon-report-term__header">' +
+            '<span class="mon-report-term__name">' +
+            escapeHtml(termLabel) +
+            "</span>" +
+            '<span class="mon-badge ' +
+            statusClass(item.status) +
+            '">' +
+            escapeHtml(item.status || "Not sent") +
+            "</span>" +
+            "</div>" +
+            linkBlock +
+            reportStatusSelect(item.status || "Not sent") +
+            '<label class="form-field"><span>Date sent</span><input type="date" name="dateSent" value="' +
+            escapeHtml(item.dateSent || "") +
+            '"></label>' +
+            '<label class="form-field"><span>Google Drive link</span><input type="url" name="driveLink" value="' +
+            escapeHtml(link) +
+            '" placeholder="https://drive.google.com/…" inputmode="url"></label>' +
+            '<button type="submit" class="btn btn--primary mon-report-save">Save term report</button>' +
+            "</form></li>"
+          );
+        })
+        .join("") +
+      "</ul>";
+    return list;
+  }
+
   function renderReviews(record) {
     var items = record.reviews || [];
     var list =
@@ -550,6 +649,8 @@
       body = renderBehaviour(record);
     } else if (def.type === "attainment") {
       body = renderAttainment(record);
+    } else if (def.type === "reports") {
+      body = renderReports(record);
     } else if (def.type === "reviews") {
       body = renderReviews(record);
     } else if (def.type === "removal") {
@@ -616,6 +717,27 @@
         renderProfile();
       });
     }
+
+    root.querySelectorAll(".mon-report-form").forEach(function (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var reportId = form.dataset.reportId;
+        var fd = new FormData(form);
+        var rec = getRecord(activeStudentId);
+        var reports = (rec.reports || emptyReports()).map(function (item) {
+          if (item.id !== reportId) return item;
+          return {
+            id: item.id,
+            term: item.term,
+            status: String(fd.get("status") || "Not sent").trim(),
+            dateSent: String(fd.get("dateSent") || "").trim(),
+            driveLink: String(fd.get("driveLink") || "").trim(),
+          };
+        });
+        updateRecord(activeStudentId, { reports: reports });
+        renderProfile();
+      });
+    });
 
     root.querySelectorAll(".mon-add-form").forEach(function (form) {
       form.addEventListener("submit", function (e) {

@@ -238,6 +238,43 @@
         color: var(--accent);
         margin-bottom: 0.25rem;
       }
+
+      .demo-report-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.5rem 0.75rem;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .demo-report-row:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .demo-report-row__main {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .demo-report-row__title {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 0.25rem;
+      }
+
+      .demo-report-row__meta {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+      }
+
+      .demo-report-row__meta a {
+        color: var(--accent);
+        word-break: break-all;
+      }
     </style>
   </head>
   <body>
@@ -553,6 +590,43 @@
           </div>
         </section>
 
+        <section class="mon-section-panel demo-section-panel" id="panel-reports" data-section="reports" hidden>
+          <h2 class="mon-section-panel__title">Reports</h2>
+          <p class="demo-tracker-note">
+            DEMO example term reports. Each UK school term links to a Google Drive document sent to the home school. Tap a link to open in a new tab.
+          </p>
+          <div class="demo-attainment-block">
+            <div class="demo-report-row">
+              <div class="demo-report-row__main">
+                <div class="demo-report-row__title">Autumn Term Report</div>
+                <div class="demo-report-row__meta">Sent 12 December 2025</div>
+                <div class="demo-report-row__meta">
+                  <a href="https://drive.google.com/file/d/1DEMO-student-a-autumn-report-placeholder/view" target="_blank" rel="noopener noreferrer">Open autumn report (Google Drive placeholder)</a>
+                </div>
+              </div>
+              <span class="mon-badge mon-badge--ok">Sent</span>
+            </div>
+            <div class="demo-report-row">
+              <div class="demo-report-row__main">
+                <div class="demo-report-row__title">Spring Term Report</div>
+                <div class="demo-report-row__meta">Sent 28 March 2026</div>
+                <div class="demo-report-row__meta">
+                  <a href="https://drive.google.com/file/d/1DEMO-student-a-spring-report-placeholder/view" target="_blank" rel="noopener noreferrer">Open spring report (Google Drive placeholder)</a>
+                </div>
+              </div>
+              <span class="mon-badge mon-badge--ok">Sent</span>
+            </div>
+            <div class="demo-report-row">
+              <div class="demo-report-row__main">
+                <div class="demo-report-row__title">Summer Term Report</div>
+                <div class="demo-report-row__meta">Due July 2026</div>
+                <div class="demo-report-row__meta demo-field__value--muted">Link not yet added</div>
+              </div>
+              <span class="mon-badge mon-badge--warn">Not sent</span>
+            </div>
+          </div>
+        </section>
+
         <section class="mon-section-panel demo-section-panel" id="panel-reviews" data-section="reviews" hidden>
           <h2 class="mon-section-panel__title">Reviews</h2>
           <ul class="mon-log">
@@ -598,6 +672,7 @@
           { key: "behaviour", title: "Behaviour", meta: "3 logged" },
           { key: "interventions", title: "Interventions", meta: "7 logged" },
           { key: "attainment", title: "Attainment", meta: "9 courses" },
+          { key: "reports", title: "Reports", meta: "2 of 3 sent" },
           { key: "reviews", title: "Reviews", meta: "3 reviews" },
           { key: "removal", title: "Removal", meta: "Not flagged" },
         ];

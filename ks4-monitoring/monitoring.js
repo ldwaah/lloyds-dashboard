@@ -1,7 +1,25 @@
 (function () {
   var STORAGE_KEY = "lloyds-ks4-monitoring";
   var VERSION_KEY = "lloyds-ks4-monitoring-seed-version";
-  var SEED_VERSION = 8;
+  var SEED_VERSION = 9;
+
+  var REPORT_TERMS = ["Autumn", "Spring", "Summer"];
+
+  function reportTermId(term) {
+    return "report-" + String(term).toLowerCase();
+  }
+
+  function emptyReports() {
+    return REPORT_TERMS.map(function (term) {
+      return {
+        id: reportTermId(term),
+        term: term,
+        dateSent: "",
+        driveLink: "",
+        status: "Not sent",
+      };
+    });
+  }
 
   var EXCLUDED_IDS = [
     "ks4-flynn-hurley",
@@ -111,6 +129,33 @@
     }
     if (!record.interventions) {
       record.interventions = [];
+    }
+    if (!record.reports || !record.reports.length) {
+      record.reports = emptyReports();
+    } else {
+      var byTerm = {};
+      record.reports.forEach(function (r) {
+        if (r && r.term) byTerm[r.term] = r;
+      });
+      record.reports = REPORT_TERMS.map(function (term) {
+        var existing = byTerm[term];
+        if (existing) {
+          return {
+            id: existing.id || reportTermId(term),
+            term: term,
+            dateSent: existing.dateSent || "",
+            driveLink: existing.driveLink || "",
+            status: existing.status || "Not sent",
+          };
+        }
+        return {
+          id: reportTermId(term),
+          term: term,
+          dateSent: "",
+          driveLink: "",
+          status: "Not sent",
+        };
+      });
     }
     if (record.removal && clearSectionNotes) {
       record.removal.notes = "";
@@ -673,6 +718,19 @@
       });
     }
 
+    if (version < 9) {
+      Object.keys(store).forEach(function (id) {
+        if (!store[id].reports || !store[id].reports.length) {
+          store[id].reports = emptyReports();
+          changed = true;
+        } else {
+          var before = JSON.stringify(store[id].reports);
+          store[id].reports = normalizeRecord({ reports: store[id].reports }).reports;
+          if (JSON.stringify(store[id].reports) !== before) changed = true;
+        }
+      });
+    }
+
     if (version < 7) {
       Object.keys(SEED_RECORDS).forEach(function (id) {
         if (!store[id]) return;
@@ -713,6 +771,8 @@
     loadStore: loadStore,
     inductionStatusFromDate: inductionStatusFromDate,
     normalizeRecord: normalizeRecord,
+    emptyReports: emptyReports,
+    REPORT_TERMS: REPORT_TERMS,
     SEED_VERSION: SEED_VERSION,
     SEED_RECORDS: SEED_RECORDS,
     STORAGE_KEY: STORAGE_KEY,
