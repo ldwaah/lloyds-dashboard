@@ -71,7 +71,24 @@
           <header class="page-header">
             <h1>Tasks</h1>
           </header>
-          <div class="workspace" aria-label="Tasks workspace"></div>
+          <div class="workspace tasks-workspace" aria-label="Tasks workspace">
+            <section class="task-import" aria-label="Paste email action list">
+              <label class="form-field" for="task-import-text">
+                <span class="form-field__label">Paste Email Action List</span>
+                <textarea
+                  id="task-import-text"
+                  class="task-import__textarea"
+                  rows="5"
+                  placeholder="Paste one action per line…&#10;Contact Barking Abbey for Kamari induction, cc Bal.&#10;Complete King's Trust QAR documentation."
+                ></textarea>
+              </label>
+              <button type="button" id="task-convert-btn" class="btn btn--primary">
+                Convert to Tasks
+              </button>
+            </section>
+
+            <div id="task-list" class="task-list" aria-live="polite"></div>
+          </div>
         </section>
 
         <!-- Notes -->
@@ -232,6 +249,7 @@
     </nav>
 
     <script src="reminders.js"></script>
+    <script src="tasks.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
