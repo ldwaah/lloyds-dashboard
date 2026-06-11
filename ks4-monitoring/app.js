@@ -78,7 +78,14 @@
     window.dispatchEvent(new CustomEvent("lloyds-ks4-monitoring-changed"));
   }
 
+  function ensureMigrated() {
+    if (window.LloydsKS4MonitoringSeed && window.LloydsKS4MonitoringSeed.migrate) {
+      window.LloydsKS4MonitoringSeed.migrate();
+    }
+  }
+
   function getRecord(studentId) {
+    ensureMigrated();
     var store = loadStore();
     if (!store[studentId]) {
       store[studentId] = emptyRecord(studentId);
@@ -624,6 +631,7 @@
   }
 
   function init() {
+    ensureMigrated();
     document.getElementById("mon-back-btn").addEventListener("click", goBack);
 
     if (!parseHash()) {

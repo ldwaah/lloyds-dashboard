@@ -1,7 +1,7 @@
 (function () {
   var STORAGE_KEY = "lloyds-ks4-students";
   var VERSION_KEY = "lloyds-ks4-seed-version";
-  var SEED_VERSION = 2;
+  var SEED_VERSION = 3;
   var SHEET_URL =
     "https://docs.google.com/spreadsheets/d/1kMZy6UPEICCHABe7Fa9FIf_ij0z79l84aAYsRhzn-qc/edit";
 
@@ -62,17 +62,17 @@
       keyStage: "KS4",
       yearGroup: "Year 10",
       school: "Jo Richardson Community School",
-      placementType: "Unknown",
+      placementType: "KS4",
       currentStatus: "Current",
       inductionStatus: "Unknown",
       riskAssessmentStatus: "Unknown",
       ilpStatus: "Unknown",
       studentProfileStatus: "Unknown",
       reviewNeeded: "Yes",
-      evidenceSource: "Google Sheet — Master list",
+      evidenceSource: "Google Sheet — Master list + Y10 provision tab",
       evidenceWording:
-        "KS 4, Year Group 10, Jo Richardson Community School, Start Date 12/08/2025; BFL: Final Warning; Interventions: Mentoring; Agencies: Social Services; King's Trust: Completed",
-      missingInfo: "Placement type (live/flexi/paid), induction, risk assessment, ILP, profile",
+        "KS 4, Year Group 10, Jo Richardson Community School, Start Date 12/08/2025; Provision: KS4; BFL: Final Warning; Interventions: Mentoring; Agencies: Social Services; King's Trust: Completed",
+      missingInfo: "Funding type (LA/Commissioned), induction, risk assessment, ILP, profile",
       suggestedAction: "Monitor BFL Final Warning; confirm next review milestone",
       confidence: "High",
     },
@@ -102,17 +102,17 @@
       keyStage: "KS4",
       yearGroup: "Year 10",
       school: "Robert Clack",
-      placementType: "Unknown",
+      placementType: "KS4",
       currentStatus: "Current",
       inductionStatus: "Unknown",
       riskAssessmentStatus: "Unknown",
       ilpStatus: "Unknown",
       studentProfileStatus: "Unknown",
       reviewNeeded: "Yes",
-      evidenceSource: "Google Sheet — Master list",
+      evidenceSource: "Google Sheet — Master list + Y10 provision tab",
       evidenceWording:
-        "KS 4, Year Group 10, Robert Clack, Start Date 02/10/2025; BFL: Doing Well / OK; Interventions: Reduced Timetable; Agencies: Social Services; King's Trust: N/A",
-      missingInfo: "Placement type, induction, risk assessment, ILP, profile",
+        "KS 4, Year Group 10, Robert Clack, Start Date 02/10/2025; Provision: KS4; BFL: Doing Well / OK; Interventions: Reduced Timetable; Agencies: Social Services; King's Trust: Completed",
+      missingInfo: "Funding type, induction, risk assessment, ILP, profile",
       suggestedAction: "Confirm 32-week review (14/05/2026) preparation",
       confidence: "High",
     },
@@ -122,17 +122,17 @@
       keyStage: "KS4",
       yearGroup: "Year 10",
       school: "Dagenham Park School",
-      placementType: "Unknown",
+      placementType: "KS4",
       currentStatus: "Current",
       inductionStatus: "Unknown",
       riskAssessmentStatus: "Unknown",
       ilpStatus: "Unknown",
       studentProfileStatus: "Unknown",
       reviewNeeded: "Yes",
-      evidenceSource: "Google Sheet — Master list",
+      evidenceSource: "Google Sheet — Master list + Y10 provision tab",
       evidenceWording:
-        "KS 4, Year Group 10, Dagenham Park School, Start Date 09/08/2025; BFL: Doing Well / OK; Interventions: Mentoring; King's Trust: N/A",
-      missingInfo: "Placement type, induction, risk assessment, ILP, profile",
+        "KS 4, Year Group 10, Dagenham Park School, Start Date 09/08/2025; Provision: KS4; BFL: Doing Well / OK; Interventions: Mentoring; King's Trust: N/A",
+      missingInfo: "Funding type, induction, risk assessment, ILP, profile",
       suggestedAction: "Confirm 32-week review (21/03/2026) completed",
       confidence: "High",
     },
@@ -142,17 +142,17 @@
       keyStage: "KS4",
       yearGroup: "Year 10",
       school: "Robert Clack",
-      placementType: "Unknown",
+      placementType: "KS4",
       currentStatus: "Current",
       inductionStatus: "Unknown",
       riskAssessmentStatus: "Unknown",
       ilpStatus: "Unknown",
       studentProfileStatus: "Unknown",
       reviewNeeded: "Yes",
-      evidenceSource: "Google Sheet — Master list + Engagement tab",
+      evidenceSource: "Google Sheet — Master list + Y10 provision + Engagement tab",
       evidenceWording:
-        "KS 4, Year Group 10, Robert Clack, Start Date 27/01/2026; BFL: Report; Interventions: FLZ; Agencies: Subwize; Engagement: Occasionally Late, Mostly Engaged, Low Concern",
-      missingInfo: "Placement type, induction, risk assessment, ILP, profile",
+        "KS 4, Year Group 10, Robert Clack, Start Date 27/01/2026; Provision: KS4; BFL: Report; Interventions: FLZ; Agencies: Subwize; Engagement (Jovan Lane Ridge): Occasionally Late, Mostly Engaged, Low Concern",
+      missingInfo: "Funding type, induction, risk assessment, ILP, profile",
       suggestedAction: "Follow up home contact (No Contact on engagement tab)",
       confidence: "High",
     },
@@ -162,17 +162,17 @@
       keyStage: "KS4",
       yearGroup: "Year 10",
       school: "Robert Clack",
-      placementType: "Unknown",
+      placementType: "KS4",
       currentStatus: "Current",
       inductionStatus: "Unknown",
       riskAssessmentStatus: "Unknown",
       ilpStatus: "Unknown",
       studentProfileStatus: "Unknown",
       reviewNeeded: "Yes",
-      evidenceSource: "Google Sheet — Master list",
+      evidenceSource: "Google Sheet — Master list + Y10 provision tab",
       evidenceWording:
-        "KS 4, Year Group 10, Robert Clack, Start Date 07/10/2025; BFL: Doing Well / OK; Interventions: Reduced Timetable; King's Trust: N/A",
-      missingInfo: "Placement type, induction, risk assessment, ILP, profile",
+        "KS 4, Year Group 10, Robert Clack, Start Date 07/10/2025; Provision: KS4; BFL: Doing Well / OK; Interventions: Reduced Timetable; King's Trust: N/A",
+      missingInfo: "Funding type, induction, risk assessment, ILP, profile",
       suggestedAction: "Confirm 32-week review (19/05/2026)",
       confidence: "High",
     },
@@ -182,17 +182,17 @@
       keyStage: "KS4",
       yearGroup: "Year 10",
       school: "All Saints",
-      placementType: "Unknown",
+      placementType: "KS4",
       currentStatus: "Current",
       inductionStatus: "Unknown",
       riskAssessmentStatus: "Unknown",
       ilpStatus: "Unknown",
       studentProfileStatus: "Unknown",
       reviewNeeded: "Yes",
-      evidenceSource: "Google Sheet — Master list",
+      evidenceSource: "Google Sheet — Master list + Y10 provision tab",
       evidenceWording:
-        "KS 4, Year Group 10, All Saints, Start Date 03/05/2026; BFL: Doing Well / OK; Interventions: Mentoring; King's Trust: Completed",
-      missingInfo: "Placement type, induction, risk assessment, ILP, profile",
+        "KS 4, Year Group 10, All Saints, Start Date 03/05/2026; Provision: KS4; BFL: Doing Well / OK; Interventions: Mentoring; King's Trust: Completed",
+      missingInfo: "Funding type, induction, risk assessment, ILP, profile",
       suggestedAction: "Confirm 6-week review (14/06/2026)",
       confidence: "High",
     },
@@ -223,7 +223,7 @@
       keyStage: "KS4",
       yearGroup: "Year 11",
       school: "Robert Clack",
-      placementType: "Live",
+      placementType: "KS4",
       currentStatus: "Proposed",
       inductionStatus: "Not Started",
       riskAssessmentStatus: "Unknown",
@@ -232,8 +232,8 @@
       reviewNeeded: "Yes",
       evidenceSource: "Google Sheet — Master list + Y11 provision tab",
       evidenceWording:
-        "KS 4, Year Group 11, Robert Clack, Start Date 01/09/2026; Intended Destination: College; Provision: KS4 (active placement track); GCSE courses In Progress; future reviews through 13/04/2027",
-      missingInfo: "Placement type (live/flexi/paid), induction, risk assessment, ILP",
+        "KS 4, Year Group 11, Robert Clack, Start Date 01/09/2026; Intended Destination: College; Provision: KS4; GCSE courses In Progress; future reviews through 13/04/2027",
+      missingInfo: "Funding type (LA/Commissioned), induction, risk assessment, ILP",
       suggestedAction: "Prepare for Sept 2026 start; create student profile",
       confidence: "High",
     },
@@ -243,7 +243,7 @@
       keyStage: "KS4",
       yearGroup: "Year 11",
       school: "Greatfields School",
-      placementType: "Live",
+      placementType: "KS4",
       currentStatus: "Current",
       inductionStatus: "Unknown",
       riskAssessmentStatus: "Unknown",
@@ -253,7 +253,7 @@
       evidenceSource: "Google Sheet — Master list + Y11 provision tab",
       evidenceWording:
         "KS 4, Year Group 11, Greatfields School, Start Date 20/10/2025; Provision: KS4; GCSE English/Maths In Progress; Interventions: FLZ; Agencies: CAMHS; active review cycle through 01/06/2026",
-      missingInfo: "Induction, risk assessment, ILP",
+      missingInfo: "Funding type, induction, risk assessment, ILP",
       suggestedAction: "Create/send Year 11 student profile",
       confidence: "High",
     },
@@ -294,9 +294,25 @@
       students = applyExclusions(students);
       if (students.length !== before) changed = true;
 
+      var seedById = {};
+      SEED_STUDENTS.forEach(function (s) {
+        seedById[s.id] = s;
+      });
+
       var existing = {};
       students.forEach(function (s) {
         existing[s.id] = true;
+        var seed = seedById[s.id];
+        if (seed && version < 3) {
+          if (seed.placementType && seed.placementType !== "Unknown") {
+            s.placementType = seed.placementType;
+          }
+          s.evidenceSource = seed.evidenceSource;
+          s.evidenceWording = seed.evidenceWording;
+          s.missingInfo = seed.missingInfo;
+          s.suggestedAction = seed.suggestedAction;
+          changed = true;
+        }
       });
       SEED_STUDENTS.forEach(function (s) {
         if (!existing[s.id]) {
@@ -499,7 +515,7 @@
       " · Actions: " +
       groups.actions.length +
       "</p>" +
-      '<p class="home-ks4-summary__source">Source: Google Sheet (no emails in workspace)</p>";
+      '<p class="home-ks4-summary__source">Source: Google Sheet (no emails in workspace)</p>';
   }
 
   var expandedId = null;
