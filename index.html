@@ -2,31 +2,158 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#f9f9f8" />
     <title>Lloyd's Dashboard</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="app">
-      <header class="header">
-        <h1>Lloyd's Dashboard</h1>
-        <p class="date" id="today-date" aria-live="polite"></p>
-        <p class="tagline">100% Workflow</p>
-      </header>
+      <main class="content">
+        <!-- Home -->
+        <section
+          id="panel-home"
+          class="panel panel--active"
+          role="tabpanel"
+          aria-labelledby="tab-home"
+        >
+          <header class="header">
+            <h1>Lloyd's Dashboard</h1>
+            <p class="date" id="today-date" aria-live="polite"></p>
+            <p class="tagline">100% Workflow</p>
+          </header>
 
-      <main class="canvas">
-        <section class="cards" aria-label="Workspace sections">
-          <article class="card">
-            <h2>Today</h2>
-          </article>
-          <article class="card">
-            <h2>This Week</h2>
-          </article>
-          <article class="card">
-            <h2>Notes</h2>
-          </article>
+          <div class="canvas">
+            <section class="cards" aria-label="Workspace sections">
+              <article class="card">
+                <h2>Today</h2>
+              </article>
+              <article class="card">
+                <h2>This Week</h2>
+              </article>
+              <article class="card">
+                <h2>Notes</h2>
+              </article>
+            </section>
+          </div>
+        </section>
+
+        <!-- Calendar -->
+        <section
+          id="panel-calendar"
+          class="panel"
+          role="tabpanel"
+          aria-labelledby="tab-calendar"
+          hidden
+        >
+          <header class="page-header">
+            <h1>Calendar</h1>
+          </header>
+          <div class="workspace" aria-label="Calendar workspace"></div>
+        </section>
+
+        <!-- Tasks -->
+        <section
+          id="panel-tasks"
+          class="panel"
+          role="tabpanel"
+          aria-labelledby="tab-tasks"
+          hidden
+        >
+          <header class="page-header">
+            <h1>Tasks</h1>
+          </header>
+          <div class="workspace" aria-label="Tasks workspace"></div>
+        </section>
+
+        <!-- Notes -->
+        <section
+          id="panel-notes"
+          class="panel"
+          role="tabpanel"
+          aria-labelledby="tab-notes"
+          hidden
+        >
+          <header class="page-header">
+            <h1>Notes</h1>
+          </header>
+          <div class="workspace" aria-label="Notes workspace"></div>
         </section>
       </main>
+
+      <nav class="tab-bar" role="tablist" aria-label="Main navigation">
+        <button
+          type="button"
+          class="tab tab--active"
+          id="tab-home"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel-home"
+          data-tab="home"
+        >
+          <span class="tab__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+              <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-9.5z" />
+            </svg>
+          </span>
+          <span class="tab__label">Home</span>
+        </button>
+        <button
+          type="button"
+          class="tab"
+          id="tab-calendar"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-calendar"
+          data-tab="calendar"
+        >
+          <span class="tab__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+              <rect x="3" y="5" width="18" height="16" rx="2" />
+              <path d="M3 10h18M8 3v4M16 3v4" />
+            </svg>
+          </span>
+          <span class="tab__label">Calendar</span>
+        </button>
+        <button
+          type="button"
+          class="tab"
+          id="tab-tasks"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-tasks"
+          data-tab="tasks"
+        >
+          <span class="tab__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+              <path d="M9 11l3 3L22 4" />
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+            </svg>
+          </span>
+          <span class="tab__label">Tasks</span>
+        </button>
+        <button
+          type="button"
+          class="tab"
+          id="tab-notes"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-notes"
+          data-tab="notes"
+        >
+          <span class="tab__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
+              <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" />
+            </svg>
+          </span>
+          <span class="tab__label">Notes</span>
+        </button>
+      </nav>
     </div>
 
     <script src="script.js"></script>
