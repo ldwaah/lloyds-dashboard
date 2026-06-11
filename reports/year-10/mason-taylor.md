@@ -36,6 +36,21 @@
 - Purple Ruler / progress list: `Mason Taylorq` in student roster fragment (alongside Tyler Freder, Honey Gutpa, etc.)
 - Google Sheet link fragment contains `mason taylor` in URL metadata (cache only - not email content about the student)
 
+## Outlook Web (full extract)
+
+**Extraction date:** 2026-06-11  
+**Method:** cursor-ide-browser MCP; Current Cohort List and Student updates referenced in prior pass  
+**Emails opened:** 0 dedicated Mason-only thread
+
+### Email: RAPID RESPONSE REFERRALS / Current Cohort (HxStore)
+
+- Table row: `Mason Taylor` - **Dagenham Park** - live placement
+- HTML fragment: `Mason Taylor: Dagenham Par`
+
+**Gap:** Current Cohort List email body (Eugene Wed 10/06/2026) not readable in this session
+
+---
+
 ## Gaps
 
 - No email evidence found for: dedicated email thread with Mason Taylor in subject line

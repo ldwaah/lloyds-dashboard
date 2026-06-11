@@ -57,6 +57,33 @@
 
 **Topics:** remote learning access
 
+## Outlook Web (full extract)
+
+**Extraction date:** 2026-06-11  
+**Method:** cursor-ide-browser MCP; Student updates thread referenced in prior pass; dedicated Harrison subject in HxStore  
+**Emails opened:** 0 dedicated Harrison-only thread (cohort email referenced only)
+
+### Email: Student updates (referenced, full Eugene body not re-captured)
+
+| Field | Detail |
+|-------|--------|
+| Subject (HxStore fragment) | `#Harrison Jones (report needs to be submitted to Ba3` |
+| School | Robert Clack (batch table); Barking Abbey (report submission subject) |
+
+**HxStore subject fragment:**
+
+- `Harrison Jones (report needs to be submitted to Ba3`
+
+### Email: Lloyd Dwaah reply (Student updates thread, HxStore fragment)
+
+- `I can contact Barking Abbey and cc Bal regard Kamari Emanuel s induction arrangements an rela to Harrison Jones Ronny Burletson,4 you clarify what reports need to be submitted?`
+
+**Action items:** report to Barking Abbey (per subject line); Lloyd to clarify required reports
+
+**Gap:** Eugene Dwaah Student updates email body (Wed 10/06/2026) not readable in this session (search UI returned empty results)
+
+---
+
 ## Gaps
 
 - No email evidence found for: induction, completed risk assessment for Harrison, ILP, student profile

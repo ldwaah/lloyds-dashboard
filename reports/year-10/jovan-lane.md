@@ -51,6 +51,20 @@
 
 - `Jovan L` in rapid-response style list: `Charlie A, Stacey G, Flynn H, Jovan L, Calum M, Tyrell`
 
+## Outlook Web (full extract)
+
+**Extraction date:** 2026-06-11  
+**Method:** cursor-ide-browser MCP; batch emails referenced  
+**Emails opened:** 0 dedicated Jovan-only thread
+
+### Email: RAPID RESPONSE REFERRALS / Current Cohort (HxStore)
+
+- Table row: `Jovan Lane-Ridge` - **Robert Clack** - live placement
+
+**Gap:** Current Cohort List full body not readable in this session
+
+---
+
 ## Gaps
 
 - No email evidence found for: induction completion, risk assessment, ILP, student profile

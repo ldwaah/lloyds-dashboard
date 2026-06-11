@@ -49,6 +49,33 @@
 
 **Topics:** school liaison, reports, Barking Abbey (indirect)
 
+## Outlook Web (full extract)
+
+**Extraction date:** 2026-06-11  
+**Method:** cursor-ide-browser MCP; HxStore subject lines; Rapid Response batch referenced  
+**Emails opened:** Attendance Concern thread identified in prior pass; full body not re-captured (search UI empty)
+
+### Email: RE: Attendance Concern Ronny and Teddy Burletson
+
+| Field | Detail |
+|-------|--------|
+| Subject (HxStore) | `RE: Attendance Concern Ronny and Teddy Burletson` |
+| School | Jo Richardson Community School (contacts on Bromcom profile) |
+
+**Gap:** reading pane body not extracted in this session
+
+### Email: RAPID RESPONSE REFERRALS (batch, HxStore)
+
+- Table row: `Ronny Burletson` - **Robert Clack** - live placement
+
+### Email: Lloyd Dwaah reply (Student updates, HxStore fragment)
+
+- `rela to Harrison Jones Ronny Burletson,4 you clarify what reports need to be submitted?`
+
+**Action items:** report submission clarification; parent school liaison Robert Clack
+
+---
+
 ## Gaps
 
 - No email evidence found for: dedicated per-student thread beyond batch table and attendance subject

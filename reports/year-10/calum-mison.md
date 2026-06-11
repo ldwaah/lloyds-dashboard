@@ -52,6 +52,43 @@
 - Listed in KS4 rapid-response style batch list: `Charlie A, Stacey G, Flynn H, Jovan L, Calum M, Tyrell` (partial name match in cache)
 - Lesson Access ticket (2026-04-14): `Details: Calum MiC Joshua Lang, Y Tyler Redgrave Dennis Ungureanu` - Calum named alongside others re Purple Ruler / lesson access
 
+## Outlook Web (full extract)
+
+**Extraction date:** 2026-06-11  
+**Method:** cursor-ide-browser MCP; search "Calum Mison"; opened and expanded "Calum Mison Behaviour Update" thread  
+**Emails opened:** 1 (multi-message thread)
+
+### Email: Calum Mison Behaviour Update
+
+| Field | Detail |
+|-------|--------|
+| Subject | `Calum Mison Behaviour Update` / `Re: Calum Mison Behaviour Update` |
+| School | Jo Richardson Community School (JRCS) |
+| Participants | Lloyd Dwaah, KAUR G (KAU), HOWE A (HOW), Admin Support, Eugene Dwaah |
+
+**Lloyd Dwaah, Tue 28/04/2026 07:25, To: KAUR G**
+
+- `formally update you regarding ongoing and escalating concerns in relation to Calum Mison (JRCS), following his placement on a Final Warning Behaviour Contract`
+- `Final Warning Behaviour Contract issued following multi-agency meeting`
+- `Weekly report system introduced` with targets: `Follow instructions first time`; `Participate in all sessions`; `Remain in designated areas and not wander the building`
+- `Calum will attend core subjects only`, timetable `09:00 – 11:00 daily`, `reviewed weekly`
+
+**Lloyd Dwaah, Thu 30/04/2026 14:52**
+
+- `28 April` - `Mum advised that Calum would be absent`; `observed in the community wearing Jo Richardson Community School uniform`
+- `29 April` - `arrived late`; `two warnings for refusing to hand over an aftershave bottle`; `two warnings for playing video games`; `dismissed at 11:00am`
+- `vape in his pocket`; `placed on remote learning as an interim measure`
+
+**HOWE A, Thu 30/04/2026 16:03:** `I'm concerned about him being in remote learning.`
+
+**KAUR G, Thu 30/04/2026 15:27:** `available to meet Tuesday afternoon 2 pm at JRCS or 2.15 at Future`
+
+**Lloyd Dwaah, Fri 01/05/2026 07:26:** `Calum's mum has confirmed she is available to meet on Tuesday at 2.15pm at Future Youth Zone`
+
+**Action items:** meeting Future Youth Zone; weekly reviews; remote learning pending school meeting
+
+---
+
 ## Gaps
 
 - No email evidence found for: induction completion, risk assessment, ILP, student profile

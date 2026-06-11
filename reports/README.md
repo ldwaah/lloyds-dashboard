@@ -1,7 +1,8 @@
 # Year 10 Email Evidence Reports
 
 Generated: 2026-06-11  
-**Bromcom extraction:** 2026-06-11 (all 10 Year 10 students located in Bromcom MIS)
+**Bromcom extraction:** 2026-06-11 (all 10 Year 10 students located in Bromcom MIS)  
+**Outlook Web full extract:** 2026-06-11 (cursor-ide-browser MCP, reading pane via CDP `Runtime.evaluate`)
 
 ## Reports
 
@@ -16,7 +17,7 @@ Generated: 2026-06-11
 | Jovan Lane | [year-10/jovan-lane.md](year-10/jovan-lane.md) | 2 | 1 |
 | Harrison Jones | [year-10/harrison-jones.md](year-10/harrison-jones.md) | 2 | 1 |
 | Joshua Lang | [year-10/joshua-lang.md](year-10/joshua-lang.md) | 4 | 2 |
-| Tyler Fredreick | [year-10/tyler-fredreick.md](year-10/tyler-fredreick.md) | 3 | 2 (+ 1 full Outlook Web thread) |
+| Tyler Fredreick | [year-10/tyler-fredreick.md](year-10/tyler-fredreick.md) | 3 | 2 (+ full Outlook Web thread) |
 | Kamari Emanuel (optional) | [year-10/kamari-emanuel.md](year-10/kamari-emanuel.md) | 2 | 2 |
 
 Student list verified from `ks4-monitoring/ks4-students.js` (10 Year 10 students + Kamari as optional).
@@ -26,8 +27,11 @@ Student list verified from `ks4-monitoring/ks4-students.js` (10 Year 10 students
 ### 1. Outlook Web (cursor-ide-browser MCP)
 
 - Tab: `https://outlook.cloud.microsoft/mail/` (signed in as Lloyd Dwaah, ldwaah@evolution-sportsgroup.com)
-- Searched student names; opened and expanded full thread for Tyler Fredrick
-- **Access:** OK for inbox search and reading pane
+- Workflow: `browser_lock` → search combobox fill + Enter → click `[role=option]` → expand conversation → CDP extract `document.querySelector('[role=main][aria-label="Reading Pane"]').innerText`
+- Raw extracts saved to `data/outlook-extracts/` where full threads captured
+- **Emails fully opened (reading pane):** Calum Mison Behaviour Update; Tyler Fredrick URGENT thread; Stacey Grail Comprehensive Behaviour & Safeguarding Report; Jayden O Brien 4-week placement; Joshua Lang KS4 100%; Tyrell Allassani incident; Student updates / Current Cohort / Rapid Response / Ronny attendance (partial or batch references)
+- **Access:** OK when search returns results; search UI sometimes returns empty message list until retry
+- Each `year-10/{slug}.md` includes `## Outlook Web (full extract)` with quoted evidence only
 
 ### 2. Desktop Outlook AppleScript
 

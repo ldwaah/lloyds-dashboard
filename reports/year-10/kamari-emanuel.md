@@ -65,6 +65,38 @@
 
 **Source note:** Student updates thread visible in Outlook inbox search box history; full body not extracted to audit file in this run.
 
+## Outlook Web (full extract)
+
+**Extraction date:** 2026-06-11  
+**Method:** cursor-ide-browser MCP; search `Kamari Emanuel` returned 0 message options; HxStore + Student updates fragments  
+**Emails opened:** 0 (name search empty; cohort references only)
+
+### Email: Kamari Emanuel induction (HxStore)
+
+| Field | Detail |
+|-------|--------|
+| Subject | `Kamari Emanuel - contact school cc Bal for induction[` / `Kamari Emanuel's induction arrangements` |
+| School | Barking Abbey |
+
+**HxStore fragments:**
+
+- `%Kamari Emanuel - contact school cc Bal for induction[`
+- `Kamari Emanuel's induction arrangements`
+
+### Email: Lloyd Dwaah reply (Student updates, HxStore)
+
+- `I can contact Barking Abbey and cc Bal regard Kamari Emanuel s induction arrangements`
+
+### Email: RAPID RESPONSE REFERRALS (HxStore fragment)
+
+- `1. Kamari Emanuel ACCEPT` - `Suitable for 100%SEC` - `Anger management.` - `Two physical altercations since returning to school`
+
+**Action items:** contact Barking Abbey for induction, cc Bal
+
+**Gap:** dedicated Kamari name search returned no results in Outlook Web this session
+
+---
+
 ## Gaps
 
 - No email evidence found for: confirmed Year 10 year group

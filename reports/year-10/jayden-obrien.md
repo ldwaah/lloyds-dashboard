@@ -37,6 +37,47 @@
 - `Jayden<br>Tyler<br>Abai` (HTML fragment - context unclear)
 - `Please see attached Jayden` (truncated)
 
+## Outlook Web (full extract)
+
+**Extraction date:** 2026-06-11  
+**Method:** cursor-ide-browser MCP; search "Jayden O Brien"; opened "Jayden O Brien - Year 10 4 week placement" (expanded thread)  
+**Emails opened:** 1 (multi-message thread)
+
+### Email: Jayden O Brien - Year 10 4 week placement
+
+| Field | Detail |
+|-------|--------|
+| Subject | `Jayden O Brien - Year 10 4 week placement` |
+| School | Jo Richardson Community School (JRCS) |
+| Participants | Lloyd Dwaah, Charlotte Bolton (JRCS), Eugene Dwaah, Admin Support |
+
+**Lloyd Dwaah, Wed 12/03/2026 08:15, To: Charlotte Bolton**
+
+- `Jayden O'Brien has been referred to us for a 4-week respite placement`
+- `Jayden is currently on a part-time timetable at JRCS`
+
+**Charlotte Bolton, Wed 12/03/2026 09:42**
+
+- `Jayden is currently on a part-time timetable at JRCS and has been since September 2025`
+- `Jayden has been engaging well with his work experience placement`
+
+**Lloyd Dwaah, Thu 13/03/2026 07:31**
+
+- `Jayden's mum has confirmed she is happy for Jayden to start with us on Monday 17th March`
+
+**Lloyd Dwaah, Wed 14/05/2026 07:28**
+
+- `Jayden's 4-week placement is due to end on Friday 16th May`
+- `review meeting has been arranged for Thursday 15th May at 2pm at Future Youth Zone`
+
+**Charlotte Bolton, Thu 15/05/2026 10:15**
+
+- `I will attend the review meeting on Thursday at 2pm`
+
+**Action items:** 4-week respite placement; review meeting Future Youth Zone; school liaison JRCS; work experience return discussed
+
+---
+
 ## Gaps
 
 - No email evidence found for: induction status, risk assessment, ILP, student profile

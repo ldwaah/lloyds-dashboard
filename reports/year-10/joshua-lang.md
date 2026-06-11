@@ -81,6 +81,38 @@
 - `See below regarding Joshua Lang.` (excerpt 1)
 - `Joshua Lang and Daniel Jolaoso` (excerpt 2)
 
+## Outlook Web (full extract)
+
+**Extraction date:** 2026-06-11  
+**Method:** cursor-ide-browser MCP; search "Joshua Lang"; opened "Joshua Lang - KS4 100%" (expanded thread)  
+**Emails opened:** 1 (multi-message thread)
+
+### Email: Joshua Lang - KS4 100%
+
+| Field | Detail |
+|-------|--------|
+| Subject | `Joshua Lang - KS4 100%` |
+| School | All Saints Catholic School |
+| Participants | Bal Gill, Simon Lucraft (All Saints), Lloyd Dwaah, Eugene Dwaah |
+
+**Bal Gill, Tue 03/06/2026 11:15**
+
+- `Rapid Response referral for Joshua Lang`
+- `Joshua is currently not attending school`
+
+**Simon Lucraft, Tue 03/06/2026 14:22**
+
+- `Joshua has been absent from school for a significant period`
+- `we are supportive of a placement at 100% Sports and Education Centre`
+
+**Lloyd Dwaah, Wed 04/06/2026 07:45**
+
+- `Joshua is already with us.`
+
+**Action items:** Rapid Response referral; school liaison All Saints; placement already active at 100%
+
+---
+
 ## Gaps
 
 - No email evidence found for: induction completion, risk assessment, ILP, student profile

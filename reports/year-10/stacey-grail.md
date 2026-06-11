@@ -76,6 +76,44 @@
 
 - Rapid Response Referrals (9 June 2026): Stacey Grail listed as **(LAC)** in live placements table (`general-ks4-terms.txt`)
 
+## Outlook Web (full extract)
+
+**Extraction date:** 2026-06-11  
+**Method:** cursor-ide-browser MCP; search "Stacey Grail"; opened "Comprehensive Behaviour & Safeguarding Report (Stacey Grail)"  
+**Emails opened:** 1 (2-message thread with attachment)
+
+### Email: Comprehensive Behaviour & Safeguarding Report (Stacey Grail)
+
+| Field | Detail |
+|-------|--------|
+| Subject | `Comprehensive Behaviour & Safeguarding Report (Stacey Grail)` |
+| Date | Mon 18/05/2026 13:42 (attachment) / 13:54 (summary) |
+| From | Lloyd Dwaah |
+| To | Eugene Dwaah |
+| Attachments | `Comprehensive Behaviour & Safeguarding Report (Stacey Grail).pdf` (144 KB) |
+
+**Lloyd Dwaah, Mon 18/05/2026 13:54**
+
+- `Please see incidents involving SG, she was issued a final warning by CEO, who also conducted a meeting with SG mum.`
+
+**Key Incidents (quoted from reading pane):**
+
+- `10/02/2026 – Physical Behaviour Incident` - `punched the student in the private area`
+- `26/02/2026 – Serious Absconding Incident` - `absconded from site`; `safeguarding concerns escalated due to police protection concerns disclosed by parent`
+- `02/03/2026 – Assault of Year 8 Pupil (Snapchat Footage)` - `physically assaulting a Year 8 pupil`; `issued with a Final Warning`
+- `27/02/2026 – Suspected Vaping / Prohibited Item` - `vape device was located`
+- `Subsequent Incident – Assault of Year 11 Pupil` - `fixed-term exclusion from JRCS`; `reset/subsequent Final Warning`
+- `27/03/2026 – Physical Altercation with Female Student` - `two-week behaviour report`
+- `March–April 2026 – Positive Behaviour Monitoring Period` - `no further incidents`
+- `08/05/2026 – Missing Overnight / Leaving Site Incident` - `staying overnight at a police-arranged safe location`
+- `11–12/05/2026 – Escalated Safeguarding Concerns` - `urgent safeguarding updates and professionals meetings`; `police involvement`
+
+**Action items:** final warning issued; CEO meeting with mum; professionals meetings; LAC status noted in other emails
+
+**Not opened this session:** `URGENT SAFEGUARDING UPDATE REGARDING STACEY GRAIL (UPDATE)` (Tiara Hutchinson) - visible in search results only
+
+---
+
 ## Gaps
 
 - No email evidence found for: induction, completed risk assessment document, ILP, student profile

@@ -48,6 +48,45 @@
 
 - `Tyrell Allass` appears in attendance / portal list: `b">8 Tyrell Allassa Kayden St Rose Calum Mi`
 
+## Outlook Web (full extract)
+
+**Extraction date:** 2026-06-11  
+**Method:** cursor-ide-browser MCP; search "Tyrell Allassani"; expanded "Urgent Incident involving Tyrell Allassani and Ronny Cooper"  
+**Emails opened:** 1 (2-message thread)  
+**Raw extract:** `data/outlook-extracts/tyrell-allassani-incident-thread.txt`
+
+### Email: Urgent Incident involving Tyrell Allassani and Ronny Cooper
+
+| Field | Detail |
+|-------|--------|
+| Subject | `Urgent Incident involving Tyrell Allassani and Ronny Cooper` |
+| Date | Tue 24/03/2026 |
+| From | Eugene Dwaah; reply KEANE, L (KEA) Lisa Keane (JRCS) |
+| To | HOWE, A (HOW); KAUR, G (KAU); KEANE, L (KEA) |
+| Cc | Lloyd Dwaah; Admin Support |
+| School | Jo Richardson Community School |
+
+**Eugene Dwaah, Tue 24/03/2026 15:34**
+
+- `serious safeguarding and health & safety incident` at `local bus stop near the provision, involving Tyrell and Ronny Cooper plus another student from Robert Clack`
+- `dispute between students, reportedly involving a vape`
+- `Exchange of physical punches between all students involved`
+- `situation escalating into the road with oncoming traffic`
+- `A significant and immediate risk to life`
+- `CCTV secured` via `Facilities Management team at Future Youth Zone`
+- `Tyrell and Ronny will not be permitted to attend provision until a full risk assessment and safety plan is completed`
+- `potential for exclusion`
+
+**KEANE L, Tue 24/03/2026 17:40**
+
+- `they will need suspending, let's discuss`
+
+**Action items:** risk assessment and safety plan before return; urgent meeting with JRCS; CCTV review
+
+**Note:** Tyrell not listed in Eugene Current Cohort KS4 list (10 Jun 2026) per prior audit
+
+---
+
 ## Gaps
 
 - No email evidence found for: dedicated thread with subject "Tyrell Allassani" (only partial "Tyrell" matches in audit)

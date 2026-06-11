@@ -15,28 +15,56 @@
 
 ## Email evidence
 
-### Thread 1: URGENT: Tyler Fredrick Punctuality and Behaviour Concern (Outlook Web - full thread)
+## Outlook Web (full extract)
 
-| # | Date | From | Snippet (reading pane) |
-|---|------|------|------------------------|
-| 1 | Mon 08/06/2026 13:26 | Admin Support | `Dear Sean, I wanted to provide you with an update regarding Tyler's attendance this week. Today, Tyler arrived at 12:35, despite being expected to attend from 9:00am each day.` |
-| 2 | Tue 09/06/2026 13:49 | Mr S Webber (swebber@robertclack.co.uk) | `Good Afternoon All, I am happy to come in for a meeting if that would be beneficial at all or I can call later today? Thank you for the support you are offering Tyler.` |
-| 3 | Tue 09/06/2026 13:51 | Admin Support | `Hi Sean, Thank you for all your support. A meeting has been arranged now for Thursday at 9.30am with mum and Tyler at Futures if you can make that. If you are unavailable we c` (truncated) |
-| 4 | Tue 09/06/2026 14:00 | Eugene Dwaah | `Dear Shirley and Sean, Thank you for your emails. To clarify, Tyler has not been excluded, suspended, or removed from the provision. Due to ongoing concerns regarding persisten` (truncated) |
-| 5 | Tue 09/06/2026 14:31 | Mr S Webber | `Hi Eugene, I am happy of course to attend this review when we have a date and time so I can support yourselves, Tyler and family to ascertain the best next steps regarding Tyler` |
-| 6 | Thu 11/06/2026 10:29 | Mr J Course / John Course (JCourse@robertclack.co.uk) - Deputy Headteacher, DSL | `Hi Eugene, I hope you are well, a report for Tyler was shared at Rapid Response yesterday, it seemed to indicate that you were having difficulty contacting us. As per the email belo` (truncated) |
+**Extraction date:** 2026-06-11  
+**Method:** cursor-ide-browser MCP; search "Tyler Fredrick Punctuality"; expanded full thread  
+**Emails opened:** 1 (6-message thread)
 
-**Participants:** Admin Support, Eugene Dwaah, Mr S Webber (Sean Webber), Mr J Course (John Course, DSL), Lloyd Dwaah, Sacha Akinyemi (Cc)
+### Email: URGENT: Tyler Fredrick Punctuality and Behaviour Concern
 
-**Additional detail from ks4-students.js evidenceWording (sourced from same Outlook Web thread, cross-checked in reading pane):**
+| Field | Detail |
+|-------|--------|
+| Subject | `URGENT: Tyler Fredrick Punctuality and Behaviour Concern` |
+| School | Robert Clack School |
+| Participants | Admin Support, Eugene Dwaah, Mr S Webber, Mr J Course (DSL), Lloyd Dwaah, Sacha Akinyemi |
 
-- Punctuality: often 2-3 hours late; defensive when staff discuss lateness
-- Conduct: rudeness to staff, inappropriate language, difficulty following instructions
-- CEO invited mum to meeting; temporarily on remote learning package pending urgent review; safeguarding concerns re lateness, attendance, activities outside provision
+**Message: Admin Support, Mon 08/06/2026 13:26, To: Mr S Webber**
 
-**Topics:** behaviour, punctuality, safeguarding, school liaison (Robert Clack), meetings (Futures Thu 9:30am), remote learning, Rapid Response report
+- `Today, Tyler arrived at 12:35, despite being expected to attend from 9:00am each day.`
+- `Tyler frequently arriving between two and three hours late.`
+- `defensive when staff attempt to discuss his lateness`
+- `instances of rudeness towards staff, inappropriate language, and difficulties following staff instructions`
+- `the CEO has invited Mum to attend a meeting with us tomorrow`
 
-**Source:** Outlook Web reading pane, conversation expanded 2026-06-11
+**Message: Mr S Webber, Tue 09/06/2026 13:49**
+
+- `I am happy to come in for a meeting if that would be beneficial at all or I can call later today?`
+
+**Message: Admin Support, Tue 09/06/2026 13:51**
+
+- `A meeting has been arranged now for Thursday at 9.30am with mum and Tyler at Futures`
+
+**Message: Eugene Dwaah, Tue 09/06/2026 14:00**
+
+- `Tyler has not been excluded, suspended, or removed from the provision.`
+- `persistent lateness, attendance patterns, and information that has raised safeguarding concerns regarding Tyler's activities outside of provision`
+- `Tyler has been temporarily placed on a remote learning package, supported by his parent`
+- `urgent review meeting is convened between 100% Sports and Education Centre, the school, and parent/carer`
+- `safeguarding and risk-management measure`
+
+**Message: Mr S Webber, Tue 09/06/2026 14:31**
+
+- `I am happy of course to attend this review when we have a date and time`
+
+**Message: Mr J Course, Thu 11/06/2026 10:29, Deputy Headteacher - DSL**
+
+- `a report for Tyler was shared at Rapid Response yesterday`
+- `please could you let us know the next steps? Could you also clarify what the plan is in respect to Tyler please?`
+
+**Attachments mentioned:** `<image.png>` (in Mr S Webber message)
+
+**Action items:** meeting Thu 9.30am Futures; risk assessment review; Rapid Response report shared; remote learning pending review meeting
 
 ---
 
