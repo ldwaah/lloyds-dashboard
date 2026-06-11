@@ -362,6 +362,20 @@ body {
   margin-bottom: 1rem;
 }
 
+.mon-derived-status {
+  font-size: 0.875rem;
+  margin-bottom: 0.875rem;
+  padding: 0.625rem 0.75rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.mon-derived-status__hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
 .mon-empty {
   font-size: 0.8125rem;
   font-weight: 500;
