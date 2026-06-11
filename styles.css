@@ -28,6 +28,8 @@
   --accent-teal-soft: rgba(13, 107, 110, 0.14);
   --accent-violet: #4a3d8f;
   --accent-violet-soft: rgba(74, 61, 143, 0.14);
+  --accent-orange: #c2410c;
+  --accent-orange-soft: rgba(194, 65, 12, 0.14);
   --shadow-sm: 0 1px 2px rgba(26, 26, 26, 0.04);
   --shadow: 0 1px 2px rgba(26, 26, 26, 0.04), 0 8px 24px rgba(26, 26, 26, 0.05);
   --shadow-hover: 0 2px 4px rgba(26, 26, 26, 0.05), 0 12px 32px rgba(26, 26, 26, 0.07);
@@ -351,6 +353,70 @@ body {
 .tab--link {
   text-decoration: none;
   color: var(--text-muted);
+}
+
+/* Home daily actions card */
+
+.card--daily-actions {
+  min-height: auto;
+}
+
+.card--daily-actions h2 {
+  margin-bottom: 0.75rem;
+}
+
+.home-daily-actions-list {
+  margin-top: 0.25rem;
+}
+
+.daily-actions-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.daily-action-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.daily-action-item__label {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.875rem 1rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.daily-action-item__label:active {
+  opacity: 0.7;
+}
+
+.daily-action-item__checkbox {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.daily-action-item__text {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.daily-action-item--done .daily-action-item__text {
+  color: var(--text-muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--border);
 }
 
 /* Home reminders card */
@@ -1979,6 +2045,19 @@ body {
 .other-menu__item:nth-child(3) .other-menu__icon {
   background: var(--accent-violet-soft);
   color: var(--accent-violet);
+}
+
+.other-menu__item:nth-child(4) {
+  border-left: 4px solid var(--accent-orange);
+}
+
+.other-menu__item:nth-child(4) .other-menu__icon {
+  background: var(--accent-orange-soft);
+  color: var(--accent-orange);
+}
+
+.other-menu__item--external .other-menu__chevron {
+  opacity: 0.7;
 }
 
 .header,
