@@ -1,15 +1,15 @@
-var CACHE_NAME = "ks4-monitoring-v2";
+var CACHE_NAME = "ks4-monitoring-v3";
 
 var ASSETS = [
   "./",
   "./index.html",
   "./styles.css",
+  "./ks4-students.js",
   "./monitoring.js",
   "./app.js",
   "./manifest.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
-  "../ks4-students.js",
 ];
 
 function assetUrl(path) {

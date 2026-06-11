@@ -638,7 +638,18 @@
     window.dispatchEvent(new CustomEvent("lloyds-ks4-monitoring-changed"));
   }
 
+  function ensureKs4Students() {
+    if (window.LloydsKS4 && window.LloydsKS4.migrateStudents) {
+      return window.LloydsKS4.migrateStudents();
+    }
+    if (window.LloydsKS4 && window.LloydsKS4.getStudents) {
+      return window.LloydsKS4.getStudents();
+    }
+    return [];
+  }
+
   function migrateMonitoring() {
+    ensureKs4Students();
     var version = parseInt(localStorage.getItem(VERSION_KEY) || "0", 10);
     var store = loadStore();
     var changed = false;
@@ -665,6 +676,7 @@
 
   window.LloydsKS4MonitoringSeed = {
     migrate: migrateMonitoring,
+    ensureKs4Students: ensureKs4Students,
     loadStore: loadStore,
     SEED_VERSION: SEED_VERSION,
     SEED_RECORDS: SEED_RECORDS,

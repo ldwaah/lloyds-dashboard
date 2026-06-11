@@ -31,8 +31,13 @@
   }
 
   function getStudents() {
-    if (window.LloydsKS4 && window.LloydsKS4.getStudents) {
-      return window.LloydsKS4.getStudents();
+    if (window.LloydsKS4) {
+      if (window.LloydsKS4.migrateStudents) {
+        return window.LloydsKS4.migrateStudents();
+      }
+      if (window.LloydsKS4.getStudents) {
+        return window.LloydsKS4.getStudents();
+      }
     }
     return [];
   }
@@ -205,14 +210,16 @@
       "<p>Lifecycle monitoring from induction through to provision exit. Store document links only — files live elsewhere.</p>" +
       "<p><strong>" +
       students.length +
-      "</strong> students synced from Lloyd's Dashboard KS4 list.</p>" +
+      "</strong> KS4 students tracked" +
+      (students.length ? " (shared with Lloyd's Dashboard on this device)." : ".") +
+      "</p>" +
       "</div>" +
       groupHtml("Year 10", y10) +
       groupHtml("Year 11", y11) +
       (other.length ? groupHtml("Other KS4", other) : "") +
       (students.length
         ? ""
-        : '<p class="mon-empty">No students found. Open Lloyd\'s Dashboard first to seed the KS4 list.</p>');
+        : '<p class="mon-empty">Student list did not load. Pull down to refresh or close and reopen the app.</p>');
 
     root.querySelectorAll(".mon-student-card").forEach(function (btn) {
       btn.addEventListener("click", function () {

@@ -1,3 +1,4 @@
+/* Standalone copy of ../ks4-students.js — keep in sync when seed changes. */
 (function () {
   var STORAGE_KEY = "lloyds-ks4-students";
   var VERSION_KEY = "lloyds-ks4-seed-version";
