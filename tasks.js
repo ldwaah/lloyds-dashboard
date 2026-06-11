@@ -1,5 +1,7 @@
 (function () {
   var STORAGE_KEY = "lloyds-tasks";
+  var WORKFLOWS_KEY = "lloyds-workflows";
+  var YEAR11_WORKFLOW_ID = "wf-year11-profiles";
 
   var STATUSES = ["Not Started", "In Progress", "Done"];
   var PRIORITIES = ["Low", "Medium", "High"];
@@ -10,10 +12,14 @@
     "SEND/EHCP",
     "Curriculum/Qualification",
     "Student Reports",
+    "Student Profiles",
+    "School Communication",
     "Staff Follow-Up",
     "Personal",
     "Other",
   ];
+
+  var currentFilter = "all";
 
   function loadTasks() {
     try {
@@ -28,6 +34,74 @@
 
   function saveTasks(tasks) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+  }
+
+  function loadWorkflows() {
+    try {
+      var raw = localStorage.getItem(WORKFLOWS_KEY);
+      if (!raw) return [];
+      var parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveWorkflows(workflows) {
+    localStorage.setItem(WORKFLOWS_KEY, JSON.stringify(workflows));
+  }
+
+  function generateId() {
+    return Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+  }
+
+  function seedYear11Workflow() {
+    var workflows = loadWorkflows();
+    var tasks = loadTasks();
+    var changed = false;
+
+    if (!workflows.some(function (w) { return w.id === YEAR11_WORKFLOW_ID; })) {
+      workflows.push({
+        id: YEAR11_WORKFLOW_ID,
+        name: "Year 11 Student Profiles",
+      });
+      changed = true;
+    }
+
+    var seedTasks = [
+      {
+        id: "task-year11-create-profiles",
+        title: "Create Year 11 student profiles",
+        category: "Student Profiles",
+        priority: "High",
+        dueDate: "2026-06-15",
+        status: "Not Started",
+        workflowId: YEAR11_WORKFLOW_ID,
+      },
+      {
+        id: "task-year11-send-profiles",
+        title: "Send Year 11 student profiles to schools",
+        category: "School Communication",
+        priority: "High",
+        dueDate: "2026-06-19",
+        status: "Not Started",
+        workflowId: YEAR11_WORKFLOW_ID,
+      },
+    ];
+
+    seedTasks.forEach(function (seed) {
+      if (!tasks.some(function (t) { return t.id === seed.id; })) {
+        tasks.push(seed);
+        changed = true;
+      }
+    });
+
+    if (changed) {
+      saveWorkflows(workflows);
+      saveTasks(tasks);
+    }
+
+    return { workflows: workflows, tasks: tasks };
   }
 
   function pad(n) {
@@ -106,14 +180,15 @@
     return "Work";
   }
 
-  function createTaskFromLine(line) {
+  function createTaskFromLine(line, workflowId) {
     return {
-      id: Date.now().toString(36) + Math.random().toString(36).slice(2, 7),
+      id: generateId(),
       title: line,
       status: "Not Started",
       priority: "Medium",
       category: detectCategory(line),
       dueDate: parseDueDate(line),
+      workflowId: workflowId || "",
     };
   }
 
@@ -134,6 +209,52 @@
     return div.innerHTML;
   }
 
+  function getWorkflowById(workflows, id) {
+    if (!id) return null;
+    for (var i = 0; i < workflows.length; i++) {
+      if (workflows[i].id === id) return workflows[i];
+    }
+    return null;
+  }
+
+  function getWorkflowName(workflows, workflowId) {
+    var wf = getWorkflowById(workflows, workflowId);
+    return wf ? wf.name : "";
+  }
+
+  function getTasksForWorkflow(tasks, workflowId) {
+    return tasks.filter(function (t) {
+      return t.workflowId === workflowId;
+    });
+  }
+
+  function getWorkflowStatus(wfTasks) {
+    if (!wfTasks.length) return "Not Started";
+    var allDone = wfTasks.every(function (t) { return t.status === "Done"; });
+    if (allDone) return "Complete";
+    var allNotStarted = wfTasks.every(function (t) {
+      return t.status === "Not Started";
+    });
+    if (allNotStarted) return "Not Started";
+    return "In Progress";
+  }
+
+  function getWorkflowProgress(wfTasks) {
+    var done = wfTasks.filter(function (t) { return t.status === "Done"; }).length;
+    return { done: done, total: wfTasks.length };
+  }
+
+  function getWorkflowNextDeadline(wfTasks) {
+    var incomplete = wfTasks.filter(function (t) {
+      return t.status !== "Done" && t.dueDate;
+    });
+    if (!incomplete.length) return "";
+    incomplete.sort(function (a, b) {
+      return a.dueDate < b.dueDate ? -1 : a.dueDate > b.dueDate ? 1 : 0;
+    });
+    return incomplete[0].dueDate;
+  }
+
   function categoryClass(category) {
     return (
       "task-category task-category--" +
@@ -148,10 +269,15 @@
     );
   }
 
-  function priorityClass(priority) {
+  function workflowStatusClass(status) {
     return (
-      "task-priority task-priority--" + priority.toLowerCase()
+      "workflow-status workflow-status--" +
+      status.toLowerCase().replace(/\s+/g, "-")
     );
+  }
+
+  function priorityClass(priority) {
+    return "task-priority task-priority--" + priority.toLowerCase();
   }
 
   function formatDate(dateStr) {
@@ -171,7 +297,7 @@
 
   function sortTasks(tasks) {
     var statusOrder = { "Not Started": 0, "In Progress": 1, "Done": 2 };
-    var priorityOrder = { High: 0, Medium: 1, Low: 2 };
+    var priorityOrder = { High: 0, "Medium-High": 1, Medium: 2, Low: 3 };
 
     return tasks.slice().sort(function (a, b) {
       var sa = statusOrder[a.status] !== undefined ? statusOrder[a.status] : 9;
@@ -192,6 +318,14 @@
     });
   }
 
+  function filterTasks(tasks) {
+    if (currentFilter === "all") return tasks;
+    if (currentFilter === "none") {
+      return tasks.filter(function (t) { return !t.workflowId; });
+    }
+    return tasks.filter(function (t) { return t.workflowId === currentFilter; });
+  }
+
   function optionsHtml(values, selected) {
     return values
       .map(function (v) {
@@ -208,7 +342,30 @@
       .join("");
   }
 
-  function renderTaskView(task) {
+  function workflowOptionsHtml(workflows, selected, includeEmpty) {
+    var html = "";
+    if (includeEmpty) {
+      html +=
+        '<option value=""' +
+        (!selected ? " selected" : "") +
+        ">None</option>";
+    }
+    workflows.forEach(function (wf) {
+      html +=
+        '<option value="' +
+        escapeHtml(wf.id) +
+        '"' +
+        (wf.id === selected ? " selected" : "") +
+        ">" +
+        escapeHtml(wf.name) +
+        "</option>";
+    });
+    return html;
+  }
+
+  function renderTaskView(task, workflows) {
+    var workflowName = getWorkflowName(workflows, task.workflowId);
+
     return (
       '<article class="task-item" data-id="' +
       escapeHtml(task.id) +
@@ -236,6 +393,9 @@
       '">' +
       escapeHtml(task.category) +
       "</span>" +
+      (workflowName
+        ? '<span class="task-workflow">' + escapeHtml(workflowName) + "</span>"
+        : "") +
       (task.dueDate
         ? '<span class="task-item__due">Due ' +
           formatDate(task.dueDate) +
@@ -254,7 +414,7 @@
       "</div>" +
       '<form class="task-item__edit-form" hidden>' +
       '<div class="form-field">' +
-      '<label>Title</label>' +
+      "<label>Title</label>" +
       '<input type="text" name="title" value="' +
       escapeHtml(task.title) +
       '" required />' +
@@ -285,6 +445,12 @@
       optionsHtml(CATEGORIES, task.category) +
       "</select>" +
       "</div>" +
+      '<div class="form-field">' +
+      "<label>Parent Workflow</label>" +
+      '<select name="workflowId">' +
+      workflowOptionsHtml(workflows, task.workflowId || "", true) +
+      "</select>" +
+      "</div>" +
       '<div class="task-item__edit-actions">' +
       '<button type="submit" class="btn btn--primary btn--sm">Save</button>' +
       '<button type="button" class="btn btn--ghost btn--sm task-item__cancel">Cancel</button>' +
@@ -294,9 +460,51 @@
     );
   }
 
-  function renderTaskList(tasks) {
+  function renderFilterBar(workflows, tasks) {
+    var filtered = filterTasks(tasks);
+    var options =
+      '<option value="all"' +
+      (currentFilter === "all" ? " selected" : "") +
+      ">All tasks</option>" +
+      '<option value="none"' +
+      (currentFilter === "none" ? " selected" : "") +
+      ">No workflow</option>";
+
+    workflows.forEach(function (wf) {
+      options +=
+        '<option value="' +
+        escapeHtml(wf.id) +
+        '"' +
+        (currentFilter === wf.id ? " selected" : "") +
+        ">" +
+        escapeHtml(wf.name) +
+        "</option>";
+    });
+
+    return (
+      '<div class="task-list__toolbar">' +
+      '<div class="task-list__header">' +
+      "<h2 class=\"task-list__title\">" +
+      filtered.length +
+      " task" +
+      (filtered.length === 1 ? "" : "s") +
+      "</h2>" +
+      "</div>" +
+      '<div class="form-field form-field--inline">' +
+      '<label for="task-workflow-filter">Filter</label>' +
+      '<select id="task-workflow-filter" class="task-filter">' +
+      options +
+      "</select>" +
+      "</div>" +
+      "</div>"
+    );
+  }
+
+  function renderTaskList(tasks, workflows) {
     var container = document.getElementById("task-list");
     if (!container) return;
+
+    var filtered = filterTasks(tasks);
 
     if (!tasks.length) {
       container.innerHTML =
@@ -304,21 +512,27 @@
       return;
     }
 
-    var sorted = sortTasks(tasks);
+    var sorted = sortTasks(filtered);
     container.innerHTML =
-      '<div class="task-list__header">' +
-      "<h2 class=\"task-list__title\">" +
-      sorted.length +
-      " task" +
-      (sorted.length === 1 ? "" : "s") +
-      "</h2>" +
-      "</div>" +
-      sorted.map(renderTaskView).join("");
+      renderFilterBar(workflows, tasks) +
+      (sorted.length
+        ? sorted.map(function (t) { return renderTaskView(t, workflows); }).join("")
+        : '<p class="empty-state empty-state--compact">No tasks match this filter.</p>');
 
-    bindTaskEvents(container, tasks);
+    bindFilterEvents();
+    bindTaskEvents(container, tasks, workflows);
   }
 
-  function bindTaskEvents(container, tasks) {
+  function bindFilterEvents() {
+    var filterEl = document.getElementById("task-workflow-filter");
+    if (!filterEl) return;
+    filterEl.addEventListener("change", function () {
+      currentFilter = filterEl.value;
+      refresh();
+    });
+  }
+
+  function bindTaskEvents(container, tasks, workflows) {
     container.querySelectorAll(".task-item").forEach(function (el) {
       var id = el.getAttribute("data-id");
       var view = el.querySelector(".task-item__view");
@@ -352,11 +566,13 @@
         var priority = form.querySelector('[name="priority"]').value;
         var category = form.querySelector('[name="category"]').value;
         var dueDate = form.querySelector('[name="dueDate"]').value;
+        var workflowId = form.querySelector('[name="workflowId"]').value;
 
         if (!title) return;
         if (STATUSES.indexOf(status) === -1) return;
         if (PRIORITIES.indexOf(priority) === -1) return;
         if (CATEGORIES.indexOf(category) === -1) return;
+        if (workflowId && !getWorkflowById(workflows, workflowId)) return;
 
         var updated = tasks.map(function (t) {
           if (t.id !== id) return t;
@@ -367,6 +583,7 @@
             priority: priority,
             category: category,
             dueDate: dueDate || "",
+            workflowId: workflowId || "",
           };
         });
 
@@ -376,37 +593,101 @@
     });
   }
 
+  function renderHomeWorkflows(tasks, workflows) {
+    var container = document.getElementById("home-workflows-list");
+    if (!container) return;
+
+    if (!workflows.length) {
+      container.innerHTML =
+        '<p class="empty-state empty-state--compact">No workflows yet.</p>';
+      return;
+    }
+
+    var html = '<ul class="workflow-home-list">';
+    workflows.forEach(function (wf) {
+      var wfTasks = getTasksForWorkflow(tasks, wf.id);
+      var progress = getWorkflowProgress(wfTasks);
+      var status = getWorkflowStatus(wfTasks);
+      var nextDeadline = getWorkflowNextDeadline(wfTasks);
+
+      html +=
+        '<li class="workflow-home-item">' +
+        '<p class="workflow-home-item__name">' +
+        escapeHtml(wf.name) +
+        "</p>" +
+        '<div class="workflow-home-item__meta">' +
+        '<span class="workflow-home-item__progress">' +
+        progress.done +
+        "/" +
+        progress.total +
+        " done</span>" +
+        '<span class="' +
+        workflowStatusClass(status) +
+        '">' +
+        escapeHtml(status) +
+        "</span>" +
+        "</div>" +
+        (nextDeadline
+          ? '<p class="workflow-home-item__deadline">Next: ' +
+            formatDate(nextDeadline) +
+            "</p>"
+          : status === "Complete"
+            ? '<p class="workflow-home-item__deadline">All tasks complete</p>'
+            : "") +
+        "</li>";
+    });
+    html += "</ul>";
+
+    container.innerHTML = html;
+  }
+
+  function updateWorkflowDropdowns(workflows) {
+    var importSelect = document.getElementById("task-import-workflow");
+    if (importSelect) {
+      var current = importSelect.value;
+      importSelect.innerHTML = workflowOptionsHtml(workflows, current, true);
+    }
+  }
+
   function refresh(tasks) {
+    var workflows = loadWorkflows();
     tasks = tasks || loadTasks();
-    renderTaskList(tasks);
+    updateWorkflowDropdowns(workflows);
+    renderTaskList(tasks, workflows);
+    renderHomeWorkflows(tasks, workflows);
   }
 
   function initImport() {
     var textarea = document.getElementById("task-import-text");
     var convertBtn = document.getElementById("task-convert-btn");
+    var workflowSelect = document.getElementById("task-import-workflow");
     if (!textarea || !convertBtn) return;
 
     convertBtn.addEventListener("click", function () {
       var lines = parseImportLines(textarea.value);
       if (!lines.length) return;
 
+      var workflowId = workflowSelect ? workflowSelect.value : "";
       var tasks = loadTasks();
       lines.forEach(function (line) {
-        tasks.push(createTaskFromLine(line));
+        tasks.push(createTaskFromLine(line, workflowId));
       });
 
       saveTasks(tasks);
       refresh(tasks);
       textarea.value = "";
+      if (workflowSelect) workflowSelect.value = "";
     });
   }
 
   window.LloydsTasks = {
     refresh: refresh,
     load: loadTasks,
+    loadWorkflows: loadWorkflows,
   };
 
   document.addEventListener("DOMContentLoaded", function () {
+    seedYear11Workflow();
     initImport();
     refresh();
   });
