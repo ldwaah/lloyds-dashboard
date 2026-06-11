@@ -1,8 +1,9 @@
-var CACHE_NAME = "ks4-monitoring-v10";
+var CACHE_NAME = "ks4-monitoring-v11";
 
 var ASSETS = [
   "./",
   "./index.html",
+  "./demo-student-a.html",
   "./styles.css",
   "./ks4-students.js",
   "./monitoring.js",

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#f6f5f2" />
+    <title>DEMO - Student A (Template Profile) | KS4 Monitoring</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .demo-banner {
+        margin: 0 0 1rem;
+        padding: 0.75rem 1rem;
+        border-radius: var(--radius-sm);
+        background: linear-gradient(135deg, #1e3a5f 0%, #2d4f7c 100%);
+        color: #fff;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-align: center;
+        box-shadow: var(--shadow);
+      }
+
+      .demo-banner span {
+        display: block;
+        margin-top: 0.25rem;
+        font-size: 0.6875rem;
+        font-weight: 500;
+        opacity: 0.85;
+        letter-spacing: 0.02em;
+        text-transform: none;
+      }
+
+      .mon-header__links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 1rem;
+        margin-top: 0.875rem;
+      }
+
+      .mon-header__links a {
+        font-size: 0.8125rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color var(--duration-fast) var(--ease-out);
+      }
+
+      .mon-header__links a:hover,
+      .mon-header__links a:focus-visible {
+        color: var(--accent);
+      }
+
+      .demo-journey {
+        margin-bottom: 1.25rem;
+        padding: 1rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        background: var(--surface);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .demo-journey__title {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 0.875rem;
+      }
+
+      .demo-journey__track {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.25rem;
+        position: relative;
+      }
+
+      .demo-journey__track::before {
+        content: "";
+        position: absolute;
+        top: 0.5rem;
+        left: 0.75rem;
+        right: 0.75rem;
+        height: 2px;
+        background: var(--border-strong);
+        z-index: 0;
+      }
+
+      .demo-journey__step {
+        flex: 1;
+        min-width: 0;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .demo-journey__dot {
+        width: 1rem;
+        height: 1rem;
+        margin: 0 auto 0.35rem;
+        border-radius: 50%;
+        border: 2px solid var(--accent);
+        background: var(--surface);
+      }
+
+      .demo-journey__step--done .demo-journey__dot {
+        background: var(--accent);
+      }
+
+      .demo-journey__step--current .demo-journey__dot {
+        background: var(--accent-soft);
+        box-shadow: 0 0 0 3px var(--accent-soft);
+      }
+
+      .demo-journey__label {
+        font-size: 0.5625rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        line-height: 1.3;
+      }
+
+      .demo-journey__step--done .demo-journey__label,
+      .demo-journey__step--current .demo-journey__label {
+        color: var(--accent);
+      }
+
+      .demo-field {
+        margin-bottom: 0.875rem;
+      }
+
+      .demo-field__label {
+        display: block;
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 0.375rem;
+      }
+
+      .demo-field__value {
+        font-size: 0.9375rem;
+        line-height: 1.5;
+        color: var(--text);
+      }
+
+      .demo-field__value--muted {
+        color: var(--text-muted);
+        font-size: 0.875rem;
+      }
+
+      .demo-field__value a {
+        color: var(--accent);
+        word-break: break-all;
+      }
+
+      .demo-meta-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+      }
+
+      @media (max-width: 360px) {
+        .demo-meta-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .demo-section-panel[hidden] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <header class="mon-header">
+        <div class="mon-header__top">
+          <div class="mon-header__text">
+            <h1 class="mon-header__title">Student A</h1>
+            <p class="mon-header__subtitle">Year 10 · Maple Grove Community School</p>
+            <p class="mon-header__profile">KS4 placement · Template profile (fictional)</p>
+          </div>
+        </div>
+        <div class="mon-header__links">
+          <a href="index.html">← KS4 Monitoring</a>
+          <a href="../index.html">Lloyd's Dashboard</a>
+        </div>
+      </header>
+
+      <main class="content">
+        <div class="demo-banner" role="status">
+          DEMO - Student A (Template Profile)
+          <span>Example data only. Not a real student record.</span>
+        </div>
+
+        <div class="demo-journey" aria-label="Student journey timeline">
+          <h2 class="demo-journey__title">Lifecycle journey</h2>
+          <div class="demo-journey__track">
+            <div class="demo-journey__step demo-journey__step--done">
+              <div class="demo-journey__dot" aria-hidden="true"></div>
+              <span class="demo-journey__label">Induction</span>
+            </div>
+            <div class="demo-journey__step demo-journey__step--done">
+              <div class="demo-journey__dot" aria-hidden="true"></div>
+              <span class="demo-journey__label">Documents</span>
+            </div>
+            <div class="demo-journey__step demo-journey__step--done">
+              <div class="demo-journey__dot" aria-hidden="true"></div>
+              <span class="demo-journey__label">Reviews</span>
+            </div>
+            <div class="demo-journey__step demo-journey__step--current">
+              <div class="demo-journey__dot" aria-hidden="true"></div>
+              <span class="demo-journey__label">On track</span>
+            </div>
+            <div class="demo-journey__step">
+              <div class="demo-journey__dot" aria-hidden="true"></div>
+              <span class="demo-journey__label">Finish</span>
+            </div>
+          </div>
+        </div>
+
+        <nav class="mon-section-nav" aria-label="Profile sections" id="demo-nav"></nav>
+
+        <section class="mon-section-panel demo-section-panel" id="panel-metadata" data-section="metadata">
+          <h2 class="mon-section-panel__title">Metadata</h2>
+          <div class="demo-meta-grid">
+            <div class="demo-field">
+              <span class="demo-field__label">Year group</span>
+              <span class="demo-field__value">Year 10</span>
+            </div>
+            <div class="demo-field">
+              <span class="demo-field__label">Key stage</span>
+              <span class="demo-field__value">KS4</span>
+            </div>
+            <div class="demo-field">
+              <span class="demo-field__label">Placement type</span>
+              <span class="demo-field__value">KS4</span>
+            </div>
+            <div class="demo-field">
+              <span class="demo-field__label">Home school</span>
+              <span class="demo-field__value">Maple Grove Community School</span>
+            </div>
+            <div class="demo-field">
+              <span class="demo-field__label">Lead mentor</span>
+              <span class="demo-field__value">LD</span>
+            </div>
+            <div class="demo-field">
+              <span class="demo-field__label">Funding type</span>
+              <span class="demo-field__value">School funded</span>
+            </div>
+          </div>
+          <div class="demo-field">
+            <span class="demo-field__label">Interventions</span>
+            <span class="demo-field__value">Reduced timetable, weekly mentor check-in</span>
+          </div>
+          <div class="demo-field">
+            <span class="demo-field__label">Intended destination</span>
+            <span class="demo-field__value">Return to mainstream full-time from September 2026</span>
+          </div>
+          <p class="mon-notice" style="margin-top: 0.5rem; margin-bottom: 0">
+            Metadata shows how school, placement, and context fields sit alongside lifecycle tracking. All values here are fictional template examples.
+          </p>
+        </section>
+
+        <section class="mon-section-panel demo-section-panel" id="panel-induction" data-section="induction" hidden>
+          <h2 class="mon-section-panel__title">Induction</h2>
+          <p class="mon-derived-status">
+            Status: <strong>Complete</strong>
+            <span class="mon-derived-status__hint">(from start date)</span>
+          </p>
+          <div class="demo-field">
+            <span class="demo-field__label">Start date with centre</span>
+            <span class="demo-field__value">8 September 2025</span>
+          </div>
+          <div class="demo-field">
+            <span class="demo-field__label">Home Centre Agreement</span>
+            <span class="demo-field__value">
+              <a href="https://drive.google.com/file/d/1DEMO-student-a-hca-placeholder/view" target="_blank" rel="noopener noreferrer">View agreement (Google Drive placeholder)</a>
+            </span>
+          </div>
+          <div class="demo-field">
+            <span class="demo-field__label">Notes</span>
+            <p class="demo-field__value demo-field__value--muted">
+              Induction completed within first week. Parent/carer attended welcome meeting. Student understands centre expectations and agreed to reduced timetable schedule. All paperwork signed and filed.
+            </p>
+          </div>
+        </section>
+
+        <section class="mon-section-panel demo-section-panel" id="panel-ilp" data-section="ilp" hidden>
+          <h2 class="mon-section-panel__title">Individual Learning Plans (ILP)</h2>
+          <p style="margin-bottom: 0.875rem">
+            <span class="mon-badge mon-badge--ok">Complete</span>
+          </p>
+          <div class="demo-field">
+            <span class="demo-field__label">Document link</span>
+            <span class="demo-field__value">
+              <a href="https://drive.google.com/file/d/1DEMO-student-a-ilp-placeholder/view" target="_blank" rel="noopener noreferrer">View ILP (Google Drive placeholder)</a>
+            </span>
+          </div>
+          <div class="demo-field">
+            <span class="demo-field__label">Review date</span>
+            <span class="demo-field__value">15 January 2026</span>
+          </div>
+          <div class="demo-field">
+            <span class="demo-field__label">Notes</span>
+            <p class="demo-field__value demo-field__value--muted">
+              Targets set for English, maths, and employability. Next formal ILP review scheduled for spring term. Student engaged well in target-setting meeting.
+            </p>
+          </div>
+        </section>
+
+        <section class="mon-section-panel demo-section-panel" id="panel-riskAssessment" data-section="riskAssessment" hidden>
+          <h2 class="mon-section-panel__title">Risk Assessments</h2>
+          <p style="margin-bottom: 0.875rem">
+            <span class="mon-badge mon-badge--ok">Complete</span>
+          </p>
+          <div class="demo-field">
+            <span class="demo-field__label">Document link</span>
+            <span class="demo-field__value">
+              <a href="https://drive.google.com/file/d/1DEMO-student-a-risk-placeholder/view" target="_blank" rel="noopener noreferrer">View risk assessment (Google Drive placeholder)</a>
+            </span>
+          </div>
+          <div class="demo-field">
+            <span class="demo-field__label">Signed date</span>
+            <span class="demo-field__value">10 September 2025</span>
+          </div>
+          <div class="demo-field">
+            <span class="demo-field__label">Notes</span>
+            <p class="demo-field__value demo-field__value--muted">
+              Low-level risk profile. No current safeguarding concerns. Review due at 12-week review or sooner if circumstances change.
+            </p>
+          </div>
+        </section>
+
+        <section class="mon-section-panel demo-section-panel" id="panel-studentPassport" data-section="studentPassport" hidden>
+          <h2 class="mon-section-panel__title">Student Passport</h2>
+          <p style="margin-bottom: 0.875rem">
+            <span class="mon-badge mon-badge--ok">Complete</span>
+          </p>
+          <div class="demo-field">
+            <span class="demo-field__label">Source (school / in-house)</span>
+            <span class="demo-field__value">School</span>
+          </div>
+          <div class="demo-field">
+            <span class="demo-field__label">Document link</span>
+            <span class="demo-field__value">
+              <a href="https://drive.google.com/file/d/1DEMO-student-a-passport-placeholder/view" target="_blank" rel="noopener noreferrer">View student passport (Google Drive placeholder)</a>
+            </span>
+          </div>
+          <div class="demo-field">
+            <span class="demo-field__label">Notes</span>
+            <p class="demo-field__value demo-field__value--muted">
+              Received from Maple Grove Community School SEND team. Includes learning needs summary, exam access arrangements, and emergency contacts.
+            </p>
+          </div>
+        </section>
+
+        <section class="mon-section-panel demo-section-panel" id="panel-behaviour" data-section="behaviour" hidden>
+          <h2 class="mon-section-panel__title">Behaviour Instances</h2>
+          <ul class="mon-log">
+            <li class="mon-log__item">
+              <div class="mon-log__date">22 October 2025</div>
+              <p class="mon-log__text">Minor incident: talking over others during group task and refusing initial redirect.</p>
+              <p class="mon-log__meta"><strong>Intervention:</strong> Brief restorative conversation with mentor. Student agreed to use hand-up rule and take a 5-minute reset break.</p>
+              <p class="mon-log__meta"><strong>Outcome:</strong> Resolved. No further issues in session. Follow-up check completed next day.</p>
+            </li>
+            <li class="mon-log__item">
+              <div class="mon-log__date">14 November 2025</div>
+              <p class="mon-log__text">Low-level disruption: arrived late to morning session without notifying centre.</p>
+              <p class="mon-log__meta"><strong>Intervention:</strong> Mentor call to parent/carer. Reminder of attendance expectations and travel plan agreed.</p>
+              <p class="mon-log__meta"><strong>Outcome:</strong> Resolved. Punctuality improved over following two weeks. No formal warning required.</p>
+            </li>
+            <li class="mon-log__item">
+              <div class="mon-log__date">9 January 2026</div>
+              <p class="mon-log__text">Positive note: student supported a peer during practical activity and demonstrated leadership.</p>
+              <p class="mon-log__meta"><strong>Intervention:</strong> Verbal praise and positive contact home.</p>
+              <p class="mon-log__meta"><strong>Outcome:</strong> Reinforces good behaviour. Logged for 12-week review evidence.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="mon-section-panel demo-section-panel" id="panel-attainment" data-section="attainment" hidden>
+          <h2 class="mon-section-panel__title">Attainment</h2>
+          <ul class="mon-log">
+            <li class="mon-log__item">
+              <div class="mon-log__date">18 December 2025 · King's Trust Level 1 Award</div>
+              <p class="mon-log__text">Theory unit complete. Practical unit in progress. Expected completion by Easter 2026.</p>
+            </li>
+            <li class="mon-log__item">
+              <div class="mon-log__date">15 January 2026 · GCSE English Language</div>
+              <p class="mon-log__text">Working towards grade 4. Strong improvement in extended writing. Mock paper score moved from grade 3 to grade 4 boundary.</p>
+            </li>
+            <li class="mon-log__item">
+              <div class="mon-log__date">15 January 2026 · GCSE Mathematics</div>
+              <p class="mon-log__text">Working towards grade 3. Number skills secure. Focus area: ratio and proportion. On track for next grade boundary with continued support.</p>
+            </li>
+            <li class="mon-log__item">
+              <div class="mon-log__date">20 January 2026 · Y10 provision courses</div>
+              <p class="mon-log__text">Health and Safety Level 1 complete. First Aid Level 1 and Safeguarding in progress.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="mon-section-panel demo-section-panel" id="panel-reviews" data-section="reviews" hidden>
+          <h2 class="mon-section-panel__title">Reviews</h2>
+          <ul class="mon-log">
+            <li class="mon-log__item">
+              <div class="mon-log__date">6 October 2025 · 4-week review</div>
+              <p class="mon-log__text">Settling in well. Attendance 94%. Engaging with mentor and core sessions.</p>
+              <p class="mon-log__meta">Outcome: Continue current provision. No changes to timetable.</p>
+            </li>
+            <li class="mon-log__item">
+              <div class="mon-log__date">1 December 2025 · 12-week review</div>
+              <p class="mon-log__text">Good engagement across provision. One minor behaviour incident logged and resolved. ILP targets on track.</p>
+              <p class="mon-log__meta">Outcome: Remain on KS4 placement. School to attend next review.</p>
+            </li>
+            <li class="mon-log__item">
+              <div class="mon-log__date">5 May 2026 · 32-week review</div>
+              <p class="mon-log__text">Strong progress in English and King's Trust. Behaviour stable. Student motivated about return to mainstream.</p>
+              <p class="mon-log__meta">Outcome: Plan phased reintegration meetings with home school for autumn term.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="mon-section-panel demo-section-panel" id="panel-removal" data-section="removal" hidden>
+          <h2 class="mon-section-panel__title">Removal / Provision Exit</h2>
+          <p class="mon-derived-status">
+            Status: <strong>Not flagged</strong>
+            <span class="mon-derived-status__hint">(student on track)</span>
+          </p>
+          <p class="mon-empty" style="margin-top: 0.875rem">
+            No removal or provision exit process in progress. This section stays empty for students who are meeting centre expectations.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      (function () {
+        var SECTIONS = [
+          { key: "metadata", title: "Metadata", meta: "Year 10 · KS4" },
+          { key: "induction", title: "Induction", meta: "Complete" },
+          { key: "ilp", title: "ILP", meta: "Complete" },
+          { key: "riskAssessment", title: "Risk Assessment", meta: "Complete" },
+          { key: "studentPassport", title: "Student Passport", meta: "Complete" },
+          { key: "behaviour", title: "Behaviour", meta: "3 logged" },
+          { key: "attainment", title: "Attainment", meta: "4 entries" },
+          { key: "reviews", title: "Reviews", meta: "3 reviews" },
+          { key: "removal", title: "Removal", meta: "Not flagged" },
+        ];
+
+        var active = "metadata";
+        var nav = document.getElementById("demo-nav");
+
+        function renderNav() {
+          nav.innerHTML = SECTIONS.map(function (s) {
+            return (
+              '<button type="button" class="mon-section-tab' +
+              (s.key === active ? " mon-section-tab--active" : "") +
+              '" data-section="' +
+              s.key +
+              '">' +
+              s.title +
+              '<span class="mon-section-tab__meta">' +
+              s.meta +
+              "</span></button>"
+            );
+          }).join("");
+        }
+
+        function showSection(key) {
+          active = key;
+          renderNav();
+          document.querySelectorAll(".demo-section-panel").forEach(function (panel) {
+            panel.hidden = panel.dataset.section !== key;
+          });
+        }
+
+        nav.addEventListener("click", function (e) {
+          var btn = e.target.closest("[data-section]");
+          if (btn) showSection(btn.dataset.section);
+        });
+
+        renderNav();
+        showSection("metadata");
+      })();
+    </script>
+  </body>
+</html>
