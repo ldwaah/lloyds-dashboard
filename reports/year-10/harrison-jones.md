@@ -173,3 +173,41 @@ Recent AM codes predominantly B (authorised absence) in latest communications.
 ### Data quality flags
 
 3 issues: Parental Responsibility, Contact 1 Phone, Contact 2 Phone.
+
+## Student intelligence report
+
+**Source:** WhatsApp Chat - 100% Staff Group.zip (`_chat.txt`)
+
+### Comments and observations
+
+- 07/07/2025: Induction meeting confirmed. Source: `_chat.txt`.
+- 08/07/2025: De'juane reported: "Harrison Jones - induction completed, he's notorious for disrupting classrooms, seemed well mannered and understood our policies but the disruption will need to be nipped if he shows any sign of it." Source: `_chat.txt`.
+- Same update stated Harrison would start Thursday and be with the provision permanently from September.
+- 10/07/2025: Reminder: "Harrison Jones year 9 student joins us today." Source: `_chat.txt`.
+- 03/09/2025: Lloyd/EvolveOne reported Harrison would not attend because his nan had fractured her spine and had been struggling with him over the summer. Source: `_chat.txt`.
+- School was to be contacted regarding the situation.
+
+### Stresses and concerns
+
+- Known classroom disruption concerns.
+- Attendance issue at start of September.
+- Family/home pressure involving nan's injury.
+- Concern that family had struggled with him over summer.
+
+### Strengths and positives
+
+- Described as well mannered.
+- Understood centre policies during induction.
+
+### Actions / interventions mentioned
+
+- Induction process.
+- School liaison.
+- Attendance follow-up.
+
+### Gaps / missing information
+
+- No safeguarding record located.
+- No academic progress information.
+
+**Monitor flag:** Disruption, attendance, family pressures.

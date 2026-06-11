@@ -182,3 +182,9 @@ No SEN, EHCP, or medical data visible on Profile view. Interventions and Access 
 ### Data quality flags
 
 4 issues: Parental Responsibility, Contact 1 Phone, Contact 2 Phone, Contact 2 Email.
+
+## Student intelligence report
+
+**Source:** WhatsApp Chat - 100% Staff Group.zip (`_chat.txt`)
+
+No comments found in this ZIP.

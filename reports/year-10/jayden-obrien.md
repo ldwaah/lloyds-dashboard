@@ -159,3 +159,9 @@ No student phone or address. Emergency contacts: none. Support events: no data.
 ### Data quality flags
 
 5 issues: Parental Responsibility, Contact 1 Phone, Contact 2, Contact 2 Phone, Contact 2 Email.
+
+## Student intelligence report
+
+**Source:** WhatsApp Chat - 100% Staff Group.zip (`_chat.txt`)
+
+No comments found in this ZIP.

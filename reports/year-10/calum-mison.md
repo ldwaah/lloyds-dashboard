@@ -189,3 +189,9 @@ Behaviour tab not opened; no behaviour points totals visible on Profile view.
 
 - Dedicated Attendance, Behaviour, SEN, Health Background, Safeguarding sub-pages not scraped in this extraction.
 - No medical conditions visible on Profile view.
+
+## Student intelligence report
+
+**Source:** WhatsApp Chat - 100% Staff Group.zip (`_chat.txt`)
+
+No comments found in this ZIP.

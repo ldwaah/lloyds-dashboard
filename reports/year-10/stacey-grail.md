@@ -235,3 +235,41 @@ No explicit EHCP or SEN code on Profile view. Emergency contacts: none listed.
 ### Data quality flags
 
 3 issues: Parental Responsibility, Contact 1 Phone, Contact 2 Email.
+
+## Student intelligence report
+
+**Source:** WhatsApp Chat - 100% Staff Group.zip (`_chat.txt`)
+
+### Comments and observations
+
+- 13/11/2025: Reference found to "RRG Referral - Stacey Grail.pdf" posted by Lloyd/EvolveOne. Source: `_chat.txt`.
+- 19/03/2026: Grandad (CEO) stated: "Please note Stacey Grail will be be in school from tomorrow on a final contract." Source: `_chat.txt`.
+- 20/05/2026: Grandad (CEO) noted: "11:00am - Meeting with Stacey Grail and parent." Source: `_chat.txt`.
+- 08/06/2026: Grandad (CEO) stated: "ask Stacey mum to come meet me tomorrow morning with Stacey because her placement is in danger". Source: `_chat.txt`.
+- 08/06/2026: Incident report by Lorelle Gavillet regarding Stacey leaving at dismissal despite instructions to remain on site awaiting collection by parent. Source: `_chat.txt`.
+
+### Stresses and concerns
+
+- Placement at risk.
+- Final contract mentioned.
+- Behaviour / compliance concerns arising from dismissal incident.
+- Parent meetings required.
+
+### Strengths and positives
+
+- None specifically recorded.
+
+### Actions / interventions mentioned
+
+- Rapid Response referral.
+- Parent meetings.
+- Placement review discussions.
+- Incident report recorded.
+
+### Gaps / missing information
+
+- Year group unknown.
+- No academic information.
+- No detailed safeguarding outcome recorded.
+
+**Urgent flag:** Placement in danger / final contract.

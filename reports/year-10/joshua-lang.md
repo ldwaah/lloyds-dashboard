@@ -195,3 +195,39 @@ Support events: no data on profile. Emergency contacts: none.
 ### Data quality flags
 
 3 issues: Parental Responsibility, Contact 1 Phone, Contact 2 Phone.
+
+## Student intelligence report
+
+**Source:** WhatsApp Chat - 100% Staff Group.zip (`_chat.txt`)
+
+### Comments and observations
+
+- 05/06/2026: Incident report by Lorelle Gavillet.
+- During a King's Trust Teamwork session Joshua was accidentally struck on the nose by a football.
+- Joshua experienced a nosebleed.
+- First aid was provided.
+- Parent contacted.
+- Incident deemed accidental.
+- Student who kicked the ball apologised.
+- Joshua later reported feeling okay and not in pain.
+
+### Stresses and concerns
+
+- Minor injury incident.
+
+### Strengths and positives
+
+- Positive participation in group activity.
+- No ongoing concerns reported following incident.
+
+### Actions / interventions mentioned
+
+- First aid.
+- Parent contact.
+- Incident report completed.
+
+### Gaps / missing information
+
+- No behavioural concerns.
+- No safeguarding concerns.
+- No academic information.

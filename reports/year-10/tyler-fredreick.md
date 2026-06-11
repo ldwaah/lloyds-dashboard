@@ -194,3 +194,9 @@ Support events: no data. Emergency contacts: none.
 ### Data quality flags
 
 3 issues: Parental Responsibility, Contact 1 Phone, Contact 2 Phone.
+
+## Student intelligence report
+
+**Source:** WhatsApp Chat - 100% Staff Group.zip (`_chat.txt`)
+
+No comments found in this ZIP.

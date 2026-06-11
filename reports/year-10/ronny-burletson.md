@@ -187,3 +187,28 @@ Recent AM codes (communications): all N on 11, 10, 9, 8, 5 Jun.
 ### Data quality flags
 
 3 issues: Parental Responsibility, Contact 1 Phone, Contact 2 Email.
+
+## Student intelligence report
+
+**Source:** WhatsApp Chat - 100% Staff Group.zip (`_chat.txt`)
+
+### Comments and observations
+
+- 13/11/2025 attendance list references "Ronny B (Report)". Source: `_chat.txt`.
+
+### Stresses and concerns
+
+- On report.
+
+### Strengths and positives
+
+- None recorded.
+
+### Actions / interventions mentioned
+
+- Report monitoring.
+
+### Gaps / missing information
+
+- No further detail found.
+- Identity cannot be confirmed with complete certainty.

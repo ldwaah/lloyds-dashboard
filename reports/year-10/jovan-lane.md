@@ -159,3 +159,31 @@ Recent AM codes include / and B (11-10 Jun). Communications to Robert Clack cont
 ### Data quality flags
 
 3 issues: Parental Responsibility, Contact 1 Phone, Contact 2 Phone.
+
+## Student intelligence report
+
+**Source:** WhatsApp Chat - 100% Staff Group.zip (`_chat.txt`)
+
+### Comments and observations
+
+- 16/04/2026 listed in Focused Learning group as "Jovan Lane-Ridge". Source: `_chat.txt`.
+- 16/04/2026 listed again in finish-time arrangements as "Jovan L". Source: `_chat.txt`.
+
+### Stresses and concerns
+
+- Placement in Focused Learning.
+
+### Strengths and positives
+
+- None specifically recorded.
+
+### Actions / interventions mentioned
+
+- Focused Learning provision.
+- Structured finish-time arrangements.
+
+### Gaps / missing information
+
+- No behaviour details.
+- No safeguarding information.
+- No academic information.
