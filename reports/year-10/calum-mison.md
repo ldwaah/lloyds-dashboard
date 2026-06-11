@@ -61,3 +61,63 @@
 ## Name variations searched
 
 - Calum Mison, Calum Mi (truncated in cache)
+## Bromcom data
+
+**Extraction date:** 2026-06-11  
+**Source:** Bromcom MIS (`https://cloudmis.bromcom.com`), signed-in session  
+**Student list URL:** `https://cloudmis.bromcom.com/Nucleus/UI/Areas/People/StudentList.aspx`  
+**Profile URL:** `https://cloudmis.bromcom.com/Nucleus/UI/Areas/Students/StudentDetails.aspx?StudentIDs=129#Profile`  
+**Record located:** Yes (Bromcom Student ID 129)
+
+### Enrolment (profile panel)
+
+| Field | Value (Bromcom UI) |
+|-------|-------------------|
+| Legal name | Calum Mison |
+| Sex | Male |
+| Date of birth | 04/08/2011 |
+| Age | 14y 10m |
+| Year group | Y10 |
+| Tutor group | KS4 Reg |
+| Tutor name | A Dwaah |
+| Admission number | 000033 |
+| Enrolment status (list view) | ONROLL |
+| UPN | N/A |
+| EAL | No |
+
+### Attendance highlights (profile panel)
+
+| Metric | Value |
+|--------|-------|
+| Sessions absent | 16/94 |
+| Absent percentage | 17.02% |
+
+Recent attendance communications (latest 5, outbound to JRCS contact): AM session codes on 11 Jun (/), 10 Jun (N), 9 Jun (/), 8 Jun (/), 5 Jun (N).
+
+### Contacts (profile panel)
+
+| Contact | Relationship | Priority | Email / phone |
+|---------|--------------|----------|---------------|
+| Mr and Ms Jo Richardson Attendance #40 | Other Non-Family Contact | 1 | a_student_services@jorichardson.onmicrosoft.com |
+
+Student contact line: "No contact information available". Address: "No address information available". Emergency contacts: none listed.
+
+### SEN / EHCP / medical / safeguarding
+
+- SEN tab not opened separately; no SEN status text visible on Profile (All panels) view.
+- Health Background, Safeguarding tabs not extracted in this pass.
+- Interventions, Access Arrangements, Support Events: "There is no data available for this module."
+- Support Documents: none listed.
+
+### Behaviour
+
+Behaviour tab not opened; no behaviour points totals visible on Profile view.
+
+### Data quality flags (Bromcom UI)
+
+5 issues: Parental Responsibility, Contact 1 Phone, Contact 2, Contact 2 Phone, Contact 2 Email.
+
+### Gaps
+
+- Dedicated Attendance, Behaviour, SEN, Health Background, Safeguarding sub-pages not scraped in this extraction.
+- No medical conditions visible on Profile view.

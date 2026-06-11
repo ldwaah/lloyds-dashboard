@@ -46,3 +46,46 @@
 ## Name variations searched
 
 - Jayden O'Brien, Jayden O Brien, Jayden O'Brie
+## Bromcom data
+
+**Extraction date:** 2026-06-11  
+**Source:** Bromcom MIS (`https://cloudmis.bromcom.com`), signed-in session  
+**Profile URL:** `https://cloudmis.bromcom.com/Nucleus/UI/Areas/Students/StudentDetails.aspx?StudentIDs=142#Profile`  
+**Record located:** Yes (Bromcom Student ID 142)
+
+### Enrolment
+
+| Field | Value |
+|-------|-------|
+| Legal name | Jayden O'Brien |
+| Sex | Male |
+| DOB | 24/08/2011 |
+| Age | 14y 9m |
+| Year group | Y10 |
+| Tutor group | KS4 Reg |
+| Tutor name | A Dwaah |
+| Admission number | 000039 |
+| Admission date (list view) | 10/04/2026 |
+| Enrolment | ONROLL |
+| EAL | No |
+
+### Attendance highlights
+
+| Metric | Value |
+|--------|-------|
+| Sessions absent | 20/74 |
+| Absent percentage | 27.03% |
+
+Recent AM codes: 11 Jun (/), 10 Jun (N), 9 Jun (/), 8 Jun (M), 5 Jun (M).
+
+### Contacts
+
+| Contact | Relationship | Priority | Email |
+|---------|--------------|----------|-------|
+| Mr and Ms Jo Richardson Attendance #40 | Other Non-Family Contact | 1 | a_student_services@jorichardson.onmicrosoft.com |
+
+No student phone or address. Emergency contacts: none. Support events: no data.
+
+### Data quality flags
+
+5 issues: Parental Responsibility, Contact 1 Phone, Contact 2, Contact 2 Phone, Contact 2 Email.

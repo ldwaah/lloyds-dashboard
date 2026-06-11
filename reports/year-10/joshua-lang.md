@@ -90,3 +90,47 @@
 ## Name variations searched
 
 - Joshua Lang, Joshua Lang7 (list truncation)
+## Bromcom data
+
+**Extraction date:** 2026-06-11  
+**Source:** Bromcom MIS (`https://cloudmis.bromcom.com`), signed-in session  
+**Profile URL:** `https://cloudmis.bromcom.com/Nucleus/UI/Areas/Students/StudentDetails.aspx?StudentIDs=125#Profile`  
+**Record located:** Yes (Bromcom Student ID 125)
+
+### Enrolment
+
+| Field | Value |
+|-------|-------|
+| Legal name | Joshua Lang |
+| Sex | Male |
+| DOB | 25/05/2011 |
+| Age | 15y |
+| Year group | Y10 |
+| Tutor group | KS4 Reg |
+| Tutor name | A Dwaah |
+| Admission number | 000030 |
+| Admission date (list view) | 05/03/2026 |
+| EAL | No |
+
+### Attendance highlights
+
+| Metric | Value |
+|--------|-------|
+| Sessions absent | 14/108 |
+| Absent percentage | 12.96% |
+
+Recent AM codes: N on 11 and 10 Jun (communications to All Saints contacts).
+
+### Contacts
+
+| Contact | Relationship | Priority | Email |
+|---------|--------------|----------|-------|
+| Miss Patricia Martin #87 | Other Non-Family Contact | 1 | pmartin@AllSaintsSchool.co.uk |
+| Mr All Saints Attendance Contacts #48 | Other Non-Family Contact | 2 | mincedal@allsaintsschool.co.uk |
+| Miss C Spicer #126 | Other Non-Family Contact | 3 | Cspicer@allsaintsschool.co.uk |
+
+Support events: no data on profile. Emergency contacts: none.
+
+### Data quality flags
+
+3 issues: Parental Responsibility, Contact 1 Phone, Contact 2 Phone.

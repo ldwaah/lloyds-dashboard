@@ -89,3 +89,49 @@
 ## Name variations searched
 
 - Tyler Fredreick, Tyler Fredrick, Tyler Frederick, Tyler Walterstow-Frederick, Tyler Freder
+## Bromcom data
+
+**Extraction date:** 2026-06-11  
+**Source:** Bromcom MIS (`https://cloudmis.bromcom.com`), signed-in session  
+**Profile URL:** `https://cloudmis.bromcom.com/Nucleus/UI/Areas/Students/StudentDetails.aspx?StudentIDs=149#Profile`  
+**Record located:** Yes (Bromcom Student ID 149; spelling **Fredreick** in MIS)
+
+### Enrolment
+
+| Field | Value |
+|-------|-------|
+| Legal name | Tyler Fredreick |
+| Sex | Male |
+| DOB | 20/03/2011 |
+| Age | 15y 2m |
+| Year group | Y10 |
+| Tutor group | KS4 Reg |
+| Tutor name | A Dwaah |
+| Admission number | 000044 |
+| Admission date (list view) | 07/05/2026 |
+| EAL | No |
+
+Profile banner: important document available (name not extracted).
+
+### Attendance highlights
+
+| Metric | Value |
+|--------|-------|
+| Sessions absent | 14/40 |
+| Absent percentage | 35.00% |
+
+Recent AM codes: O (11 Jun), B (10 Jun) in communications to Robert Clack contacts.
+
+### Contacts
+
+| Contact | Relationship | Priority | Email |
+|---------|--------------|----------|-------|
+| Mr Robert Clack Attendance 2 #50 | Other Non-Family Contact | 1 | FShirley@robertclack.co.uk |
+| Mr Robert Clack Attendance Contacts #47 | Other Non-Family Contact | 2 | larch@robertclack.co.uk |
+| Mr S Webber #150 | Other Non-Family Contact | 3 | swebber@robertclack.co.uk |
+
+Support events: no data. Emergency contacts: none.
+
+### Data quality flags
+
+3 issues: Parental Responsibility, Contact 1 Phone, Contact 2 Phone.

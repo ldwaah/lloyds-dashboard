@@ -1,6 +1,7 @@
 # Year 10 Email Evidence Reports
 
-Generated: 2026-06-11
+Generated: 2026-06-11  
+**Bromcom extraction:** 2026-06-11 (all 10 Year 10 students located in Bromcom MIS)
 
 ## Reports
 
@@ -44,7 +45,15 @@ tell application "Microsoft Outlook" to count of messages of inbox
 - **Method:** Read-only binary extract (ASCII runs + context windows); prior audit saved to `data/emails-extracted/*.txt`
 - **Note:** Earlier extract used `.../Main Profile/Data/HxStore.hxd`; current file is under `Main Identity/`
 
-### 4. Existing audit files
+### 4. Bromcom MIS (cursor-ide-browser MCP)
+
+- Tab: `https://cloudmis.bromcom.com/Nucleus/UI/Areas/People/StudentList.aspx` (Evolution Education, signed in)
+- Method: Students List grid (38 on roll) plus per-student Profile (`StudentDetails.aspx?StudentIDs={id}#Profile`)
+- **Access:** OK. All 10 target students found as Y10 / KS4 Reg.
+- **Evidence appended:** `## Bromcom data` section in each `year-10/{slug}.md`
+- **Not extracted in this pass:** dedicated Behaviour, Attendance, SEN, Health Background, Safeguarding sub-tabs (Profile "All panels" view used); behaviour point totals from list additional columns did not render after column save
+
+### 5. Existing audit files
 
 - `data/emails-extracted/` (per-student `.txt`, `_summary.txt`, `outlook-search-report.txt`, `general-ks4-terms.txt`)
 - Extracted 2026-06-11 from HxStore; cross-checked against live cache re-read on 2026-06-11
@@ -57,9 +66,10 @@ tell application "Microsoft Outlook" to count of messages of inbox
 | AppleScript (New Outlook) | Blocked - 0 messages returned |
 | HxStore | Available (subjects/snippets; full bodies often truncated) |
 | Full email bodies | Partial - cache fragments and Outlook Web reading pane only where opened |
+| Bromcom MIS | Available (Students List + Student Details Profile) |
 
 ## Rules applied
 
-- Evidence only from email sources above
+- Evidence only from sources above (email + Bromcom UI)
 - No guessing or fabrication
 - Gaps explicitly noted per student

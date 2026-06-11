@@ -47,3 +47,55 @@
 ## Name variations searched
 
 - Mason Taylor, mason taylor (case variants in cache)
+## Bromcom data
+
+**Extraction date:** 2026-06-11  
+**Source:** Bromcom MIS (`https://cloudmis.bromcom.com`), signed-in session  
+**Profile URL:** `https://cloudmis.bromcom.com/Nucleus/UI/Areas/Students/StudentDetails.aspx?StudentIDs=30#Profile`  
+**Record located:** Yes (Bromcom Student ID 30)
+
+### Enrolment
+
+| Field | Value |
+|-------|-------|
+| Legal name | Mason Taylor |
+| Sex | Male |
+| DOB | 30/06/2011 |
+| Age | 14y 11m |
+| Year group | Y10 |
+| Tutor group | KS4 Reg |
+| Tutor name | A Dwaah |
+| Admission number | 000014 |
+| Admission date (list view) | 04/08/2025 |
+| Address | 9, Ridgewell Close, Dagenham, RM10 9AJ |
+| EAL | No |
+
+### Attendance highlights
+
+| Metric | Value |
+|--------|-------|
+| Sessions absent | 96/326 |
+| Absent percentage | 29.45% |
+
+Recent AM codes: 11 Jun (/), 10 Jun (B), 9 Jun (I), 8 Jun (N), 5 Jun (N). Communications sent to Ms Nicole B (Dagenham Park).
+
+### Contacts
+
+| Contact | Relationship | Priority | Phone / email |
+|---------|--------------|----------|---------------|
+| Ms Nicole B #51 | Other Non-Family Contact | 1 | NBorg@dagenhampark.org.uk |
+| Ms Mason Mum #75 | Mother | 4 | 07751 44159 |
+| Ms Mason Dad #74 | Father | 5 | 07399 354562 |
+
+### Support events
+
+| Date | Type | Description (truncated) |
+|------|------|-------------------------|
+| 04/12/2025 | Mentoring (1-to-1) | During his reduced timetable Mason has agreed ... |
+| 03/11/2025 | Restorative | Reset meeting had with Mason's mum and step fat... |
+| 20/10/2025 | Mentoring (1-to-1) | Weekly targets for 20-25 October |
+| 06/10/2025 | Mentoring (1-to-1) | weekly target setting |
+
+### Data quality flags
+
+3 issues: Parental Responsibility, Contact 1 Phone, Contact 2 Email.

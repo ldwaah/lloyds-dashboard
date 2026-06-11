@@ -66,3 +66,55 @@
 ## Name variations searched
 
 - Harrison Jones, Harrison Jone6 (truncated in lists)
+## Bromcom data
+
+**Extraction date:** 2026-06-11  
+**Source:** Bromcom MIS (`https://cloudmis.bromcom.com`), signed-in session  
+**Profile URL:** `https://cloudmis.bromcom.com/Nucleus/UI/Areas/Students/StudentDetails.aspx?StudentIDs=25#Profile`  
+**Record located:** Yes (Bromcom Student ID 25)
+
+### Enrolment
+
+| Field | Value |
+|-------|-------|
+| Legal name | Harrison Jones |
+| Sex | Male |
+| DOB | 04/07/2011 |
+| Age | 14y 11m |
+| Year group | Y10 |
+| Tutor group | KS4 Reg |
+| Tutor name | A Dwaah |
+| Admission number | 000009 |
+| Admission date (list view) | 04/08/2025 |
+| Address | 157, Burnside Road, Dagenham, RM8 2PJ |
+| EAL | No |
+
+Profile banner: important document available (name not extracted).
+
+### Attendance highlights
+
+| Metric | Value |
+|--------|-------|
+| Sessions absent | 121/326 |
+| Absent percentage | 37.12% |
+
+Recent AM codes predominantly B (authorised absence) in latest communications.
+
+### Contacts
+
+| Contact | Relationship | Priority | Phone / email |
+|---------|--------------|----------|---------------|
+| Mr Robert Clack Attendance Contacts #47 | Other Non-Family Contact | 1 | larch@robertclack.co.uk |
+| Mr Robert Clack Attendance 2 #50 | Other Non-Family Contact | 2 | FShirley@robertclack.co.uk |
+| Ms Harrison's Nan #67 | Other Family Member | 5 | 07852 908888 |
+
+### Support events
+
+| Date | Type | Description (truncated) |
+|------|------|-------------------------|
+| 12/02/2026 | Mentoring (1-to-1) | Completed mentoring session with Harrison Jones... |
+| 04/12/2025 | Mentoring (1-to-1) | Mentoring Check-In Summary - Miss L Gavillet H... |
+
+### Data quality flags
+
+3 issues: Parental Responsibility, Contact 1 Phone, Contact 2 Phone.

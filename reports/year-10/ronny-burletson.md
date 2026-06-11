@@ -60,3 +60,56 @@
 ## Name variations searched
 
 - Ronny Burletson, Ronnie Burlet (truncated in Purple Ruler login list - may be same student)
+## Bromcom data
+
+**Extraction date:** 2026-06-11  
+**Source:** Bromcom MIS (`https://cloudmis.bromcom.com`), signed-in session  
+**Profile URL:** `https://cloudmis.bromcom.com/Nucleus/UI/Areas/Students/StudentDetails.aspx?StudentIDs=24#Profile`  
+**Record located:** Yes (Bromcom Student ID 24)
+
+### Enrolment
+
+| Field | Value |
+|-------|-------|
+| Legal name | Ronny Burletson |
+| Sex | Male |
+| DOB | 10/02/2011 |
+| Age | 15y 4m |
+| Year group | Y10 |
+| Tutor group | KS4 Reg |
+| Tutor name | A Dwaah |
+| Admission number | 000008 |
+| Admission date (list view) | 04/08/2025 |
+| Address | 148, Arden Crescent, Dagenham, RM9 4SA |
+| EAL | No |
+
+Profile banner: "There is an important document for this student. Please click to download" (document name not extracted).
+
+### Attendance highlights
+
+| Metric | Value |
+|--------|-------|
+| Sessions absent | 97/326 |
+| Absent percentage | 29.75% |
+
+Recent AM codes (communications): all N on 11, 10, 9, 8, 5 Jun.
+
+### Contacts
+
+| Contact | Relationship | Priority | Phone / email |
+|---------|--------------|----------|---------------|
+| Mr and Ms Jo Richardson Attendance #40 | Other Non-Family Contact | 1 | a_student_services@jorichardson.onmicrosoft.com |
+| Ms Ronny B's Mum #63 | Mother | 5 | 07984 638140 |
+
+### Support events
+
+| Date | Type | Description (truncated) |
+|------|------|-------------------------|
+| 10/02/2026 | Mentoring (1-to-1) | Completed mentoring session with Ronny Burlesto... |
+| 02/02/2026 | Mentoring (1-to-1) | Had a catch up discussion as he had not been in... |
+| 24/11/2025 | Restorative | Student reached RED level due to unsafe/disrupt... |
+| 24/11/2025 | Mentoring (1-to-1) | Ronnie is aware that his behaviour has been a c... |
+
+### Data quality flags
+
+3 issues: Parental Responsibility, Contact 1 Phone, Contact 2 Email.

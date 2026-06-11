@@ -85,3 +85,59 @@
 ## Name variations searched
 
 - Stacey Grail, STACEY GRAIL
+## Bromcom data
+
+**Extraction date:** 2026-06-11  
+**Source:** Bromcom MIS (`https://cloudmis.bromcom.com`), signed-in session  
+**Profile URL:** `https://cloudmis.bromcom.com/Nucleus/UI/Areas/Students/StudentDetails.aspx?StudentIDs=97#Profile`  
+**Record located:** Yes (Bromcom Student ID 97)
+
+### Enrolment
+
+| Field | Value |
+|-------|-------|
+| Legal name | Stacey Grail |
+| Sex | Female |
+| DOB | 16/09/2010 |
+| Age | 15y 8m |
+| Year group | Y10 |
+| Tutor group | KS4 Reg |
+| Tutor name | A Dwaah |
+| Admission number | 000013 |
+| Admission date (list view) | 08/12/2025 |
+| Student phone (profile header) | 07476 844955 |
+| EAL | No |
+
+### Attendance highlights
+
+| Metric | Value |
+|--------|-------|
+| Sessions absent | 41/200 |
+| Absent percentage | 20.50% |
+
+### Contacts
+
+| Contact | Relationship | Priority | Phone / email |
+|---------|--------------|----------|---------------|
+| Mr and Ms Jo Richardson Attendance #40 | Other Non-Family Contact | 1 | a_student_services@jorichardson.onmicrosoft.com |
+| Miss Helen Grail #98 | Mother | 2 | 07476 844955 |
+| Mr David Grail #99 | Father | 3 | 07561787304 |
+
+### Support events and documents
+
+| Date | Type | Notes |
+|------|------|-------|
+| 09/02/2026 | Mentoring (1-to-1) | Completed mentoring session with Stacey Grail (...); SMART targets attached |
+| 08/12/2025 | Mentoring (1-to-1) | First Day / First mentoring session |
+| 08/12/2025 | Mentoring (1-to-1) | Check-In Session Day 1 Following SG and MC's... |
+| 08/12/2025 | Educational Psychologists | SEMH Results (first day assessment) |
+
+Support document: **SEMH Results** (start 08/12/2025), Support Area: Behaviour & Education Support.
+
+### SEN / safeguarding
+
+No explicit EHCP or SEN code on Profile view. Emergency contacts: none listed.
+
+### Data quality flags
+
+3 issues: Parental Responsibility, Contact 1 Phone, Contact 2 Email.

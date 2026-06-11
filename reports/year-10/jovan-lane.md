@@ -61,3 +61,51 @@
 ## Name variations searched
 
 - Jovan Lane, Jovan Lane-Ridge, Jovan Lane Ridg, Jovan L
+## Bromcom data
+
+**Extraction date:** 2026-06-11  
+**Source:** Bromcom MIS (`https://cloudmis.bromcom.com`), signed-in session  
+**Profile URL:** `https://cloudmis.bromcom.com/Nucleus/UI/Areas/Students/StudentDetails.aspx?StudentIDs=115#Profile`  
+**Record located:** Yes (Bromcom lists surname **Lane-Ridge**, Student ID 115)
+
+### Enrolment
+
+| Field | Value |
+|-------|-------|
+| Legal name | Jovan Lane-Ridge |
+| Sex | Male |
+| DOB | 11/06/2011 |
+| Age | 15y |
+| Year group | Y10 |
+| Tutor group | KS4 Reg |
+| Tutor name | A Dwaah |
+| Admission number | 000025 |
+| Admission date (list view) | 26/01/2026 |
+| EAL | No |
+
+### Attendance highlights
+
+| Metric | Value |
+|--------|-------|
+| Sessions absent | 9/154 |
+| Absent percentage | 5.84% |
+
+Recent AM codes include / and B (11-10 Jun). Communications to Robert Clack contacts.
+
+### Contacts
+
+| Contact | Relationship | Priority | Email |
+|---------|--------------|----------|-------|
+| Mr Robert Clack Attendance 2 #50 | Other Non-Family Contact | 1 | FShirley@robertclack.co.uk |
+| Mr Alex Lee #116 | Other Non-Family Contact | 2 | alee@robertclack.co.uk |
+| Miss S S #117 | Other Non-Family Contact | 3 | sstpierre@robertclack.co.uk |
+
+### Support events
+
+| Date | Type | Description (truncated) |
+|------|------|-------------------------|
+| 13/02/2026 | Reflection | Positive message sent home for good conduct and... |
+
+### Data quality flags
+
+3 issues: Parental Responsibility, Contact 1 Phone, Contact 2 Phone.
