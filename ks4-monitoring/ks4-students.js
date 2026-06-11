@@ -1,4 +1,4 @@
-/* Standalone copy of ../ks4-students.js — keep in sync when seed changes. */
+/* Standalone copy of ../ks4-students.js - keep in sync when seed changes. */
 (function () {
   var STORAGE_KEY = "lloyds-ks4-students";
   var VERSION_KEY = "lloyds-ks4-seed-version";
@@ -6,7 +6,7 @@
   var SHEET_URL =
     "https://docs.google.com/spreadsheets/d/1kMZy6UPEICCHABe7Fa9FIf_ij0z79l84aAYsRhzn-qc/edit";
 
-  /* Excluded from dashboard — Y11 leavers / KS-flexi winding down (see sheet evidence in repo notes) */
+  /* Excluded from dashboard - Y11 leavers / KS-flexi winding down (see sheet evidence in repo notes) */
   var EXCLUDED_IDS = [
     "ks4-vinnie-lane",
     "ks4-lexi-penny",
@@ -30,7 +30,7 @@
       ilpStatus: "Unknown",
       studentProfileStatus: "Unknown",
       reviewNeeded: "Yes",
-      evidenceSource: "Google Sheet — Master list + Y10 provision tab",
+      evidenceSource: "Google Sheet - Master list + Y10 provision tab",
       evidenceWording:
         "KS 4, Year Group 10, Jo Richardson Community School, Start Date 03/11/2026; Provision: Flexi Full Time; BFL: Final Warning; King's Trust Theory/Practical: Not Engaged",
       missingInfo:
@@ -52,7 +52,7 @@
       ilpStatus: "Unknown",
       studentProfileStatus: "Unknown",
       reviewNeeded: "Yes",
-      evidenceSource: "Google Sheet — Master list + Y10 provision tab",
+      evidenceSource: "Google Sheet - Master list + Y10 provision tab",
       evidenceWording:
         "KS 4, Year Group 10, Jo Richardson Community School, Start Date 26/03/2026; Provision: Flexi Full Time; BFL: Doing Well / OK; King's Trust: Completed (Theory, Practical, Level 1 Award)",
       missingInfo: "Induction status, risk assessment, ILP, student profile",
@@ -72,7 +72,7 @@
       ilpStatus: "Unknown",
       studentProfileStatus: "Unknown",
       reviewNeeded: "Yes",
-      evidenceSource: "Google Sheet — Master list + Y10 provision tab",
+      evidenceSource: "Google Sheet - Master list + Y10 provision tab",
       evidenceWording:
         "KS 4, Year Group 10, Jo Richardson Community School, Start Date 12/08/2025; Provision: KS4; BFL: Final Warning; Interventions: Mentoring; Agencies: Social Services; King's Trust: Completed",
       missingInfo: "Funding type (LA/Commissioned), induction, risk assessment, ILP, profile",
@@ -92,7 +92,7 @@
       ilpStatus: "Unknown",
       studentProfileStatus: "Unknown",
       reviewNeeded: "Unknown",
-      evidenceSource: "Google Sheet — Master list + Y10 provision tab",
+      evidenceSource: "Google Sheet - Master list + Y10 provision tab",
       evidenceWording:
         "KS 4, Year Group 10, Jo Richardson Community School; Provision: Flexi Full Time; BFL: Doing Well / OK; Interventions: Reduced Timetable; King's Trust: Completed",
       missingInfo: "Start date, review dates, induction, risk assessment, ILP, profile",
@@ -112,7 +112,7 @@
       ilpStatus: "Unknown",
       studentProfileStatus: "Unknown",
       reviewNeeded: "Yes",
-      evidenceSource: "Google Sheet — Master list + Y10 provision tab",
+      evidenceSource: "Google Sheet - Master list + Y10 provision tab",
       evidenceWording:
         "KS 4, Year Group 10, Robert Clack, Start Date 02/10/2025; Provision: KS4; BFL: Doing Well / OK; Interventions: Reduced Timetable; Agencies: Social Services; King's Trust: Completed",
       missingInfo: "Funding type, induction, risk assessment, ILP, profile",
@@ -132,7 +132,7 @@
       ilpStatus: "Unknown",
       studentProfileStatus: "Unknown",
       reviewNeeded: "Yes",
-      evidenceSource: "Google Sheet — Master list + Y10 provision tab",
+      evidenceSource: "Google Sheet - Master list + Y10 provision tab",
       evidenceWording:
         "KS 4, Year Group 10, Dagenham Park School, Start Date 09/08/2025; Provision: KS4; BFL: Doing Well / OK; Interventions: Mentoring; King's Trust: N/A",
       missingInfo: "Funding type, induction, risk assessment, ILP, profile",
@@ -152,7 +152,7 @@
       ilpStatus: "Unknown",
       studentProfileStatus: "Unknown",
       reviewNeeded: "Yes",
-      evidenceSource: "Google Sheet — Master list + Y10 provision + Engagement tab",
+      evidenceSource: "Google Sheet - Master list + Y10 provision + Engagement tab",
       evidenceWording:
         "KS 4, Year Group 10, Robert Clack, Start Date 27/01/2026; Provision: KS4; BFL: Report; Interventions: FLZ; Agencies: Subwize; Engagement (Jovan Lane Ridge): Occasionally Late, Mostly Engaged, Low Concern",
       missingInfo: "Funding type, induction, risk assessment, ILP, profile",
@@ -172,7 +172,7 @@
       ilpStatus: "Unknown",
       studentProfileStatus: "Unknown",
       reviewNeeded: "Yes",
-      evidenceSource: "Google Sheet — Master list + Y10 provision tab",
+      evidenceSource: "Google Sheet - Master list + Y10 provision tab",
       evidenceWording:
         "KS 4, Year Group 10, Robert Clack, Start Date 07/10/2025; Provision: KS4; BFL: Doing Well / OK; Interventions: Reduced Timetable; King's Trust: N/A",
       missingInfo: "Funding type, induction, risk assessment, ILP, profile",
@@ -192,7 +192,7 @@
       ilpStatus: "Unknown",
       studentProfileStatus: "Unknown",
       reviewNeeded: "Yes",
-      evidenceSource: "Google Sheet — Master list + Y10 provision tab",
+      evidenceSource: "Google Sheet - Master list + Y10 provision tab",
       evidenceWording:
         "KS 4, Year Group 10, All Saints, Start Date 03/05/2026; Provision: KS4; BFL: Doing Well / OK; Interventions: Mentoring; King's Trust: Completed",
       missingInfo: "Funding type, induction, risk assessment, ILP, profile",
@@ -213,7 +213,7 @@
       studentProfileStatus: "Unknown",
       reviewNeeded: "Yes",
       evidenceSource:
-        "Google Sheet — Master list + Engagement tab; Outlook Web emails Jun 2026 (URGENT: Tyler Fredrick Punctuality and Behaviour Concern thread)",
+        "Google Sheet - Master list + Engagement tab; Outlook Web emails Jun 2026 (URGENT: Tyler Fredrick Punctuality and Behaviour Concern thread)",
       evidenceWording:
         "Sheet: Y10, Robert Clack, Start Date 03/07/2026, BFL Doing Well/OK, Mentoring. Engagement tab (Tyler Frederick): Frequently Late, Refusing/Disengaged, Not Accessing Learning. Email 08/06/2026 (Admin Support): arrived 12:35, expected 9:00; ongoing lateness (often 2–3 hours); conduct concerns (rudeness, inappropriate language, not following instructions); CEO invited mum to meeting. Email 09/06/2026 (Eugene Dwaah): NOT excluded/suspended/removed; temporarily on remote learning package pending urgent review with school and parent; safeguarding concerns re lateness, attendance, activities outside provision. Email 09/06/2026 (Amy Dwaah): review meeting Thu 9:30am at Futures with mum and Tyler. Email 11/06/2026 (John Course, Robert Clack DSL): asking for plan/next steps after Rapid Response report.",
       missingInfo:
@@ -238,7 +238,7 @@
       evidenceSource:
         "Outlook Web emails Jun 2026 (Student updates sent item, Admin Support, Eugene Dwaah cohort emails)",
       evidenceWording:
-        "Email 10 Jun 2026 (Lloyd Dwaah, Student updates, sent): Lloyd to contact Barking Abbey and cc Bal regarding Kamari Emanuel's induction arrangements. Email (Admin Support): 'Who is this call me Kamari Emanuel'. Eugene Dwaah emails reference new/proposed students and Current Cohort List (10 Jun 2026) — Kamari named in search results only; full cohort list body not opened.",
+        "Email 10 Jun 2026 (Lloyd Dwaah, Student updates, sent): Lloyd to contact Barking Abbey and cc Bal regarding Kamari Emanuel's induction arrangements. Email (Admin Support): 'Who is this call me Kamari Emanuel'. Eugene Dwaah emails reference new/proposed students and Current Cohort List (10 Jun 2026) - Kamari named in search results only; full cohort list body not opened.",
       missingInfo:
         "Year group, placement type, start date, funding type, risk assessment, ILP, student profile; confirm induction status with Barking Abbey",
       suggestedAction: "Contact Barking Abbey for Kamari Emanuel induction, cc Bal (per Student updates email)",
@@ -349,241 +349,14 @@
     return migrateStudents();
   }
 
-  function groupStudents(students) {
-    var a = [];
-    var b = [];
-    var c = [];
-    var d = [];
-    var e = [];
-
-    students.forEach(function (s) {
-      if (s.yearGroup === "Year 10") {
-        a.push(s);
-      } else if (s.yearGroup === "Year 11") {
-        b.push(s);
-      } else if (s.keyStage === "KS4" || s.keyStage === "4") {
-        c.push(s);
-      }
-
-      if (
-        s.currentStatus === "Proposed" ||
-        s.currentStatus === "Historical" ||
-        s.currentStatus === "Unclear"
-      ) {
-        d.push(s);
-      }
-
-      if (
-        s.riskAssessmentStatus === "Needed" ||
-        s.riskAssessmentStatus === "Not Started" ||
-        s.studentProfileStatus === "Not Started" ||
-        s.reviewNeeded === "Yes" ||
-        s.inductionStatus === "Not Started"
-      ) {
-        e.push(s);
-      }
-    });
-
-    return { year10: a, year11: b, ks4UnknownYear: c, proposedUnclear: d, actions: e };
-  }
-
-  function statusClass(value) {
-    if (!value) return "";
-    var v = String(value).toLowerCase();
-    if (v.indexOf("complete") !== -1 || v === "current") return "ks4-badge--ok";
-    if (v.indexOf("not started") !== -1 || v === "needed") return "ks4-badge--warn";
-    if (v === "proposed" || v === "unclear") return "ks4-badge--muted";
-    if (v === "unknown") return "ks4-badge--unknown";
-    return "";
-  }
-
-  function escapeHtml(str) {
-    return String(str || "")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
-  }
-
-  function renderStudentCard(student, expanded) {
-    var html =
-      '<article class="ks4-card" data-id="' +
-      escapeHtml(student.id) +
-      '">' +
-      '<button type="button" class="ks4-card__toggle" aria-expanded="' +
-      (expanded ? "true" : "false") +
-      '">' +
-      '<div class="ks4-card__summary">' +
-      '<span class="ks4-card__name">' +
-      escapeHtml(student.name) +
-      "</span>" +
-      '<span class="ks4-card__meta">' +
-      escapeHtml(student.yearGroup) +
-      " · " +
-      escapeHtml(student.school) +
-      "</span>" +
-      '<div class="ks4-card__badges">' +
-      '<span class="ks4-badge ' +
-      statusClass(student.currentStatus) +
-      '">' +
-      escapeHtml(student.currentStatus) +
-      "</span>" +
-      '<span class="ks4-badge ' +
-      statusClass(student.placementType) +
-      '">' +
-      escapeHtml(student.placementType) +
-      "</span>" +
-      '<span class="ks4-badge ks4-badge--confidence">' +
-      escapeHtml(student.confidence) +
-      "</span>" +
-      "</div></div>" +
-      '<svg class="ks4-card__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>' +
-      "</button>";
-
-    if (expanded) {
-      html +=
-        '<div class="ks4-card__detail">' +
-        '<dl class="ks4-detail-grid">' +
-        detailRow("Key Stage", student.keyStage) +
-        detailRow("Year Group", student.yearGroup) +
-        detailRow("School / Referrer", student.school) +
-        detailRow("Placement Type", student.placementType) +
-        detailRow("Current Status", student.currentStatus) +
-        detailRow("Induction", student.inductionStatus) +
-        detailRow("Risk Assessment", student.riskAssessmentStatus) +
-        detailRow("ILP", student.ilpStatus) +
-        detailRow("Student Profile", student.studentProfileStatus) +
-        detailRow("Review Needed", student.reviewNeeded) +
-        detailRow("Confidence", student.confidence) +
-        "</dl>" +
-        '<p class="ks4-detail-block"><strong>Evidence source</strong><br>' +
-        escapeHtml(student.evidenceSource) +
-        "</p>" +
-        '<p class="ks4-detail-block"><strong>Exact wording</strong><br>' +
-        escapeHtml(student.evidenceWording) +
-        "</p>" +
-        '<p class="ks4-detail-block"><strong>Missing information</strong><br>' +
-        escapeHtml(student.missingInfo) +
-        "</p>" +
-        '<p class="ks4-detail-block"><strong>Suggested next action</strong><br>' +
-        escapeHtml(student.suggestedAction) +
-        "</p>" +
-        "</div>";
-    }
-
-    html += "</article>";
-    return html;
-  }
-
-  function detailRow(label, value) {
-    return (
-      "<div><dt>" +
-      escapeHtml(label) +
-      '</dt><dd class="ks4-badge ' +
-      statusClass(value) +
-      '">' +
-      escapeHtml(value) +
-      "</dd></div>"
-    );
-  }
-
-  function renderGroup(title, students, expandedId) {
-    if (!students.length) {
-      return (
-        '<section class="ks4-group"><h3 class="ks4-group__title">' +
-        escapeHtml(title) +
-        ' <span class="ks4-group__count">0</span></h3><p class="ks4-empty">None</p></section>'
-      );
-    }
-    var cards = students
-      .map(function (s) {
-        return renderStudentCard(s, expandedId === s.id);
-      })
-      .join("");
-    return (
-      '<section class="ks4-group"><h3 class="ks4-group__title">' +
-      escapeHtml(title) +
-      ' <span class="ks4-group__count">' +
-      students.length +
-      "</span></h3>" +
-      '<div class="ks4-list">' +
-      cards +
-      "</div></section>"
-    );
-  }
-
-  function renderHomeSummary() {
-    var students = getStudents();
-    var groups = groupStudents(students);
-    var el = document.getElementById("home-ks4-summary");
-    if (!el) return;
-    el.innerHTML =
-      '<p class="home-ks4-summary__stat"><strong>' +
-      students.length +
-      "</strong> KS4 students tracked</p>" +
-      '<p class="home-ks4-summary__breakdown">Y10: ' +
-      groups.year10.length +
-      " · Y11: " +
-      groups.year11.length +
-      " · Actions: " +
-      groups.actions.length +
-      "</p>" +
-      '<p class="home-ks4-summary__source">Source: Google Sheet (no emails in workspace)</p>';
-  }
-
-  var expandedId = null;
-
-  function render() {
-    var root = document.getElementById("ks4-root");
-    if (!root) return;
-
-    var students = getStudents();
-    var groups = groupStudents(students);
-
-    root.innerHTML =
-      '<div class="ks4-notice">' +
-      "<p><strong>Data sources:</strong> Google Sheet exported " +
-      new Date().toLocaleDateString("en-GB") +
-      '. No .eml/.mbox emails found in workspace.</p>' +
-      "<p><strong>Y11 excluded from dashboard:</strong> Vinnie Lane, Lexi Penny, Amishael Mufata, Sylvin Pun, Flynn Hurley, Charlie Archer — no Year 11 students currently tracked.</p>" +
-      '<p class="ks4-notice__link"><a href="' +
-      SHEET_URL +
-      '" target="_blank" rel="noopener">Open source spreadsheet</a></p>' +
-      "</div>" +
-      renderGroup("A. Confirmed Year 10", groups.year10, expandedId) +
-      renderGroup("B. Confirmed Year 11", groups.year11, expandedId) +
-      renderGroup("C. KS4 — year group unknown", groups.ks4UnknownYear, expandedId) +
-      renderGroup("D. Proposed / unclear / historical", groups.proposedUnclear, expandedId) +
-      renderGroup("E. Immediate actions needed", groups.actions, expandedId);
-
-    root.querySelectorAll(".ks4-card__toggle").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var card = btn.closest(".ks4-card");
-        expandedId = expandedId === card.dataset.id ? null : card.dataset.id;
-        render();
-      });
-    });
-
-    renderHomeSummary();
-  }
-
   function init() {
     migrateStudents();
-    if (document.getElementById("ks4-root")) {
-      render();
-      window.addEventListener("lloyds-data-changed", function () {
-        renderHomeSummary();
-      });
-    }
   }
 
   window.LloydsKS4 = {
     getStudents: getStudents,
     migrateStudents: migrateStudents,
     saveStudents: saveStudents,
-    groupStudents: groupStudents,
-    render: render,
-    renderHomeSummary: renderHomeSummary,
     SHEET_URL: SHEET_URL,
     SEED_COUNT: SEED_STUDENTS.length,
   };

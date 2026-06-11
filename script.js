@@ -9,10 +9,45 @@
     });
   }
 
-  var tabs = document.querySelectorAll(".tab");
+  var tabs = document.querySelectorAll(".tab[data-tab]");
   var panels = document.querySelectorAll(".panel");
+  var otherView = "menu";
+
+  var otherMenu = document.getElementById("other-menu");
+  var otherNotes = document.getElementById("other-notes");
+  var otherTeaching = document.getElementById("other-teaching");
+  var otherBackBtn = document.getElementById("other-back-btn");
+  var otherTitle = document.getElementById("other-title");
+  var otherSubtitle = document.getElementById("other-subtitle");
+
+  function showOtherView(view) {
+    otherView = view;
+
+    if (otherMenu) otherMenu.hidden = view !== "menu";
+    if (otherNotes) otherNotes.hidden = view !== "notes";
+    if (otherTeaching) otherTeaching.hidden = view !== "teaching";
+    if (otherBackBtn) otherBackBtn.hidden = view === "menu";
+
+    if (!otherTitle || !otherSubtitle) return;
+
+    if (view === "menu") {
+      otherTitle.textContent = "Other";
+      otherSubtitle.textContent = "More workspaces";
+      otherSubtitle.hidden = false;
+    } else if (view === "notes") {
+      otherTitle.textContent = "Notes";
+      otherSubtitle.hidden = true;
+    } else if (view === "teaching") {
+      otherTitle.textContent = "Teaching";
+      otherSubtitle.hidden = true;
+    }
+  }
 
   function switchTab(tabName) {
+    if (tabName !== "other" && otherView !== "menu") {
+      showOtherView("menu");
+    }
+
     tabs.forEach(function (tab) {
       var isActive = tab.getAttribute("data-tab") === tabName;
       tab.classList.toggle("tab--active", isActive);
@@ -36,6 +71,18 @@
       switchTab(tab.getAttribute("data-tab"));
     });
   });
+
+  document.querySelectorAll("[data-other-view]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      showOtherView(btn.getAttribute("data-other-view"));
+    });
+  });
+
+  if (otherBackBtn) {
+    otherBackBtn.addEventListener("click", function () {
+      showOtherView("menu");
+    });
+  }
 
   switchTab("home");
 

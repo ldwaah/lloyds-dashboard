@@ -1,4 +1,4 @@
-var CACHE_NAME = "lloyds-dashboard-v18";
+var CACHE_NAME = "lloyds-dashboard-v19";
 
 var ASSETS = [
   "./",
@@ -7,7 +7,7 @@ var ASSETS = [
   "./script.js",
   "./reminders.js",
   "./tasks.js",
-  "./ks4-students.js",
+  "./notes.js",
   "./calendar.js",
   "./notifications.js",
   "./manifest.json",

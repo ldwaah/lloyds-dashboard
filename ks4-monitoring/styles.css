@@ -75,6 +75,15 @@ body {
   -webkit-backdrop-filter: blur(20px) saturate(1.2);
 }
 
+.mon-header__title {
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, var(--text) 0%, var(--accent) 120%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .mon-header__top {
   display: flex;
   align-items: flex-start;
