@@ -67,23 +67,6 @@
           </div>
         </section>
 
-        <!-- Calendar -->
-        <section
-          id="panel-calendar"
-          class="panel"
-          role="tabpanel"
-          aria-labelledby="tab-calendar"
-          hidden
-        >
-          <header class="page-header">
-            <h1>Calendar</h1>
-          </header>
-          <div class="workspace calendar-workspace" aria-label="Calendar workspace">
-            <div id="calendar-root" class="calendar-root"></div>
-            <div id="calendar-day-detail" class="calendar-day-detail" hidden aria-live="polite"></div>
-          </div>
-        </section>
-
         <!-- Tasks -->
         <section
           id="panel-tasks"
@@ -142,6 +125,23 @@
           </div>
         </section>
 
+        <!-- Calendar -->
+        <section
+          id="panel-calendar"
+          class="panel"
+          role="tabpanel"
+          aria-labelledby="tab-calendar"
+          hidden
+        >
+          <header class="page-header">
+            <h1>Calendar</h1>
+          </header>
+          <div class="workspace calendar-workspace" aria-label="Calendar workspace">
+            <div id="calendar-root" class="calendar-root"></div>
+            <div id="calendar-day-detail" class="calendar-day-detail" hidden aria-live="polite"></div>
+          </div>
+        </section>
+
         <!-- KS4 Students -->
         <section
           id="panel-ks4"
@@ -152,7 +152,6 @@
         >
           <header class="page-header">
             <h1>KS4 Students</h1>
-            <p class="page-header__subtitle">Master list tracker</p>
           </header>
           <div class="workspace ks4-workspace" aria-label="KS4 student tracker">
             <div id="ks4-root" class="ks4-root" aria-live="polite"></div>
@@ -234,23 +233,6 @@
         <button
           type="button"
           class="tab"
-          id="tab-calendar"
-          role="tab"
-          aria-selected="false"
-          aria-controls="panel-calendar"
-          data-tab="calendar"
-        >
-          <span class="tab__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-              <rect x="3" y="5" width="18" height="16" rx="2" />
-              <path d="M3 10h18M8 3v4M16 3v4" />
-            </svg>
-          </span>
-          <span class="tab__label">Calendar</span>
-        </button>
-        <button
-          type="button"
-          class="tab"
           id="tab-tasks"
           role="tab"
           aria-selected="false"
@@ -264,6 +246,23 @@
             </svg>
           </span>
           <span class="tab__label">Tasks</span>
+        </button>
+        <button
+          type="button"
+          class="tab"
+          id="tab-calendar"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-calendar"
+          data-tab="calendar"
+        >
+          <span class="tab__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+              <rect x="3" y="5" width="18" height="16" rx="2" />
+              <path d="M3 10h18M8 3v4M16 3v4" />
+            </svg>
+          </span>
+          <span class="tab__label">Calendar</span>
         </button>
         <button
           type="button"

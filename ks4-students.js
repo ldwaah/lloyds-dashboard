@@ -1,7 +1,7 @@
 (function () {
   var STORAGE_KEY = "lloyds-ks4-students";
   var VERSION_KEY = "lloyds-ks4-seed-version";
-  var SEED_VERSION = 3;
+  var SEED_VERSION = 5;
   var SHEET_URL =
     "https://docs.google.com/spreadsheets/d/1kMZy6UPEICCHABe7Fa9FIf_ij0z79l84aAYsRhzn-qc/edit";
 
@@ -11,6 +11,8 @@
     "ks4-lexi-penny",
     "ks4-amishael-mufata",
     "ks4-sylvin-pun",
+    "ks4-flynn-hurley",
+    "ks4-charlie-archer",
   ];
 
   var SEED_STUDENTS = [
@@ -217,46 +219,6 @@
       suggestedAction: "Confirm July 2026 start; address disengagement on engagement tab",
       confidence: "High",
     },
-    {
-      id: "ks4-flynn-hurley",
-      name: "Flynn Hurley",
-      keyStage: "KS4",
-      yearGroup: "Year 11",
-      school: "Robert Clack",
-      placementType: "KS4",
-      currentStatus: "Proposed",
-      inductionStatus: "Not Started",
-      riskAssessmentStatus: "Unknown",
-      ilpStatus: "Unknown",
-      studentProfileStatus: "Not Started",
-      reviewNeeded: "Yes",
-      evidenceSource: "Google Sheet — Master list + Y11 provision tab",
-      evidenceWording:
-        "KS 4, Year Group 11, Robert Clack, Start Date 01/09/2026; Intended Destination: College; Provision: KS4; GCSE courses In Progress; future reviews through 13/04/2027",
-      missingInfo: "Funding type (LA/Commissioned), induction, risk assessment, ILP",
-      suggestedAction: "Prepare for Sept 2026 start; create student profile",
-      confidence: "High",
-    },
-    {
-      id: "ks4-charlie-archer",
-      name: "Charlie Archer",
-      keyStage: "KS4",
-      yearGroup: "Year 11",
-      school: "Greatfields School",
-      placementType: "KS4",
-      currentStatus: "Current",
-      inductionStatus: "Unknown",
-      riskAssessmentStatus: "Unknown",
-      ilpStatus: "Unknown",
-      studentProfileStatus: "Not Started",
-      reviewNeeded: "Yes",
-      evidenceSource: "Google Sheet — Master list + Y11 provision tab",
-      evidenceWording:
-        "KS 4, Year Group 11, Greatfields School, Start Date 20/10/2025; Provision: KS4; GCSE English/Maths In Progress; Interventions: FLZ; Agencies: CAMHS; active review cycle through 01/06/2026",
-      missingInfo: "Funding type, induction, risk assessment, ILP",
-      suggestedAction: "Create/send Year 11 student profile",
-      confidence: "High",
-    },
   ];
 
   function loadStudents() {
@@ -390,22 +352,22 @@
     return { year10: a, year11: b, ks4UnknownYear: c, proposedUnclear: d, actions: e };
   }
 
-  function statusClass(value) {
-    if (!value) return "";
-    var v = String(value).toLowerCase();
-    if (v.indexOf("complete") !== -1 || v === "current") return "ks4-badge--ok";
-    if (v.indexOf("not started") !== -1 || v === "needed") return "ks4-badge--warn";
-    if (v === "proposed" || v === "unclear") return "ks4-badge--muted";
-    if (v === "unknown") return "ks4-badge--unknown";
-    return "";
-  }
-
   function escapeHtml(str) {
     return String(str || "")
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
+  }
+
+  function listStudents() {
+    return getStudents()
+      .filter(function (s) {
+        return s.yearGroup === "Year 10";
+      })
+      .sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+      });
   }
 
   function renderStudentCard(student, expanded) {
@@ -421,25 +383,11 @@
       escapeHtml(student.name) +
       "</span>" +
       '<span class="ks4-card__meta">' +
-      escapeHtml(student.yearGroup) +
-      " · " +
       escapeHtml(student.school) +
+      " · " +
+      escapeHtml(student.yearGroup) +
       "</span>" +
-      '<div class="ks4-card__badges">' +
-      '<span class="ks4-badge ' +
-      statusClass(student.currentStatus) +
-      '">' +
-      escapeHtml(student.currentStatus) +
-      "</span>" +
-      '<span class="ks4-badge ' +
-      statusClass(student.placementType) +
-      '">' +
-      escapeHtml(student.placementType) +
-      "</span>" +
-      '<span class="ks4-badge ks4-badge--confidence">' +
-      escapeHtml(student.confidence) +
-      "</span>" +
-      "</div></div>" +
+      "</div>" +
       '<svg class="ks4-card__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>' +
       "</button>";
 
@@ -447,30 +395,13 @@
       html +=
         '<div class="ks4-card__detail">' +
         '<dl class="ks4-detail-grid">' +
-        detailRow("Key Stage", student.keyStage) +
-        detailRow("Year Group", student.yearGroup) +
-        detailRow("School / Referrer", student.school) +
-        detailRow("Placement Type", student.placementType) +
-        detailRow("Current Status", student.currentStatus) +
+        detailRow("Placement", student.placementType) +
+        detailRow("Status", student.currentStatus) +
         detailRow("Induction", student.inductionStatus) +
-        detailRow("Risk Assessment", student.riskAssessmentStatus) +
-        detailRow("ILP", student.ilpStatus) +
-        detailRow("Student Profile", student.studentProfileStatus) +
-        detailRow("Review Needed", student.reviewNeeded) +
-        detailRow("Confidence", student.confidence) +
         "</dl>" +
-        '<p class="ks4-detail-block"><strong>Evidence source</strong><br>' +
-        escapeHtml(student.evidenceSource) +
-        "</p>" +
-        '<p class="ks4-detail-block"><strong>Exact wording</strong><br>' +
-        escapeHtml(student.evidenceWording) +
-        "</p>" +
-        '<p class="ks4-detail-block"><strong>Missing information</strong><br>' +
-        escapeHtml(student.missingInfo) +
-        "</p>" +
-        '<p class="ks4-detail-block"><strong>Suggested next action</strong><br>' +
-        escapeHtml(student.suggestedAction) +
-        "</p>" +
+        '<p class="ks4-profile-link"><a href="ks4-monitoring/#student/' +
+        escapeHtml(student.id) +
+        '/induction">Open monitoring profile</a></p>' +
         "</div>";
     }
 
@@ -482,56 +413,20 @@
     return (
       "<div><dt>" +
       escapeHtml(label) +
-      '</dt><dd class="ks4-badge ' +
-      statusClass(value) +
-      '">' +
+      "</dt><dd>" +
       escapeHtml(value) +
       "</dd></div>"
     );
   }
 
-  function renderGroup(title, students, expandedId) {
-    if (!students.length) {
-      return (
-        '<section class="ks4-group"><h3 class="ks4-group__title">' +
-        escapeHtml(title) +
-        ' <span class="ks4-group__count">0</span></h3><p class="ks4-empty">None</p></section>'
-      );
-    }
-    var cards = students
-      .map(function (s) {
-        return renderStudentCard(s, expandedId === s.id);
-      })
-      .join("");
-    return (
-      '<section class="ks4-group"><h3 class="ks4-group__title">' +
-      escapeHtml(title) +
-      ' <span class="ks4-group__count">' +
-      students.length +
-      "</span></h3>" +
-      '<div class="ks4-list">' +
-      cards +
-      "</div></section>"
-    );
-  }
-
   function renderHomeSummary() {
-    var students = getStudents();
-    var groups = groupStudents(students);
+    var students = listStudents();
     var el = document.getElementById("home-ks4-summary");
     if (!el) return;
     el.innerHTML =
       '<p class="home-ks4-summary__stat"><strong>' +
       students.length +
-      "</strong> KS4 students tracked</p>" +
-      '<p class="home-ks4-summary__breakdown">Y10: ' +
-      groups.year10.length +
-      " · Y11: " +
-      groups.year11.length +
-      " · Actions: " +
-      groups.actions.length +
-      "</p>" +
-      '<p class="home-ks4-summary__source">Source: Google Sheet (no emails in workspace)</p>';
+      "</strong> Year 10 students</p>";
   }
 
   var expandedId = null;
@@ -540,24 +435,18 @@
     var root = document.getElementById("ks4-root");
     if (!root) return;
 
-    var students = getStudents();
-    var groups = groupStudents(students);
+    var students = listStudents();
+    var cards = students
+      .map(function (s) {
+        return renderStudentCard(s, expandedId === s.id);
+      })
+      .join("");
 
     root.innerHTML =
-      '<div class="ks4-notice">' +
-      "<p><strong>Data sources:</strong> Google Sheet exported " +
-      new Date().toLocaleDateString("en-GB") +
-      '. No .eml/.mbox emails found in workspace.</p>' +
-      "<p><strong>Y11 leavers excluded:</strong> Vinnie Lane, Lexi Penny (Flexi Full Time + Apprenticeship, review cycle ended); Amishael Mufata (review cycle ended Jul 2025, no future reviews); Sylvin Pun (Special provision only, not on Y11 KS4 provision tab).</p>" +
-      '<p class="ks4-notice__link"><a href="' +
-      SHEET_URL +
-      '" target="_blank" rel="noopener">Open source spreadsheet</a></p>' +
-      "</div>" +
-      renderGroup("A. Confirmed Year 10", groups.year10, expandedId) +
-      renderGroup("B. Confirmed Year 11", groups.year11, expandedId) +
-      renderGroup("C. KS4 — year group unknown", groups.ks4UnknownYear, expandedId) +
-      renderGroup("D. Proposed / unclear / historical", groups.proposedUnclear, expandedId) +
-      renderGroup("E. Immediate actions needed", groups.actions, expandedId);
+      '<p class="ks4-header-link"><a href="ks4-monitoring/">KS4 Monitoring</a></p>' +
+      '<div class="ks4-list">' +
+      cards +
+      "</div>";
 
     root.querySelectorAll(".ks4-card__toggle").forEach(function (btn) {
       btn.addEventListener("click", function () {
