@@ -1,39 +1,64 @@
 # Year 10 Email Evidence Reports
 
-Generated: 2026-06-11  
-**Bromcom extraction:** 2026-06-11 (all 10 Year 10 students located in Bromcom MIS)  
+Generated: 2026-06-11 (updated)  
+**Progress trackers:** Google Sheets (primary); cached CSVs in `data/`  
+**Bromcom extraction:** 2026-06-11 (supplementary; Profile view per student)  
 **Outlook Web full extract:** 2026-06-11 (cursor-ide-browser MCP, reading pane via CDP `Runtime.evaluate`)
 
 ## Reports
 
-| Student | File | Threads found | Excerpts (HxStore audit) |
-|---------|------|---------------|--------------------------|
-| Calum Mison | [year-10/calum-mison.md](year-10/calum-mison.md) | 2 | 3 |
-| Jayden O'Brien | [year-10/jayden-obrien.md](year-10/jayden-obrien.md) | 1 | 4 |
-| Stacey Grail | [year-10/stacey-grail.md](year-10/stacey-grail.md) | 4 | 3 |
-| Tyrell Allassani | [year-10/tyrell-allassani.md](year-10/tyrell-allassani.md) | 2 | 2 |
-| Ronny Burletson | [year-10/ronny-burletson.md](year-10/ronny-burletson.md) | 2 | 0 (batch table only) |
-| Mason Taylor | [year-10/mason-taylor.md](year-10/mason-taylor.md) | 1 | 0 (batch table only) |
-| Jovan Lane | [year-10/jovan-lane.md](year-10/jovan-lane.md) | 2 | 1 |
-| Harrison Jones | [year-10/harrison-jones.md](year-10/harrison-jones.md) | 2 | 1 |
-| Joshua Lang | [year-10/joshua-lang.md](year-10/joshua-lang.md) | 4 | 2 |
-| Tyler Fredreick | [year-10/tyler-fredreick.md](year-10/tyler-fredreick.md) | 3 | 2 (+ full Outlook Web thread) |
-| Kamari Emanuel (optional) | [year-10/kamari-emanuel.md](year-10/kamari-emanuel.md) | 2 | 2 |
+| Student | File | Progress & gaps | Outlook full extract |
+|---------|------|-----------------|----------------------|
+| Calum Mison | [year-10/calum-mison.md](year-10/calum-mison.md) | Yes | Behaviour thread |
+| Jayden O'Brien | [year-10/jayden-obrien.md](year-10/jayden-obrien.md) | Yes | Placement thread |
+| Stacey Grail | [year-10/stacey-grail.md](year-10/stacey-grail.md) | Yes | Safeguarding + behaviour threads |
+| Tyrell Allassani | [year-10/tyrell-allassani.md](year-10/tyrell-allassani.md) | Yes | Incident thread |
+| Ronny Burletson | [year-10/ronny-burletson.md](year-10/ronny-burletson.md) | Yes | Attendance + cohort threads |
+| Mason Taylor | [year-10/mason-taylor.md](year-10/mason-taylor.md) | Yes | Cohort list |
+| Jovan Lane | [year-10/jovan-lane.md](year-10/jovan-lane.md) | Yes | Cohort list |
+| Harrison Jones | [year-10/harrison-jones.md](year-10/harrison-jones.md) | Yes | Cohort list |
+| Joshua Lang | [year-10/joshua-lang.md](year-10/joshua-lang.md) | Yes | KS4 100% thread |
+| Tyler Fredreick | [year-10/tyler-fredreick.md](year-10/tyler-fredreick.md) | Yes | URGENT punctuality thread |
+| Kamari Emanuel (optional) | [year-10/kamari-emanuel.md](year-10/kamari-emanuel.md) | Yes | Cohort list + HxStore |
 
 Student list verified from `ks4-monitoring/ks4-students.js` (10 Year 10 students + Kamari as optional).
 
 ## Search methodology
 
-### 1. Outlook Web (cursor-ide-browser MCP)
+### 1. Google Sheets progress trackers (PRIMARY)
+
+**Master tracker:** `https://docs.google.com/spreadsheets/d/1kMZy6UPEICCHABe7Fa9FIf_ij0z79l84aAYsRhzn-qc/`
+
+| Cached file | Tab / content |
+|-------------|---------------|
+| `data/ks4-master-export.csv` | Master list: BFL, interventions, review dates, start dates |
+| `data/ks4-year10-provision.csv` | Y10 provision courses (H&S, First Aid, Safeguarding, EE Play Maker) |
+| `data/ks4-kings-trust.csv` | King's Trust theory/practical/award |
+| `data/ks4-engagement.csv` | Engagement tab (punctuality, lesson engagement, concern level) |
+
+**Weekly concerns:** `https://docs.google.com/spreadsheets/d/1wTcqd1c7nLRK0HjS_UvCHFszBYytDKCy/` gid=1377154515
+
+| Cached file | Content |
+|-------------|---------|
+| `data/ks4-weekly-concerns-export.csv` | Att%, present concerns, strengths, agreed actions |
+
+**Live re-fetch (2026-06-11):** CSV export URLs returned auth/page-not-found from this environment. Progress data taken from cached exports above (same gids referenced in `ks4-monitoring/monitoring.js`).
+
+Each `year-10/{slug}.md` includes `## Progress & gaps summary` cross-referencing sheet + email + Bromcom evidence.
+
+### 2. Outlook Web (cursor-ide-browser MCP)
 
 - Tab: `https://outlook.cloud.microsoft/mail/` (signed in as Lloyd Dwaah, ldwaah@evolution-sportsgroup.com)
 - Workflow: `browser_lock` → search combobox fill + Enter → click `[role=option]` → expand conversation → CDP extract `document.querySelector('[role=main][aria-label="Reading Pane"]').innerText`
-- Raw extracts saved to `data/outlook-extracts/` where full threads captured
-- **Emails fully opened (reading pane):** Calum Mison Behaviour Update; Tyler Fredrick URGENT thread; Stacey Grail Comprehensive Behaviour & Safeguarding Report; Jayden O Brien 4-week placement; Joshua Lang KS4 100%; Tyrell Allassani incident; Student updates / Current Cohort / Rapid Response / Ronny attendance (partial or batch references)
-- **Access:** OK when search returns results; search UI sometimes returns empty message list until retry
-- Each `year-10/{slug}.md` includes `## Outlook Web (full extract)` with quoted evidence only
+- Raw extracts saved to `data/outlook-extracts/`:
+  - `stacey-grail-urgent-safeguarding-thread.txt` (Tiara Hutchinson)
+  - `student-updates-10-june-2026-thread.txt` (cohort list + Kamari/Harrison/Ronny/Tyler)
+  - `ronny-attendance-concern-thread.txt` (Ronny and Teddy)
+  - `tyler-fredrick-urgent-thread.txt`, `tyrell-allassani-incident-thread.txt` (prior pass)
+- **Newly opened this pass:** URGENT SAFEGUARDING UPDATE (Stacey); Student updates 10 June 2026; Attendance Concern Ronny and Teddy
+- **Cohort list:** captured inside Eugene Dwaah `Student updates 10 June 2026` email (not a separate subject line)
 
-### 2. Desktop Outlook AppleScript
+### 3. Desktop Outlook AppleScript
 
 ```applescript
 tell application "Microsoft Outlook" to count of messages of inbox
@@ -41,39 +66,39 @@ tell application "Microsoft Outlook" to count of messages of inbox
 
 - **Result:** 0 messages in all folders via AppleScript
 - **Cause:** New Outlook mode (`IsRunningNewOutlook = 1`). Classic AppleScript mail model not populated.
-- **Workaround:** Revert to Legacy Outlook, or use Outlook Web / HxStore cache
 
-### 3. HxStore.hxd local cache
+### 4. HxStore.hxd local cache
 
-- **Path:** `~/Library/Group Containers/UBF8T346G9.Office/Outlook/Outlook 15 Profiles/Main Identity/HxStore.hxd` (~37 MB, read 2026-06-11)
-- **Method:** Read-only binary extract (ASCII runs + context windows); prior audit saved to `data/emails-extracted/*.txt`
-- **Note:** Earlier extract used `.../Main Profile/Data/HxStore.hxd`; current file is under `Main Identity/`
+- **Path:** `~/Library/Group Containers/UBF8T346G9.Office/Outlook/Outlook 15 Profiles/Main Identity/HxStore.hxd`
+- **Method:** Read-only binary extract; audit in `data/emails-extracted/*.txt`
 
-### 4. Bromcom MIS (cursor-ide-browser MCP)
+### 5. Bromcom MIS (supplementary)
 
-- Tab: `https://cloudmis.bromcom.com/Nucleus/UI/Areas/People/StudentList.aspx` (Evolution Education, signed in)
-- Method: Students List grid (38 on roll) plus per-student Profile (`StudentDetails.aspx?StudentIDs={id}#Profile`)
-- **Access:** OK. All 10 target students found as Y10 / KS4 Reg.
-- **Evidence appended:** `## Bromcom data` section in each `year-10/{slug}.md`
-- **Not extracted in this pass:** dedicated Behaviour, Attendance, SEN, Health Background, Safeguarding sub-tabs (Profile "All panels" view used); behaviour point totals from list additional columns did not render after column save
+- **URL:** `https://cloudmis.bromcom.com/Nucleus/UI/Areas/People/StudentList.aspx` (Evolution Education, signed in)
+- **Profile URL pattern:** `StudentDetails.aspx?StudentIDs={id}#Profile`
+- **Date confirmed:** 2026-06-11
+- **Access:** OK. All 10 target Year 10 students located (Y10 / KS4 Reg).
+- **Captured:** Profile "All panels" view per student (enrolment, attendance summary, contacts, support events where visible).
+- **Not captured:** Assessment tab, dedicated Attendance/Behaviour/SEN/Safeguarding sub-pages (sidebar tabs not opened; Assessment click returned zero-dimension element). No qualification progress data from Bromcom.
+- **Progress tracker answer:** Bromcom does not replace Google Sheets for course/review tracking in this pass.
 
-### 5. Existing audit files
+### 6. Existing audit files
 
 - `data/emails-extracted/` (per-student `.txt`, `_summary.txt`, `outlook-search-report.txt`, `general-ks4-terms.txt`)
-- Extracted 2026-06-11 from HxStore; cross-checked against live cache re-read on 2026-06-11
 
 ## Access blockers
 
 | Source | Status |
 |--------|--------|
+| Google Sheets (live CSV export) | Blocked without auth (cached CSVs used) |
 | Outlook Web | Available |
-| AppleScript (New Outlook) | Blocked - 0 messages returned |
-| HxStore | Available (subjects/snippets; full bodies often truncated) |
-| Full email bodies | Partial - cache fragments and Outlook Web reading pane only where opened |
-| Bromcom MIS | Available (Students List + Student Details Profile) |
+| AppleScript (New Outlook) | Blocked |
+| HxStore | Available (fragments) |
+| Bromcom MIS | Available (Profile only; not progress/qualification tabs) |
 
 ## Rules applied
 
-- Evidence only from sources above (email + Bromcom UI)
+- Evidence only from sources above
 - No guessing or fabrication
 - Gaps explicitly noted per student
+- No em dashes in generated summaries

@@ -54,16 +54,52 @@
 ## Outlook Web (full extract)
 
 **Extraction date:** 2026-06-11  
-**Method:** cursor-ide-browser MCP; batch emails referenced  
-**Emails opened:** 0 dedicated Jovan-only thread
+**Method:** cursor-ide-browser MCP; Student updates 10 June 2026 cohort list  
+**Emails opened:** Student updates (Eugene cohort list)  
+**Raw extract:** `data/outlook-extracts/student-updates-10-june-2026-thread.txt`
 
-### Email: RAPID RESPONSE REFERRALS / Current Cohort (HxStore)
+### Email: Student updates 10 June 2026 (Eugene Dwaah, Wed 10/06/2026 16:43)
 
-- Table row: `Jovan Lane-Ridge` - **Robert Clack** - live placement
+| Field | Detail |
+|-------|--------|
+| Subject | `Student updates 10 June 2026` |
+| School | Robert Clack |
 
-**Gap:** Current Cohort List full body not readable in this session
+- `Jovan Lane-Ridge` - `Robert Clack - live places`
 
 ---
+
+## Progress & gaps summary
+
+**Data as of:** 2026-06-11 (cached Google Sheets CSV exports)
+
+### Where they are (tracker)
+
+| Source | Field | Value |
+|--------|-------|-------|
+| Master list | BFL | Report |
+| Master list | Intervention | FLZ Focused Learning Zone |
+| Master list | Agencies | Subwize |
+| Master list | Start date | 27/01/2026 |
+| Master list | Reviews | 6w 10/03/2026; 12w 21/04/2026; 24w 14/07/2026; 32w 08/09/2026 |
+| Weekly concerns | Att% | 79.41% |
+| Weekly concerns | Concern | Major concern; dysregulated; FLZ with time-out breaks |
+| Engagement tab | Punctuality / Lesson / Purple Ruler / Concern | Occasionally Late; Mostly Engaged; Attending & Completing; Low Concern |
+| Engagement tab | Home contact | No Contact |
+| Y10 provision | All courses | Started |
+| King's Trust | All | Completed |
+
+### Identified gaps
+
+| Gap | Evidence |
+|-----|----------|
+| BFL at Report level | Master list |
+| Dysregulation despite full timetable | Weekly concerns |
+| No home contact on engagement tab | `ks4-engagement.csv` |
+| No sheet evidence for ILP, risk assessment, student profile | Report gaps |
+
+**Evidence sources:** Google Sheets CSVs including `ks4-engagement.csv`
+
 
 ## Gaps
 

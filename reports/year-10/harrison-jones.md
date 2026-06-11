@@ -60,29 +60,57 @@
 ## Outlook Web (full extract)
 
 **Extraction date:** 2026-06-11  
-**Method:** cursor-ide-browser MCP; Student updates thread referenced in prior pass; dedicated Harrison subject in HxStore  
-**Emails opened:** 0 dedicated Harrison-only thread (cohort email referenced only)
+**Method:** cursor-ide-browser MCP; Student updates 10 June 2026 thread expanded  
+**Emails opened:** Student updates cohort list (Eugene + Lloyd reply)  
+**Raw extract:** `data/outlook-extracts/student-updates-10-june-2026-thread.txt`
 
-### Email: Student updates (referenced, full Eugene body not re-captured)
+### Email: Student updates 10 June 2026 (Eugene Dwaah, Wed 10/06/2026 16:43)
 
 | Field | Detail |
 |-------|--------|
-| Subject (HxStore fragment) | `#Harrison Jones (report needs to be submitted to Ba3` |
-| School | Robert Clack (batch table); Barking Abbey (report submission subject) |
+| Subject | `Student updates 10 June 2026` |
+| School | Robert Clack |
 
-**HxStore subject fragment:**
+- `Harrison Jones (report needs to be submitted to Bal)` - `Robert Clack - live places`
 
-- `Harrison Jones (report needs to be submitted to Ba3`
+### Email: Lloyd Dwaah reply (Thu 11/06/2026 08:31)
 
-### Email: Lloyd Dwaah reply (Student updates thread, HxStore fragment)
+- `In relation to Harrison Jones and Ronny Burletson, can you clarify what reports need to be submitted?`
 
-- `I can contact Barking Abbey and cc Bal regard Kamari Emanuel s induction arrangements an rela to Harrison Jones Ronny Burletson,4 you clarify what reports need to be submitted?`
-
-**Action items:** report to Barking Abbey (per subject line); Lloyd to clarify required reports
-
-**Gap:** Eugene Dwaah Student updates email body (Wed 10/06/2026) not readable in this session (search UI returned empty results)
+**Action items:** report to Bal; clarify required reports with Eugene
 
 ---
+
+## Progress & gaps summary
+
+**Data as of:** 2026-06-11 (cached Google Sheets CSV exports)
+
+### Where they are (tracker)
+
+| Source | Field | Value |
+|--------|-------|-------|
+| Master list | BFL | Doing Well / OK |
+| Master list | Intervention | Reduced Timetable |
+| Master list | Start date | 07/10/2025 |
+| Master list | Reviews | 6w 18/11/2025; 12w 30/12/2025; 24w 24/03/2026; 32w 19/05/2026 |
+| Weekly concerns | Att% | 12.27% |
+| Weekly concerns | Action | Refer Rapid Response; FLZ when in centre |
+| Y10 provision | All courses | N/A |
+| King's Trust | All | N/A |
+| Email cohort list | Report to Bal pending | `student-updates-10-june-2026-thread.txt` |
+
+### Identified gaps
+
+| Gap | Evidence |
+|-----|----------|
+| Very low attendance | 12.27% weekly concerns |
+| Report submission to Bal requested | Student updates 11/06/2026 |
+| No qualification progress on provision/King's Trust tabs | N/A on both |
+| No sheet evidence for ILP, risk assessment, student profile | Report gaps |
+| 32-week review upcoming | 19/05/2026 master list |
+
+**Evidence sources:** Google Sheets CSVs, Outlook student updates thread
+
 
 ## Gaps
 

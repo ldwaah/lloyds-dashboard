@@ -52,29 +52,76 @@
 ## Outlook Web (full extract)
 
 **Extraction date:** 2026-06-11  
-**Method:** cursor-ide-browser MCP; HxStore subject lines; Rapid Response batch referenced  
-**Emails opened:** Attendance Concern thread identified in prior pass; full body not re-captured (search UI empty)
+**Method:** cursor-ide-browser MCP; expanded threads  
+**Emails opened:** Attendance Concern (Ronny and Teddy); Student updates 10 June 2026 cohort list  
+**Raw extracts:** `data/outlook-extracts/ronny-attendance-concern-thread.txt`, `data/outlook-extracts/student-updates-10-june-2026-thread.txt`
 
-### Email: RE: Attendance Concern Ronny and Teddy Burletson
+### Email: Attendance Concern – Ronny and Teddy Burletson
 
 | Field | Detail |
 |-------|--------|
-| Subject (HxStore) | `RE: Attendance Concern Ronny and Teddy Burletson` |
-| School | Jo Richardson Community School (contacts on Bromcom profile) |
+| Subject | `Attendance Concern – Ronny and Teddy Burletson` |
+| School | Jo Richardson Community School (SIMPSON R SMP) |
 
-**Gap:** reading pane body not extracted in this session
+**Admin Support (Amy Dwaah), 16 April 2026**
 
-### Email: RAPID RESPONSE REFERRALS (batch, HxStore)
+- `Attendance: Approx. 18%`
+- `Has not returned since the Easter break`
+- `Multiple contact attempts` with parent `(no response)`
+- Requesting `urgent support from school to engage parent`
 
-- Table row: `Ronny Burletson` - **Robert Clack** - live placement
+**Admin Support, 17 April 2026**
 
-### Email: Lloyd Dwaah reply (Student updates, HxStore fragment)
+- `Ronny B has been seen roaming the streets during school time`
 
-- `rela to Harrison Jones Ronny Burletson,4 you clarify what reports need to be submitted?`
+**SIMPSON R, 17 April 2026**
 
-**Action items:** report submission clarification; parent school liaison Robert Clack
+- `concerned to hear that the boys have not returned after the Easter break`
+- Mum contact attempts with `no response`
+
+### Email: Student updates 10 June 2026 (cohort list)
+
+- `Ronny Burletson (report need to be submitted to Bal)` - `Jo Richardson - live places`
+
+### Email: Lloyd Dwaah reply, Thu 11/06/2026 08:31
+
+- `In relation to Harrison Jones and Ronny Burletson, can you clarify what reports need to be submitted?`
+
+**Action items:** report submission to Bal; parent school liaison; attendance monitoring
 
 ---
+
+## Progress & gaps summary
+
+**Data as of:** 2026-06-11 (cached Google Sheets CSV exports)
+
+### Where they are (tracker)
+
+| Source | Field | Value |
+|--------|-------|-------|
+| Master list | BFL | Doing Well / OK |
+| Master list | Agencies | Social Services |
+| Master list | Start date | 02/10/2025 |
+| Master list | Reviews | 6w 13/11/2025; 12w 25/12/2025; 24w 19/03/2026; 32w 14/05/2026 |
+| Weekly concerns | Att% | 44.58% |
+| Weekly concerns | Action | Refer Rapid Response; parent school informed |
+| Y10 provision | All courses | N/A |
+| King's Trust | All | Completed |
+| Bromcom | Sessions absent | 97/326 (29.75%); recent AM codes N |
+| Email cohort list | Report to Bal pending | `student-updates-10-june-2026-thread.txt` |
+
+### Identified gaps
+
+| Gap | Evidence |
+|-----|----------|
+| Low attendance | 44.58% weekly; Bromcom 29.75% absent |
+| Report submission to Bal unclear | Student updates thread 11/06/2026 |
+| Historical attendance crisis (~18%, post-Easter non-return) | `ronny-attendance-concern-thread.txt` |
+| Important document on Bromcom not extracted | Bromcom profile banner |
+| No sheet evidence for ILP, risk assessment, student profile | Report gaps |
+
+**Evidence sources:** Google Sheets CSVs, Bromcom section, Outlook extracts in `data/outlook-extracts/`
+
 
 ## Gaps
 

@@ -78,6 +78,35 @@
 
 ---
 
+## Progress & gaps summary
+
+**Data as of:** 2026-06-11 (cached Google Sheets CSV exports)
+
+### Where they are (tracker)
+
+| Source | Field | Value |
+|--------|-------|-------|
+| Master list | BFL | Doing Well / OK |
+| Master list | Intervention | Mentoring |
+| Master list | Start date | 26/03/2026 |
+| Master list | Reviews | 6w 07/05/2026; 12w 18/06/2026; 24w 10/09/2026; 32w 05/11/2026 |
+| Weekly concerns | Att% | 41.38% |
+| Weekly concerns | Placement | Full timetable; uniform needed; health concerns monitored |
+| Y10 provision | All courses | N/A |
+| King's Trust | Theory, Practical, Level 1 Award | Completed (all) |
+| Bromcom Profile | Sessions absent | per Bromcom section |
+
+### Identified gaps
+
+| Gap | Evidence |
+|-----|----------|
+| Attendance below 50% on weekly sheet | 41.38% weekly concerns |
+| No email/sheet evidence for ILP, risk assessment, student profile | Report gaps |
+| 12-week review due | Master list 18/06/2026 |
+
+**Evidence sources:** `data/ks4-master-export.csv`, `data/ks4-weekly-concerns-export.csv`, `data/ks4-kings-trust.csv`, Bromcom section
+
+
 ## Gaps
 
 - No email evidence found for: induction status, risk assessment, ILP, student profile

@@ -87,6 +87,34 @@
 
 ---
 
+## Progress & gaps summary
+
+**Data as of:** 2026-06-11 (cached Google Sheets CSV exports)
+
+### Where they are (tracker)
+
+| Source | Field | Value |
+|--------|-------|-------|
+| Master list | BFL | Doing Well / OK |
+| Master list | Intervention | Reduced Timetable |
+| Master list | Start date | blank |
+| Master list | Review dates | blank |
+| Weekly concerns | Att% | 72.15% |
+| Weekly concerns | Placement | Reduced timetable 12:15 finish; safety concerns |
+| Y10 provision | All courses | Started |
+| King's Trust | All | Completed |
+
+### Identified gaps
+
+| Gap | Evidence |
+|-----|----------|
+| No start/review dates on master list | `ks4-master-export.csv` row blank |
+| Safety-related reduced timetable | Weekly concerns |
+| No email/sheet evidence for ILP, risk assessment, student profile | Report gaps |
+
+**Evidence sources:** `data/ks4-master-export.csv`, `data/ks4-weekly-concerns-export.csv`, `data/ks4-year10-provision.csv`, `data/ks4-kings-trust.csv`
+
+
 ## Gaps
 
 - No email evidence found for: dedicated thread with subject "Tyrell Allassani" (only partial "Tyrell" matches in audit)

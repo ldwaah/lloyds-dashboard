@@ -107,6 +107,37 @@
 
 - Fragment in cache mentions `Tyler Fredrick, will| /BI'll KS4 to bs` in context of Zoho email access (may be separate IT thread)
 
+## Progress & gaps summary
+
+**Data as of:** 2026-06-11 (cached Google Sheets CSV exports)
+
+### Where they are (tracker)
+
+| Source | Field | Value |
+|--------|-------|-------|
+| Master list | BFL | Doing Well / OK |
+| Master list | Start date | 03/07/2026 |
+| Master list | Reviews | 6w 14/08/2026; 12w 25/09/2026; 24w 18/12/2026; 32w 12/02/2027 |
+| Weekly concerns | Att% | 14.29% |
+| Weekly concerns | Action | Monitor; potential FLZ placement |
+| Engagement tab | Punctuality / Lesson / Purple Ruler / Concern | Frequently Late; Refusing/Disengaged; Not Accessing Learning; Monitor |
+| Y10 provision | Not listed | Not on `ks4-year10-provision.csv` |
+| King's Trust | Not listed | Not on `ks4-kings-trust.csv` |
+| Email cohort list | CEO meeting 11 Jun 2026; risk assessment noted | `student-updates-10-june-2026-thread.txt` |
+
+### Identified gaps
+
+| Gap | Evidence |
+|-----|----------|
+| Very low attendance | 14.29% weekly; engagement tab Not Accessing Learning |
+| Risk assessment requested post-meeting | Lloyd reply 11/06/2026 student updates thread |
+| Not on Y10 provision or King's Trust tabs | CSV absence |
+| Name spelling varies (Fredreick/Fredrick/Frederick) | Master vs email vs engagement tab |
+| No sheet evidence for completed ILP or student profile | Report gaps |
+
+**Evidence sources:** Google Sheets CSVs, `ks4-engagement.csv`, Outlook extracts
+
+
 ## Gaps
 
 - No email evidence found for: completed risk assessment document attached

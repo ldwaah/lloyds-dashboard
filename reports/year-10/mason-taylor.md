@@ -39,17 +39,51 @@
 ## Outlook Web (full extract)
 
 **Extraction date:** 2026-06-11  
-**Method:** cursor-ide-browser MCP; Current Cohort List and Student updates referenced in prior pass  
-**Emails opened:** 0 dedicated Mason-only thread
+**Method:** cursor-ide-browser MCP; Student updates 10 June 2026 cohort list  
+**Emails opened:** Student updates (Eugene cohort list)  
+**Raw extract:** `data/outlook-extracts/student-updates-10-june-2026-thread.txt`
 
-### Email: RAPID RESPONSE REFERRALS / Current Cohort (HxStore)
+### Email: Student updates 10 June 2026 (Eugene Dwaah, Wed 10/06/2026 16:43)
 
-- Table row: `Mason Taylor` - **Dagenham Park** - live placement
-- HTML fragment: `Mason Taylor: Dagenham Par`
+| Field | Detail |
+|-------|--------|
+| Subject | `Student updates 10 June 2026` |
+| School | Dagenham Park |
 
-**Gap:** Current Cohort List email body (Eugene Wed 10/06/2026) not readable in this session
+- `Mason Taylor` - `Dagenham Park - live places`
 
 ---
+
+## Progress & gaps summary
+
+**Data as of:** 2026-06-11 (cached Google Sheets CSV exports)
+
+### Where they are (tracker)
+
+| Source | Field | Value |
+|--------|-------|-------|
+| Master list | BFL | Doing Well / OK |
+| Master list | Intervention | Mentoring |
+| Master list | Start date | 09/08/2025 |
+| Master list | Reviews | 6w 20/09/2025; 12w 01/11/2025; 24w 24/01/2026; 32w 21/03/2026 |
+| Weekly concerns | Att% | 40.61% |
+| Weekly concerns | Placement | Reduced timetable |
+| Y10 provision | H&S, First Aid | Not Engaged; Safeguarding Completed; EE Play Maker Started |
+| King's Trust | All | N/A |
+| Email cohort list | Dagenham Park live place | `student-updates-10-june-2026-thread.txt` |
+
+### Identified gaps
+
+| Gap | Evidence |
+|-----|----------|
+| Attendance below 50% | 40.61% weekly concerns |
+| H&S and First Aid not engaged | `ks4-year10-provision.csv` |
+| 32-week review date passed (21/03/2026) | Master list; outcome not in cache |
+| No dedicated email thread (batch only) | `outlook-search-report.txt` |
+| No sheet evidence for ILP, risk assessment, student profile | Report gaps |
+
+**Evidence sources:** Google Sheets CSVs, `data/outlook-extracts/student-updates-10-june-2026-thread.txt`
+
 
 ## Gaps
 

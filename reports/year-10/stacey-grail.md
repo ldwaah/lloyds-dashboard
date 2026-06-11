@@ -110,9 +110,65 @@
 
 **Action items:** final warning issued; CEO meeting with mum; professionals meetings; LAC status noted in other emails
 
-**Not opened this session:** `URGENT SAFEGUARDING UPDATE REGARDING STACEY GRAIL (UPDATE)` (Tiara Hutchinson) - visible in search results only
+### Email: URGENT SAFEGUARDING UPDATE REGARDING STACEY GRAIL (UPDATE)
+
+| Field | Detail |
+|-------|--------|
+| Subject | `URGENT SAFEGUARDING UPDATE REGARDING STACEY GRAIL (UPDATE)` |
+| From | Tiara Hutchinson (Tiara.Hutchinson@lbbd.gov.uk) |
+| Date | Tue 12/05/2026 23:04 |
+| Raw extract | `data/outlook-extracts/stacey-grail-urgent-safeguarding-thread.txt` |
+
+**Tiara Hutchinson, Tue 12/05/2026 23:04**
+
+- `reschedule the professionals meeting as a matter of urgency due to the incidents over the few days`
+- `invite one of the mentors (from school) if possible`
+- `unsuccessful in engaging with` Stacey
+
+**Admin Support (Amy Dwaah), Tue 12/05/2026 09:22**
+
+- Stacey `tracked` to same student's house `8:30-9 PM`; police escorted her home; `safe with mum`
+- Stacey on `remote learning` until `risk assessment and arrange a meeting`
+- CAD `3543/11May26` shared
+
+**Admin Support, 11 May 2026 11:53**
+
+- Stacey `left site today without permission` at break
+- `not be permitted to return` until `risk assessment and meeting with all parties`
 
 ---
+
+## Progress & gaps summary
+
+**Data as of:** 2026-06-11 (cached Google Sheets CSV exports)
+
+### Where they are (tracker)
+
+| Source | Field | Value |
+|--------|-------|-------|
+| Master list | BFL | Final Warning |
+| Master list | Agencies | Social Services |
+| Master list | Start date | 12/08/2025 |
+| Master list | Reviews | 6w 23/09/2025; 12w 04/11/2025; 24w 27/01/2026; 32w 24/03/2026 |
+| Weekly concerns | Att% | 53.85% |
+| Weekly concerns | Placement | Full timetable mainstream; last warning |
+| Y10 provision | All courses | Started |
+| King's Trust | All | Completed |
+| Bromcom | Sessions absent | 41/200 (20.50%) |
+| Email (cohort list) | Status | LAC; final warning (`data/outlook-extracts/student-updates-10-june-2026-thread.txt`) |
+
+### Identified gaps
+
+| Gap | Evidence |
+|-----|----------|
+| BFL Final Warning active | Master list; weekly concerns |
+| Risk assessment and return meeting required after absconding | `data/outlook-extracts/stacey-grail-urgent-safeguarding-thread.txt` |
+| Professionals meeting reschedule requested | Tiara Hutchinson email 12/05/2026 |
+| No sheet/email evidence for completed ILP or student profile | Report gaps |
+| 32-week review date passed (24/03/2026) | Master list; outcome not in cached exports |
+
+**Evidence sources:** Google Sheets CSVs, Bromcom section, `data/outlook-extracts/stacey-grail-urgent-safeguarding-thread.txt`
+
 
 ## Gaps
 

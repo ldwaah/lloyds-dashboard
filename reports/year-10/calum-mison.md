@@ -89,6 +89,37 @@
 
 ---
 
+## Progress & gaps summary
+
+**Data as of:** 2026-06-11 (cached Google Sheets CSV exports; live re-fetch blocked without auth)
+
+### Where they are (tracker)
+
+| Source | Field | Value |
+|--------|-------|-------|
+| Master list (`ks4-master-export.csv`) | BFL | Final Warning |
+| Master list | Intervention | Reduced Timetable |
+| Master list | Start date | 03/11/2026 |
+| Master list | Reviews | 6w 15/12/2026; 12w 26/01/2027; 24w 20/04/2027; 32w 15/06/2027 |
+| Weekly concerns (`ks4-weekly-concerns-export.csv`) | Att% | 51.28% |
+| Weekly concerns | Placement | Reduced timetable; meeting to review support plan |
+| Y10 provision | H&S L1, First Aid, Safeguarding, EE Play Maker | Not Engaged (all) |
+| King's Trust | Theory, Practical, Level 1 Award | Not Engaged (all) |
+| Bromcom Profile | Sessions absent | 16/94 (17.02%) |
+
+### Identified gaps
+
+| Gap | Evidence |
+|-----|----------|
+| King's Trust not engaged | `ks4-kings-trust.csv` |
+| Y10 provision courses not engaged | `ks4-year10-provision.csv` |
+| No email evidence for ILP, risk assessment, student profile | Report gaps section; no sheet columns for these |
+| Induction before Nov 2026 start | Master start date 03/11/2026; ks4-students.js lists induction Not Started |
+| Support plan meeting pending | Weekly concerns agreed action; Outlook behaviour thread (meeting Tue 2.15pm Future) |
+
+**Evidence sources:** `data/ks4-master-export.csv`, `data/ks4-weekly-concerns-export.csv`, `data/ks4-year10-provision.csv`, `data/ks4-kings-trust.csv`, Bromcom `## Bromcom data` in this file
+
+
 ## Gaps
 
 - No email evidence found for: induction completion, risk assessment, ILP, student profile

@@ -113,6 +113,35 @@
 
 ---
 
+## Progress & gaps summary
+
+**Data as of:** 2026-06-11 (cached Google Sheets CSV exports)
+
+### Where they are (tracker)
+
+| Source | Field | Value |
+|--------|-------|-------|
+| Master list | BFL | Doing Well / OK |
+| Master list | Intervention | Mentoring |
+| Master list | Start date | 03/05/2026 |
+| Master list | Reviews | 6w 14/06/2026; 12w 26/07/2026; 24w 18/10/2026; 32w 13/12/2026 |
+| Weekly concerns | Att% | 76.09% |
+| Weekly concerns | Action | Parent school review scheduled; intervention plan |
+| Y10 provision | All courses | Started |
+| King's Trust | All | Completed |
+| Email cohort list | All Saints live place | `student-updates-10-june-2026-thread.txt` |
+
+### Identified gaps
+
+| Gap | Evidence |
+|-----|----------|
+| 6-week review due imminently | 14/06/2026 master list |
+| Parent school review and intervention plan pending | Weekly concerns |
+| No sheet evidence for ILP, risk assessment, student profile | Report gaps |
+
+**Evidence sources:** Google Sheets CSVs, Outlook cohort thread
+
+
 ## Gaps
 
 - No email evidence found for: induction completion, risk assessment, ILP, student profile

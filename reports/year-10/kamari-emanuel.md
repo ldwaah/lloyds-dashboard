@@ -68,24 +68,22 @@
 ## Outlook Web (full extract)
 
 **Extraction date:** 2026-06-11  
-**Method:** cursor-ide-browser MCP; search `Kamari Emanuel` returned 0 message options; HxStore + Student updates fragments  
-**Emails opened:** 0 (name search empty; cohort references only)
+**Method:** cursor-ide-browser MCP; Student updates 10 June 2026 thread; HxStore fragments  
+**Emails opened:** Student updates cohort list + Lloyd reply  
+**Raw extract:** `data/outlook-extracts/student-updates-10-june-2026-thread.txt`
 
-### Email: Kamari Emanuel induction (HxStore)
+### Email: Student updates 10 June 2026 (Eugene Dwaah, Wed 10/06/2026 16:43)
 
 | Field | Detail |
 |-------|--------|
-| Subject | `Kamari Emanuel - contact school cc Bal for induction[` / `Kamari Emanuel's induction arrangements` |
+| Subject | `Student updates 10 June 2026` |
 | School | Barking Abbey |
 
-**HxStore fragments:**
+- `Kamari Emanuel - contact school cc Bal for induction` - `Barking Abbey - live places`
 
-- `%Kamari Emanuel - contact school cc Bal for induction[`
-- `Kamari Emanuel's induction arrangements`
+### Email: Lloyd Dwaah reply (Thu 11/06/2026 08:31)
 
-### Email: Lloyd Dwaah reply (Student updates, HxStore)
-
-- `I can contact Barking Abbey and cc Bal regard Kamari Emanuel s induction arrangements`
+- `I can contact Barking Abbey and cc Bal regarding Kamari Emanuel's induction arrangements.`
 
 ### Email: RAPID RESPONSE REFERRALS (HxStore fragment)
 
@@ -93,9 +91,36 @@
 
 **Action items:** contact Barking Abbey for induction, cc Bal
 
-**Gap:** dedicated Kamari name search returned no results in Outlook Web this session
+**Gap:** dedicated `Kamari Emanuel` inbox search returned 0 results; cohort thread used instead
 
 ---
+
+## Progress & gaps summary
+
+**Data as of:** 2026-06-11
+
+### Where they are (tracker)
+
+| Source | Field | Value |
+|--------|-------|-------|
+| Master list | Not on export | Not listed in `ks4-master-export.csv` |
+| Weekly concerns | Not on export | Not listed in `ks4-weekly-concerns-export.csv` |
+| Y10 provision / King's Trust | Not listed | Not on cached provision tabs |
+| Email cohort list | Barking Abbey live place; induction cc Bal | `student-updates-10-june-2026-thread.txt` |
+| Rapid Response batch (HxStore) | ACCEPT; Suitable for 100%SEC; anger management | `general-ks4-terms.txt` |
+
+### Identified gaps
+
+| Gap | Evidence |
+|-----|----------|
+| Not on Google Sheets progress trackers (cached) | Absent from master and weekly CSVs |
+| Year group unknown | Not on master list |
+| Induction not confirmed complete | Lloyd to contact Barking Abbey cc Bal (11/06/2026) |
+| No sheet/email evidence for ILP, risk assessment, student profile | Report gaps |
+| Physical altercations noted in Rapid Response referral | HxStore fragment |
+
+**Evidence sources:** Outlook `data/outlook-extracts/student-updates-10-june-2026-thread.txt`, HxStore `data/emails-extracted/kamari.txt`
+
 
 ## Gaps
 
