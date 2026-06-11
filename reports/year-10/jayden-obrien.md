@@ -3,7 +3,7 @@
 **Year group:** Year 10 (ks4-jayden-obrien)  
 **School (tracker):** Jo Richardson Community School  
 **Search date:** 2026-06-11  
-**Summary:** 1 main thread (multiple messages), 4 HxStore audit excerpts
+**Summary:** 4-week JRCS respite placement (Mar-May 2026); 41% att; email evidence only (no local PDFs)
 
 ## Sources searched
 
@@ -109,9 +109,22 @@
 
 ## Gaps
 
-- No email evidence found for: induction status, risk assessment, ILP, student profile
-- No email evidence found for: confirmed 12-week review outcome (sheet date only)
-- Full thread bodies not in audit file - snippets only
+- No local PDFs or documents beyond email extracts in Lloyd's Hub audit files
+- No evidence for: HCA, behaviour contract, risk assessment, ILP, profile PDF, school reports
+- 12-week review due 18/06/2026; outcome not in sources reviewed
+
+## Placement timeline (consolidated from Outlook thread)
+
+| Date | Event |
+|------|-------|
+| Sep 2025 | Part-time timetable at JRCS (per Charlotte Bolton) |
+| 12/03/2026 | 4-week respite referral to 100% SEC |
+| 17/03/2026 | Start confirmed Monday 17 March (mum agreed) |
+| During placement | Work experience placement; school reports engaging well |
+| 14/05/2026 | Lloyd: 4-week placement ends Friday 16 May |
+| 15/05/2026 | Review meeting 2pm Future Youth Zone (Bolton attending) |
+
+**Weekly concerns (tracker):** full timetable; uniform needed; health concerns monitored.
 
 ## Name variations searched
 

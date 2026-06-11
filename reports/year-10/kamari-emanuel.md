@@ -3,7 +3,7 @@
 **Year group (tracker):** Unknown (ks4-kamari-emanuel)  
 **School (tracker):** Barking Abbey  
 **Search date:** 2026-06-11  
-**Summary:** 2+ threads identified, 2 HxStore audit excerpts. Included because named in Rapid Response batch and induction emails.
+**Summary:** Barking Abbey live place; induction pending; Rapid Response ACCEPT (anger management); not on tracker sheets
 
 ## Sources searched
 
@@ -124,11 +124,22 @@
 
 ## Gaps
 
-- No email evidence found for: confirmed Year 10 year group
-- No email evidence found for: placement type, start date, funding type
-- No email evidence found for: risk assessment, ILP, student profile
-- Full Student updates sent-item body not in `data/emails-extracted/`
-- Year group remains Unknown in tracker
+- No local PDFs on disk; email extracts only
+- Year group not confirmed on tracker (optional student; not on master or weekly CSVs)
+- Induction arrangements actioned by Lloyd (contact Barking Abbey, cc Bal) but completion not confirmed
+
+## Rapid Response referral summary (HxStore fragment)
+
+**Source:** `general-ks4-terms.txt` / RAPID RESPONSE REFERRALS batch
+
+| Field | Detail |
+|-------|--------|
+| Decision | ACCEPT |
+| Suitability | Suitable for 100%SEC |
+| Key issues | Anger management |
+| Incidents | Two physical altercations since returning to school |
+
+**Cohort list (10/06/2026):** Barking Abbey live place; Lloyd to contact school cc Bal for induction.
 
 ## Name variations searched
 

@@ -3,7 +3,7 @@
 **Year group:** Year 10 (ks4-ronny-burletson)  
 **School (tracker):** Robert Clack  
 **Search date:** 2026-06-11  
-**Summary:** 2 thread references, 0 dedicated HxStore audit file (batch / attendance only)
+**Summary:** Post-Easter attendance crisis (~18%); report to Bal pending; Autumn 2 school report + behaviour log (local PDFs)
 
 ## Sources searched
 
@@ -125,11 +125,37 @@
 
 ## Gaps
 
-- No email evidence found for: dedicated per-student thread beyond batch table and attendance subject
-- No email evidence found for: induction, risk assessment, ILP, student profile
-- No email evidence found for: Social Services involvement (sheet only)
-- No email evidence found for: DofE status (sheet only)
-- Full email body for Rapid Response batch not fully extracted - table rows and headers only
+- No local evidence for: HCA, behaviour contract, risk assessment PDF, ILP
+- Bromcom banner notes important document on profile (name not extracted)
+- No email evidence found for: Social Services involvement (sheet only), DofE status (sheet only)
+
+## Autumn 2 school report (14 Dec 2025, local PDF)
+
+**Source:** `School Report - Ronny Burletson.pdf` (Evolution Education, report period Autumn 2, school JRCS on report)
+
+**Attendance:** 67.50% overall; 31.25% authorised absence; 1.25% unauthorised; minor punctuality concerns. Strong start to term then rapid decline.
+
+**Academic:** Maths and English both Good engagement, making expected progress. Positive in Sports Leaders, King's Trust, DofE; leadership and teamwork noted.
+
+**Behaviour stage:** Report. Lesson engagement rated Excellent on report form; commentary describes mixed term with earlier inappropriate language, defiance, disruption, then recent improvement and multiple positive recognitions.
+
+**SEMH:** Regular weekly mentoring; emotional regulation Stable; boxing sessions supporting focus and confidence; helping deliver sessions alongside staff.
+
+**Lead overview:** began term as one of strongest in year group; significant mid-term decline; encouraging recovery in final week. Key actions: attendance, sustain renewed focus, respectful communication, mentoring/boxing, rebuild early-term standards.
+
+## Bromcom behaviour log highlights (local profile PDF)
+
+**Source:** `Ronny Burletson, KS4 Reg - Profile.pdf`
+
+| Date | Event | Detail |
+|------|-------|--------|
+| 03/02/2026 | Tier 2, -2 (BHC) | Off-task, inappropriate language, refused instructions; escalated to health and safety risk; **remote learning with immediate effect** pending review |
+| 17/11/2025 | Tier 3, -3 | Physical aggression towards staff (hit staff on head with object) |
+| 17/11/2025 | Tier 1, -3 | Removal from class; swearing including shouted slur |
+| 11/02/2026 | Tier 1, -1 | Browsing YouTube without permission (x2) |
+| 07/01-10/12/2025 | Positive points | Maths, English, assembly, Kings Trust engagement |
+
+**King's Trust workbook on disk:** `Ronny Burletson - Career Planning Worksheet & picture - EL3.docx` (Entry 3 tracking; content not extracted this pass).
 
 ## Name variations searched
 

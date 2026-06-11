@@ -3,7 +3,7 @@
 **Year group:** Year 10 (ks4-jovan-lane)  
 **School (tracker):** Robert Clack  
 **Search date:** 2026-06-11  
-**Summary:** 2 threads identified, 1 HxStore audit excerpt
+**Summary:** Robert Clack live place; BFL Report; FLZ/dysregulation; 79% att; engagement tab mostly positive
 
 ## Sources searched
 
@@ -103,10 +103,24 @@
 
 ## Gaps
 
-- No email evidence found for: induction completion, risk assessment, ILP, student profile
-- No email evidence found for: Subwize agency involvement (sheet only)
-- No email evidence found for: FLZ intervention detail (sheet only)
-- Engagement tab data is sheet-sourced, not email
+- No local PDFs found on disk (Spring 1 school report folder not present on this Mac)
+- No evidence for: profile PDF, HCA, contract, risk assessment, ILP, referral PDF
+
+## Engagement profile (consolidated from tracker tabs)
+
+**Source:** `ks4-engagement.csv` + weekly concerns
+
+| Metric | Value |
+|--------|-------|
+| Punctuality | Occasionally Late |
+| Lesson engagement | Mostly Engaged |
+| Purple Ruler | Attending and Completing |
+| Concern level | Low Concern |
+| Home contact | No Contact |
+
+**WhatsApp (16/04/2026):** listed in Focused Learning group and finish-time arrangements.
+
+**Bromcom:** 5.84% sessions absent; positive reflection message home 13/02/2026 for good conduct.
 
 ## Name variations searched
 

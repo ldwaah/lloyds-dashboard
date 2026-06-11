@@ -3,7 +3,7 @@
 **Year group:** Year 10 (ks4-stacey-grail)  
 **School (tracker):** Jo Richardson Community School  
 **Search date:** 2026-06-11  
-**Summary:** 4 email threads / subjects identified, 3 HxStore audit excerpts
+**Summary:** LAC, Final Warning, multi-agency safeguarding; behaviour chronology (local PDF); 54% att tracker / 29% in behaviour report
 
 ## Sources searched
 
@@ -172,9 +172,42 @@
 
 ## Gaps
 
-- No email evidence found for: induction, completed risk assessment document, ILP, student profile
-- No email evidence found for: full safeguarding email bodies (fragments only)
+- Risk assessment and return meeting required but completed risk assessment PDF not found locally
+- No local evidence for: ILP, HCA PDF
+- RRG referral PDF on disk (image-based; text not machine-extracted)
 - No email evidence found for: funding type (LA/Commissioned)
+
+## Behaviour and safeguarding chronology (local PDF, 18 May 2026)
+
+**Source:** `Comprehensive Behaviour & Safeguarding Report (Stacey Grail).pdf` (compiled from safeguarding chronologies, incident records, staff reports, attendance, social care and police information)
+
+**Placement overview:** significant safeguarding vulnerabilities; emotional dysregulation; persistent attendance concerns; repeated absconding; peer conflict; difficulties complying with staff direction; periods of positive engagement when supported. Multi-agency oversight: social care, Child in Need/Protection procedures, police-related concerns, professionals meetings.
+
+**Attendance (report figures):** overall 28.57%; unauthorised absence 41.07%. Repeated lateness January 2026.
+
+**Key incidents (chronology):**
+
+| Date | Incident | Outcome |
+|------|----------|---------|
+| 10/02/2026 | Horseplay escalated; punched student in private area | Removed from class; Tier 1; 3-day consequence |
+| 26/02/2026 | Absconding; mother disclosed police protection arrangements; ran from site | Social worker informed; safeguarding monitoring |
+| 27/02/2026 | Suspected vaping; vape in blazer pocket; verbal dysregulation | Vape confiscated; incident logged |
+| 02/03/2026 | Assault of Year 8 pupil on Snapchat | Safeguarding chronology updated |
+| (pre-03/2026) | Assault on Year 11 pupil | Final Warning Contract; formal monitoring |
+| 27/03/2026 | Physical altercation (provoked; retaliated) | Two-week behaviour report; no further incidents during report period |
+| Mar-Apr 2026 | Positive monitoring period | No further incidents |
+| 08/05/2026 | Missing overnight / leaving site | Police-arranged safe location disclosed |
+| 11-12/05/2026 | Escalated safeguarding | Remote learning; professionals meeting reschedule (see Outlook extract) |
+
+**Strengths noted in report:** positive English and Kings Trust engagement; teamwork and negotiation skills; sports participation; Student of the Week 05/05/2026; two-week behaviour report showed sustained improvement.
+
+## Bromcom behaviour log highlights (local profile PDF)
+
+**Source:** `Stacey Grail, KS4 Reg - Profile.pdf` (Bromcom behaviour export)
+
+- 10/02/2026: Tier 1, -3 points, horseplay/punch incident (matches chronology above)
+- Jan 2026: multiple late-to-school marks; positive Kings Trust points for budgeting/teamwork (23/01, 16/01); positive maths points (07/01)
+- 06/01/2026: removal from class (-3); positive English points same day
 
 ## Name variations searched
 

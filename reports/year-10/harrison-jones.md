@@ -3,7 +3,7 @@
 **Year group:** Year 10 (ks4-harrison-jones)  
 **School (tracker):** Robert Clack  
 **Search date:** 2026-06-11  
-**Summary:** 2 threads identified, 1 HxStore audit excerpt
+**Summary:** 12% att; report to Bal pending; ILP on disk (image PDF); induction notes from WhatsApp
 
 ## Sources searched
 
@@ -114,9 +114,14 @@
 
 ## Gaps
 
-- No email evidence found for: induction, completed risk assessment for Harrison, ILP, student profile
-- No email evidence found for: reduced timetable detail (sheet only)
-- Full "report needs to be submitted" email body not in audit file
+- ILP PDF on disk (`individual-learning-plan.pdf`) is image-based; text not machine-extracted this pass
+- RRG referral PDF on disk (image-based; text not extracted)
+- No local KS4 profile PDF; no HCA or risk assessment PDF found
+- Report submission to Bal: type of report not clarified in email thread
+
+## Local files (content not extracted)
+
+An ILP PDF and updated RRG referral PDF are on disk but are image-based scans; text could not be extracted this pass. No Harrison school or parent term reports were found in the local School Term Reports folder.
 
 ## Name variations searched
 

@@ -3,7 +3,7 @@
 **Year group:** Year 10 (ks4-joshua-lang)  
 **School (tracker):** All Saints  
 **Search date:** 2026-06-11  
-**Summary:** 4 threads identified, 2 HxStore audit excerpts
+**Summary:** All Saints live place; 76% att; Rapid Response accepted; referral placeholder on disk
 
 ## Sources searched
 
@@ -144,9 +144,24 @@
 
 ## Gaps
 
-- No email evidence found for: induction completion, risk assessment, ILP, student profile
-- No email evidence found for: mentoring intervention detail (sheet only)
-- No email evidence found for: mother's Easter holiday contact (partial reference only: `His mother reached out to me prior the Easter holid` - truncated)
+- Rapid Response referral PDF on disk is image-based; companion `.txt` is placeholder only (see below)
+- No local school reports, profile, HCA, contract, risk assessment, or ILP found
+- No email evidence found for: mother's Easter holiday contact (truncated fragment only)
+
+## Rapid Response referral (local placeholder txt)
+
+**Source:** `Rapid Response Referral - Joshua Lang.txt`
+
+| Field | Value |
+|-------|-------|
+| School | All Saints |
+| Year group | Year 10 |
+| Cohort | KS4 |
+| Start date (100% SEC) | 03/03/2026 |
+
+Note in file: placeholder for linking from KS4 summary page; full referral details not yet added.
+
+**Cross-reference:** Outlook KS4 100% thread confirms Joshua already with provision (Lloyd, 04/06/2026); Bal Gill Rapid Response referral 03/06/2026; school supportive of placement.
 
 ## Name variations searched
 

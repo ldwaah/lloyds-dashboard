@@ -3,7 +3,7 @@
 **Year group:** Year 10 (ks4-tyrell-allassani)  
 **School (tracker):** Jo Richardson Community School  
 **Search date:** 2026-06-11  
-**Summary:** 2 threads / references, 2 HxStore audit excerpts
+**Summary:** Bus-stop safeguarding incident (Mar 2026); reduced timetable 12:15 finish; not on Jun cohort list
 
 ## Sources searched
 
@@ -117,10 +117,20 @@
 
 ## Gaps
 
-- No email evidence found for: dedicated thread with subject "Tyrell Allassani" (only partial "Tyrell" matches in audit)
-- No email evidence found for: induction, risk assessment, ILP, student profile
-- No email evidence found for: start date or review dates
-- No email evidence found for: reduced timetable intervention (sheet only)
+- No local PDFs found on disk for Tyrell (Spring 1 school report folder not present on this Mac)
+- Post-incident risk assessment and safety plan referenced in email but PDF not found locally
+- No email evidence found for: start date or review dates on master tracker
+- Not listed in Eugene cohort email 10/06/2026 (may indicate placement change or omission)
+
+## Incident summary (consolidated, 24 Mar 2026)
+
+**Source:** `data/outlook-extracts/tyrell-allassani-incident-thread.txt`
+
+Serious safeguarding and health and safety incident at local bus stop near provision involving Tyrell, Ronny Cooper, and a Robert Clack student. Dispute reportedly involving a vape; physical punches; escalation into road with oncoming traffic ("significant and immediate risk to life"). CCTV secured via Future Youth Zone Facilities Management.
+
+**Immediate actions:** Tyrell and Ronny not permitted to attend until full risk assessment and safety plan completed; potential exclusion discussed (JRCS: "they will need suspending").
+
+**Current tracker:** reduced timetable with 12:15 finish; safety concerns noted on weekly sheet; 72% att.
 
 ## Name variations searched
 

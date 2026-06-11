@@ -3,7 +3,7 @@
 **Year group:** Year 10 (ks4-mason-taylor)  
 **School (tracker):** Dagenham Park School  
 **Search date:** 2026-06-11  
-**Summary:** 1 main thread reference (batch), 0 dedicated HxStore audit file
+**Summary:** Dagenham Park live place; Final Warning on Autumn 2 report; 41% att; reduced timetable
 
 ## Sources searched
 
@@ -87,11 +87,25 @@
 
 ## Gaps
 
+- No local evidence for: KS4 profile PDF, HCA, behaviour contract, risk assessment, ILP
 - No email evidence found for: dedicated email thread with Mason Taylor in subject line
-- No email evidence found for: induction, risk assessment, ILP, student profile
-- No email evidence found for: mentoring intervention (sheet only)
-- No email evidence found for: 32-week review preparation (sheet date only)
-- No email evidence found for: behaviour updates or attendance concerns
+- No email evidence found for: 32-week review outcome (date 21/03/2026 passed)
+
+## Autumn 2 school report (14 Dec 2025, local PDF)
+
+**Source:** `School Report - Mason Taylor.pdf` (Evolution Education, Autumn 2, Dagenham Park)
+
+**Attendance:** 54.5% overall; 43% authorised; 2.5% unauthorised; **significant punctuality concerns**. Behavioural incidents led to online learning periods; recently reintegrating onsite.
+
+**Academic:** Maths and English both Poor engagement, below expected progress. Minimal participation; frequent reminders needed. Responds better in practical/sports settings.
+
+**Behaviour stage:** **Final Warning**. Poor lesson engagement; refuses tasks (head down, dismissive). Reflection+ ineffective. Peer interaction positive; staff interaction variable.
+
+**SEMH:** Mentoring not engaged; emotional regulation declined. Weekly parent contact.
+
+**Lead overview:** initial improvement short-lived; significant decline; hybrid timetable for health and safety when onsite; mother consistently supportive; sustained effort from Mason required.
+
+**Key actions Spring 1:** consistent attendance/punctuality; positive staff engagement onsite; hybrid learning completion; parental collaboration; work towards full onsite reintegration.
 
 ## Name variations searched
 

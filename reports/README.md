@@ -3,7 +3,8 @@
 Generated: 2026-06-11 (updated)  
 **Progress trackers:** Google Sheets (primary); cached CSVs in `data/`  
 **Bromcom extraction:** 2026-06-11 (supplementary; Profile view per student)  
-**Outlook Web full extract:** 2026-06-11 (cursor-ide-browser MCP, reading pane via CDP `Runtime.evaluate`)
+**Outlook Web full extract:** 2026-06-11 (cursor-ide-browser MCP, reading pane via CDP `Runtime.evaluate`)  
+**Local document enrichment:** 2026-06-11 (readable PDFs/docx on Mac merged into `year-10/*.md` as substantive facts, not file inventories)
 
 ## Reports
 
@@ -44,7 +45,21 @@ Student list verified from `ks4-monitoring/ks4-students.js` (10 Year 10 students
 
 **Live re-fetch (2026-06-11):** CSV export URLs returned auth/page-not-found from this environment. Progress data taken from cached exports above (same gids referenced in `ks4-monitoring/monitoring.js`).
 
-Each `year-10/{slug}.md` includes `## Progress & gaps summary` cross-referencing sheet + email + Bromcom evidence.
+Each `year-10/{slug}.md` includes `## Progress & gaps summary` cross-referencing sheet + email + Bromcom evidence, plus merged facts from local documents where readable (CEO meeting notes, behaviour chronologies, school reports, Bromcom profile PDFs).
+
+### 1b. Local documents (this Mac, 2026-06-11)
+
+| Student | Local sources merged into report |
+|---------|----------------------------------|
+| Calum Mison | CEO meeting briefing docx (5 May 2026) |
+| Stacey Grail | Comprehensive Behaviour & Safeguarding Report PDF; Bromcom profile PDF behaviour log |
+| Ronny Burletson | Autumn 2 school report PDF; Bromcom profile PDF behaviour log |
+| Mason Taylor | Autumn 2 school report PDF |
+| Joshua Lang | Rapid Response placeholder txt |
+| Harrison Jones | ILP and referral PDFs on disk (image scans; not text-extracted) |
+| Jayden O'Brien, Tyrell Allassani, Jovan Lane, Tyler Fredreick, Kamari Emanuel | Email/WhatsApp/tracker only; no readable local PDFs |
+
+Google Drive / OneDrive not on this Mac. Image-based referral PDFs not OCR'd in this pass.
 
 ### 2. Outlook Web (cursor-ide-browser MCP)
 

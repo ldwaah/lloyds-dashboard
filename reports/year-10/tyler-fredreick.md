@@ -3,7 +3,7 @@
 **Year group:** Year 10 (ks4-tyler-fredreick)  
 **School (tracker):** Robert Clack  
 **Search date:** 2026-06-11  
-**Summary:** 3 threads identified, 1 full Outlook Web thread (6 messages) + 2 HxStore excerpts
+**Summary:** Remote learning (Jun 2026); punctuality crisis; CEO meeting 11 Jun; 14% att; no local PDFs
 
 **Name spellings in emails:** Fredreick (Purple Ruler), Fredrick (Robert Clack thread), Frederick (Purple Ruler login), Walterstow-Frederick (Rapid Response batch)
 
@@ -12,8 +12,6 @@
 - Outlook Web (`outlook.cloud.microsoft`) - full thread opened and expanded
 - HxStore.hxd (`data/emails-extracted/tyler-fredreick.txt`)
 - `general-ks4-terms.txt`
-
-## Email evidence
 
 ## Outlook Web (full extract)
 
@@ -140,10 +138,21 @@
 
 ## Gaps
 
-- No email evidence found for: completed risk assessment document attached
-- No email evidence found for: ILP, student profile
-- No email evidence found for: full text of Eugene Dwaah 09/06 remote learning email (truncated in reading pane)
-- Placement type not stated in emails reviewed
+- No local PDFs with Tyler's name in path on this Mac
+- Completed risk assessment requested by Lloyd (11/06/2026) but document not found locally
+- No evidence for: ILP, KS4 profile PDF, HCA
+
+## Current status (consolidated, June 2026)
+
+| Source | Detail |
+|--------|--------|
+| 08/06/2026 | Arrived 12:35 (expected 9:00); pattern of 2-3 hour lateness; rudeness and defiance |
+| 09/06/2026 | CEO invited mum to meeting; remote learning package (not exclusion); review at Futures |
+| 11/06/2026 | Meeting with CEO; risk assessment noted on cohort list; DSL (Mr Course) asks next steps after Rapid Response report shared |
+| Tracker | 14.29% att; engagement tab: Frequently Late, Refusing/Disengaged, Not Accessing Learning |
+| Purple Ruler | Removal request ticket 202606045048 (courses EE-ST1-KS4-MATHS-G2, ENGLISH-G1) |
+
+**Name spellings in records:** Fredreick (Bromcom, Purple Ruler), Fredrick (Robert Clack emails), Walterstow-Frederick (Rapid Response batch).
 
 ## Name variations searched
 

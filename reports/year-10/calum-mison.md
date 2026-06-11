@@ -3,7 +3,7 @@
 **Year group:** Year 10 (ks4-calum-mison)  
 **School (tracker):** Jo Richardson Community School  
 **Search date:** 2026-06-11  
-**Summary:** 2 email threads identified, 3 HxStore audit excerpts
+**Summary:** Behaviour contract and remote learning (email); CEO meeting briefing (local docx, 5 May 2026); tracker Final Warning, 51% att
 
 ## Sources searched
 
@@ -122,9 +122,29 @@
 
 ## Gaps
 
-- No email evidence found for: induction completion, risk assessment, ILP, student profile
-- No email evidence found for: King's Trust engagement status (sheet only)
-- Full email bodies not recovered - subject lines and fragments only from HxStore
+- No local or email evidence for: completed risk assessment PDF, ILP, KS4 profile PDF, HCA
+- No email evidence found for: induction completion, King's Trust engagement status (sheet only)
+- Behaviour contract referenced in email thread; contract document not saved locally
+
+## CEO meeting briefing (5 May 2026, local docx)
+
+**Source:** `Calum Meeting Notes with CEO - 5.05.26.docx` (staff briefing circulated after meeting with CEO, Calum, parent, Miss Kaur JRCS)
+
+**Calum's stated views:** not learning effectively at provision; Purple Ruler work too easy; easily distracted; wants to return to JRCS for friendships.
+
+**Position communicated to Calum:** mainstream placement ended due to behaviour; return must be earned; positive behaviour and engagement non-negotiable.
+
+**Primary barrier:** open defiance and refusal to follow reasonable instructions.
+
+**Staff non-negotiables:** clear consistent expectations; challenge defiance via Behaviour for Learning; no negotiation on basics; log incidents in real time; consistency across staff.
+
+**Regulation:** time-out/cooling-off permitted when deregulated (support, not consequence); escalate immediately if health and safety or safeguarding risk.
+
+**Curriculum:** stretch and broaden only when behaviour appropriate; otherwise focus on behaviour expectations.
+
+**Monitoring:** Mr Dwaah weekly reviews (behaviour, engagement, academic participation) reported to Ms Core; parent advised to maintain communication on behaviour and engagement.
+
+**Overall:** behaviour is gatekeeper to reintegration and curriculum expansion; conditional bespoke offer if he meets expectations halfway.
 
 ## Name variations searched
 
