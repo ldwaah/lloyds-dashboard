@@ -2,9 +2,10 @@
   var STORAGE_KEY = "lloyds-tasks";
   var WORKFLOWS_KEY = "lloyds-workflows";
   var YEAR11_WORKFLOW_ID = "wf-year11-profiles";
+  var YEAR10_WORKFLOW_ID = "wf-year10-reviews";
 
   var STATUSES = ["Not Started", "In Progress", "Done"];
-  var PRIORITIES = ["Low", "Medium", "High"];
+  var PRIORITIES = ["Low", "Medium", "Medium-High", "High"];
   var CATEGORIES = [
     "Work",
     "Student Induction",
@@ -14,6 +15,7 @@
     "Student Reports",
     "Student Profiles",
     "School Communication",
+    "Student Reviews",
     "Staff Follow-Up",
     "Personal",
     "Other",
@@ -86,6 +88,64 @@
         dueDate: "2026-06-19",
         status: "Not Started",
         workflowId: YEAR11_WORKFLOW_ID,
+      },
+    ];
+
+    seedTasks.forEach(function (seed) {
+      if (!tasks.some(function (t) { return t.id === seed.id; })) {
+        tasks.push(seed);
+        changed = true;
+      }
+    });
+
+    if (changed) {
+      saveWorkflows(workflows);
+      saveTasks(tasks);
+    }
+
+    return { workflows: workflows, tasks: tasks };
+  }
+
+  function seedYear10Workflow() {
+    var workflows = loadWorkflows();
+    var tasks = loadTasks();
+    var changed = false;
+
+    if (!workflows.some(function (w) { return w.id === YEAR10_WORKFLOW_ID; })) {
+      workflows.push({
+        id: YEAR10_WORKFLOW_ID,
+        name: "Year 10 End-of-Year Reviews",
+      });
+      changed = true;
+    }
+
+    var seedTasks = [
+      {
+        id: "task-year10-identify-students",
+        title: "Identify all Year 10 students needing end-of-year review",
+        category: "Student Reviews",
+        priority: "High",
+        dueDate: "2026-06-15",
+        status: "Not Started",
+        workflowId: YEAR10_WORKFLOW_ID,
+      },
+      {
+        id: "task-year10-arrange-meetings",
+        title: "Arrange end-of-year review meetings for Year 10 students",
+        category: "Student Reviews",
+        priority: "High",
+        dueDate: "2026-06-19",
+        status: "Not Started",
+        workflowId: YEAR10_WORKFLOW_ID,
+      },
+      {
+        id: "task-year10-prepare-notes",
+        title: "Prepare review notes/questions for each Year 10 student",
+        category: "Student Reviews",
+        priority: "Medium-High",
+        dueDate: "2026-06-19",
+        status: "Not Started",
+        workflowId: YEAR10_WORKFLOW_ID,
       },
     ];
 
@@ -277,7 +337,10 @@
   }
 
   function priorityClass(priority) {
-    return "task-priority task-priority--" + priority.toLowerCase();
+    return (
+      "task-priority task-priority--" +
+      priority.toLowerCase().replace(/\s+/g, "-")
+    );
   }
 
   function formatDate(dateStr) {
@@ -614,7 +677,23 @@
         '<li class="workflow-home-item">' +
         '<p class="workflow-home-item__name">' +
         escapeHtml(wf.name) +
-        "</p>" +
+        "</p>";
+
+      if (wfTasks.length) {
+        html += '<ul class="workflow-home-item__tasks">';
+        wfTasks.forEach(function (task) {
+          var done = task.status === "Done";
+          html +=
+            '<li class="workflow-home-item__task' +
+            (done ? " workflow-home-item__task--done" : "") +
+            '">' +
+            escapeHtml(task.title) +
+            "</li>";
+        });
+        html += "</ul>";
+      }
+
+      html +=
         '<div class="workflow-home-item__meta">' +
         '<span class="workflow-home-item__progress">' +
         progress.done +
@@ -688,6 +767,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     seedYear11Workflow();
+    seedYear10Workflow();
     initImport();
     refresh();
   });

@@ -291,6 +291,28 @@ body {
   line-height: 1.35;
 }
 
+.workflow-home-item__tasks {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.workflow-home-item__task {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--border);
+}
+
+.workflow-home-item__task--done {
+  text-decoration: line-through;
+  opacity: 0.65;
+}
+
 .workflow-home-item__meta {
   display: flex;
   flex-wrap: wrap;
@@ -778,6 +800,11 @@ body {
   color: #b91c1c;
 }
 
+.task-priority--medium-high {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
 .task-category--work {
   background: #eef2ff;
   color: #4338ca;
@@ -816,6 +843,11 @@ body {
 .task-category--school-communication {
   background: #e0f2fe;
   color: #0369a1;
+}
+
+.task-category--student-reviews {
+  background: #ecfdf5;
+  color: #047857;
 }
 
 .task-category--staff-follow-up {
