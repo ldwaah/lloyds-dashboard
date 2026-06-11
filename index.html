@@ -74,24 +74,45 @@
           </header>
           <div class="workspace tasks-workspace" aria-label="Tasks workspace">
             <section class="task-import" aria-label="Paste email action list">
-              <label class="form-field" for="task-import-text">
-                <span class="form-field__label">Paste Email Action List</span>
-                <textarea
-                  id="task-import-text"
-                  class="task-import__textarea"
-                  rows="5"
-                  placeholder="Paste one action per line…&#10;Contact Barking Abbey for Kamari induction, cc Bal.&#10;Complete King's Trust QAR documentation."
-                ></textarea>
-              </label>
-              <div class="form-field">
-                <label for="task-import-workflow">Parent Workflow (optional)</label>
-                <select id="task-import-workflow" name="workflow">
-                  <option value="">None</option>
-                </select>
-              </div>
-              <button type="button" id="task-convert-btn" class="btn btn--primary">
-                Convert to Tasks
+              <button
+                type="button"
+                id="task-import-toggle"
+                class="task-import__toggle"
+                aria-expanded="false"
+                aria-controls="task-import-panel"
+              >
+                <span>Import from email</span>
+                <svg
+                  class="task-import__chevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
               </button>
+              <div id="task-import-panel" class="task-import__panel" hidden>
+                <label class="form-field" for="task-import-text">
+                  <span class="form-field__label">Paste Email Action List</span>
+                  <textarea
+                    id="task-import-text"
+                    class="task-import__textarea"
+                    rows="5"
+                    placeholder="Paste one action per line…&#10;Contact Barking Abbey for Kamari induction, cc Bal.&#10;Complete King's Trust QAR documentation."
+                  ></textarea>
+                </label>
+                <div class="form-field">
+                  <label for="task-import-workflow">Parent Workflow (optional)</label>
+                  <select id="task-import-workflow" name="workflow">
+                    <option value="">None</option>
+                  </select>
+                </div>
+                <button type="button" id="task-convert-btn" class="btn btn--primary">
+                  Convert to Tasks
+                </button>
+              </div>
             </section>
 
             <div id="task-list" class="task-list" aria-live="polite"></div>

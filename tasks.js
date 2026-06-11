@@ -593,42 +593,49 @@
       '<article class="task-item" data-id="' +
       escapeHtml(task.id) +
       '">' +
-      '<div class="task-item__view">' +
-      '<div class="task-item__body">' +
+      '<button type="button" class="task-item__summary" aria-expanded="false">' +
+      '<div class="task-item__summary-body">' +
       '<p class="task-item__title' +
       (task.status === "Done" ? " task-item__title--done" : "") +
       '">' +
       escapeHtml(task.title) +
       "</p>" +
-      '<div class="task-item__meta">' +
+      '<div class="task-item__summary-meta">' +
       '<span class="' +
       statusClass(task.status) +
       '">' +
       escapeHtml(task.status) +
       "</span>" +
       '<span class="' +
-      priorityClass(task.priority) +
-      '">' +
-      escapeHtml(task.priority) +
-      "</span>" +
-      '<span class="' +
       categoryClass(task.category) +
       '">' +
       escapeHtml(task.category) +
       "</span>" +
-      (workflowName
-        ? '<span class="task-workflow">' + escapeHtml(workflowName) + "</span>"
-        : "") +
       (task.dueDate
         ? '<span class="task-item__due">Due ' +
           formatDate(task.dueDate) +
           "</span>"
         : "") +
       "</div>" +
+      "</div>" +
+      '<svg class="task-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">' +
+      '<path d="M6 9l6 6 6-6" />' +
+      "</svg>" +
+      "</button>" +
+      '<div class="task-item__details" hidden>' +
+      '<div class="task-item__details-meta">' +
+      '<span class="' +
+      priorityClass(task.priority) +
+      '">' +
+      escapeHtml(task.priority) +
+      "</span>" +
+      (workflowName
+        ? '<span class="task-workflow">' + escapeHtml(workflowName) + "</span>"
+        : "") +
+      "</div>" +
       (task.notes
         ? '<p class="task-item__notes">' + escapeHtml(task.notes) + "</p>"
         : "") +
-      "</div>" +
       '<div class="task-item__actions">' +
       '<button type="button" class="task-item__edit" aria-label="Edit task">Edit</button>' +
       '<button type="button" class="task-item__delete" aria-label="Delete task">' +
@@ -740,7 +747,7 @@
 
     if (!tasks.length) {
       container.innerHTML =
-        '<p class="empty-state">No tasks yet. Paste an email action list above to get started.</p>';
+        '<p class="empty-state">No tasks yet. Tap Import from email to add tasks.</p>';
       return;
     }
 
@@ -767,23 +774,38 @@
   function bindTaskEvents(container, tasks, workflows) {
     container.querySelectorAll(".task-item").forEach(function (el) {
       var id = el.getAttribute("data-id");
-      var view = el.querySelector(".task-item__view");
+      var summary = el.querySelector(".task-item__summary");
+      var details = el.querySelector(".task-item__details");
       var form = el.querySelector(".task-item__edit-form");
       var editBtn = el.querySelector(".task-item__edit");
       var cancelBtn = el.querySelector(".task-item__cancel");
       var deleteBtn = el.querySelector(".task-item__delete");
 
-      editBtn.addEventListener("click", function () {
-        view.hidden = true;
+      summary.addEventListener("click", function () {
+        if (form && !form.hidden) return;
+        var expanded = summary.getAttribute("aria-expanded") === "true";
+        summary.setAttribute("aria-expanded", expanded ? "false" : "true");
+        details.hidden = expanded;
+        el.classList.toggle("task-item--expanded", !expanded);
+      });
+
+      editBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        summary.hidden = true;
+        details.hidden = true;
         form.hidden = false;
+        el.classList.remove("task-item--expanded");
       });
 
       cancelBtn.addEventListener("click", function () {
         form.hidden = true;
-        view.hidden = false;
+        summary.hidden = false;
+        summary.setAttribute("aria-expanded", "false");
+        details.hidden = true;
       });
 
-      deleteBtn.addEventListener("click", function () {
+      deleteBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
         var updated = tasks.filter(function (t) {
           return t.id !== id;
         });
@@ -846,25 +868,11 @@
 
       html +=
         '<li class="workflow-home-item">' +
+        '<button type="button" class="workflow-home-item__toggle" aria-expanded="false">' +
+        '<div class="workflow-home-item__summary">' +
         '<p class="workflow-home-item__name">' +
         escapeHtml(wf.name) +
-        "</p>";
-
-      if (wfTasks.length) {
-        html += '<ul class="workflow-home-item__tasks">';
-        wfTasks.forEach(function (task) {
-          var done = task.status === "Done";
-          html +=
-            '<li class="workflow-home-item__task' +
-            (done ? " workflow-home-item__task--done" : "") +
-            '">' +
-            escapeHtml(task.title) +
-            "</li>";
-        });
-        html += "</ul>";
-      }
-
-      html +=
+        "</p>" +
         '<div class="workflow-home-item__meta">' +
         '<span class="workflow-home-item__progress">' +
         progress.done +
@@ -884,11 +892,47 @@
           : status === "Complete"
             ? '<p class="workflow-home-item__deadline">All tasks complete</p>'
             : "") +
-        "</li>";
+        "</div>" +
+        '<svg class="workflow-home-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">' +
+        '<path d="M6 9l6 6 6-6" />' +
+        "</svg>" +
+        "</button>";
+
+      if (wfTasks.length) {
+        html += '<div class="workflow-home-item__panel" hidden><ul class="workflow-home-item__tasks">';
+        wfTasks.forEach(function (task) {
+          var done = task.status === "Done";
+          html +=
+            '<li class="workflow-home-item__task' +
+            (done ? " workflow-home-item__task--done" : "") +
+            '">' +
+            escapeHtml(task.title) +
+            "</li>";
+        });
+        html += "</ul></div>";
+      }
+
+      html += "</li>";
     });
     html += "</ul>";
 
     container.innerHTML = html;
+    bindWorkflowEvents(container);
+  }
+
+  function bindWorkflowEvents(container) {
+    container.querySelectorAll(".workflow-home-item__toggle").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var item = btn.closest(".workflow-home-item");
+        var panel = item ? item.querySelector(".workflow-home-item__panel") : null;
+        if (!panel) return;
+
+        var expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", expanded ? "false" : "true");
+        panel.hidden = expanded;
+        if (item) item.classList.toggle("workflow-home-item--expanded", !expanded);
+      });
+    });
   }
 
   function updateWorkflowDropdowns(workflows) {
@@ -908,9 +952,29 @@
   }
 
   function initImport() {
+    var toggle = document.getElementById("task-import-toggle");
+    var panel = document.getElementById("task-import-panel");
     var textarea = document.getElementById("task-import-text");
     var convertBtn = document.getElementById("task-convert-btn");
     var workflowSelect = document.getElementById("task-import-workflow");
+    var importSection = document.querySelector(".task-import");
+
+    if (toggle && panel) {
+      toggle.addEventListener("click", function () {
+        var expanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", expanded ? "false" : "true");
+        panel.hidden = expanded;
+        if (importSection) {
+          importSection.classList.toggle("task-import--expanded", !expanded);
+        }
+        if (!expanded) {
+          setTimeout(function () {
+            if (textarea) textarea.focus();
+          }, 50);
+        }
+      });
+    }
+
     if (!textarea || !convertBtn) return;
 
     convertBtn.addEventListener("click", function () {
@@ -927,6 +991,12 @@
       refresh(tasks);
       textarea.value = "";
       if (workflowSelect) workflowSelect.value = "";
+
+      if (toggle && panel) {
+        toggle.setAttribute("aria-expanded", "false");
+        panel.hidden = true;
+        if (importSection) importSection.classList.remove("task-import--expanded");
+      }
     });
   }
 

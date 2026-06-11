@@ -276,13 +276,54 @@ body {
 }
 
 .workflow-home-item {
-  padding-bottom: 0.875rem;
   border-bottom: 1px solid var(--border);
 }
 
 .workflow-home-item:last-child {
-  padding-bottom: 0;
   border-bottom: none;
+}
+
+.workflow-home-item__toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.875rem 0;
+  border: none;
+  background: transparent;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.workflow-home-item__toggle:active {
+  opacity: 0.65;
+}
+
+.workflow-home-item__summary {
+  flex: 1;
+  min-width: 0;
+}
+
+.workflow-home-item__chevron {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.125rem;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+}
+
+.workflow-home-item--expanded .workflow-home-item__chevron {
+  transform: rotate(180deg);
+}
+
+.workflow-home-item__panel {
+  overflow: hidden;
+  padding: 0 0 0.875rem;
+  animation: expand-in 0.2s ease;
 }
 
 .workflow-home-item__name {
@@ -293,7 +334,7 @@ body {
 
 .workflow-home-item__tasks {
   list-style: none;
-  margin: 0.5rem 0 0;
+  margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -606,19 +647,72 @@ body {
 /* Tasks */
 
 .tasks-workspace {
-  gap: 2rem;
+  gap: 1.5rem;
   padding-top: 1.5rem;
 }
 
 .task-import {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 12px;
   box-shadow: var(--shadow);
-  padding: 1.25rem 1.375rem;
+  overflow: hidden;
+}
+
+.task-import__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.875rem 1.125rem;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.task-import__toggle:active {
+  opacity: 0.65;
+}
+
+.task-import__chevron {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+}
+
+.task-import--expanded .task-import__chevron {
+  transform: rotate(180deg);
+}
+
+.task-import__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1.125rem 1.125rem;
+  border-top: 1px solid var(--border);
+  animation: expand-in 0.2s ease;
+}
+
+.task-import__panel[hidden] {
+  display: none;
+}
+
+@keyframes expand-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .form-field__label {
@@ -658,7 +752,7 @@ body {
 .task-list {
   display: flex;
   flex-direction: column;
-  gap: 0.625rem;
+  gap: 0.75rem;
 }
 
 .task-list__toolbar {
@@ -724,16 +818,67 @@ body {
   overflow: hidden;
 }
 
-.task-item__view {
+.task-item__summary {
   display: flex;
   align-items: flex-start;
-  gap: 0.75rem;
+  gap: 0.5rem;
+  width: 100%;
   padding: 0.875rem 1rem;
+  border: none;
+  background: transparent;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.task-item__body {
+.task-item__summary:active {
+  opacity: 0.65;
+}
+
+.task-item__summary-body {
   flex: 1;
   min-width: 0;
+}
+
+.task-item__chevron {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.125rem;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+}
+
+.task-item--expanded .task-item__chevron {
+  transform: rotate(180deg);
+}
+
+.task-item__summary-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem;
+  margin-top: 0.375rem;
+}
+
+.task-item__details {
+  padding: 0 1rem 0.875rem;
+  border-top: 1px solid var(--border);
+  animation: expand-in 0.2s ease;
+}
+
+.task-item__details[hidden] {
+  display: none;
+}
+
+.task-item__details-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem;
+  margin-top: 0.75rem;
 }
 
 .task-item__title {
