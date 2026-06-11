@@ -7,22 +7,23 @@
 }
 
 :root {
-  --bg: #f6f5f2;
+  --bg: #e8edf5;
   --bg-gradient: linear-gradient(
-    168deg,
-    #f8f7f4 0%,
-    #f3f4f8 48%,
-    #f7f6f3 100%
+    165deg,
+    #dce6f5 0%,
+    #e8edf5 35%,
+    #f0ebe6 72%,
+    #e6eaf2 100%
   );
   --surface: #ffffff;
-  --surface-raised: rgba(255, 255, 255, 0.88);
-  --text: #1a1a1a;
-  --text-muted: #6b6b68;
-  --border: rgba(26, 26, 26, 0.08);
-  --border-strong: rgba(26, 26, 26, 0.12);
-  --accent: #3d5a80;
-  --accent-soft: rgba(61, 90, 128, 0.1);
-  --accent-muted: rgba(61, 90, 128, 0.65);
+  --surface-raised: rgba(255, 255, 255, 0.92);
+  --text: #141c28;
+  --text-muted: #5c6573;
+  --border: rgba(30, 58, 95, 0.1);
+  --border-strong: rgba(30, 58, 95, 0.18);
+  --accent: #1e3a5f;
+  --accent-soft: rgba(30, 58, 95, 0.14);
+  --accent-muted: rgba(30, 58, 95, 0.72);
   --shadow-sm: 0 1px 2px rgba(26, 26, 26, 0.04);
   --shadow: 0 1px 2px rgba(26, 26, 26, 0.04), 0 8px 24px rgba(26, 26, 26, 0.05);
   --shadow-hover: 0 2px 4px rgba(26, 26, 26, 0.05), 0 12px 32px rgba(26, 26, 26, 0.07);
@@ -69,8 +70,12 @@ body {
 
 .mon-header {
   padding: calc(1.25rem + var(--safe-top)) 1.25rem 1rem;
-  border-bottom: 1px solid var(--border);
-  background: var(--surface-raised);
+  border-bottom: 1px solid var(--border-strong);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(232, 237, 245, 0.75) 100%
+  );
   backdrop-filter: blur(20px) saturate(1.2);
   -webkit-backdrop-filter: blur(20px) saturate(1.2);
 }
