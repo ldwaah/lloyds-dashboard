@@ -1,10 +1,11 @@
-var CACHE_NAME = "lloyds-dashboard-v2";
+var CACHE_NAME = "lloyds-dashboard-v3";
 
 var ASSETS = [
   "./",
   "./index.html",
   "./styles.css",
   "./script.js",
+  "./reminders.js",
   "./manifest.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
